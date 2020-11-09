@@ -1,7 +1,0 @@
-New request: the whole of tob
-New request: feature_idea:_Do_my_homework_for_me
-New request: magic 8 ball
-New request: clear
-New request: clear_requests
-New request: password
-New request: are these even going anywhere? I wonder how joe has it set up if its saving to a file? Will it just get the first word, the whole line? or will each word be its own request line? <a:think:560930378584686603>
