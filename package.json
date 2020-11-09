@@ -1,0 +1,18 @@
+{
+  "name": "osrs_boss_gear",
+  "version": "1.0.0",
+  "description": "A project for finding the best gear according to the given budget",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js",
+    "items": "node ./Items/items.js"
+  },
+  "author": "Joe Reynolds",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.4.1"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
