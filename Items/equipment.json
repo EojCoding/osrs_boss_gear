@@ -4,14 +4,6 @@
 		"name": "Magic shortbow"
 	},
 	{
-		"id": 1409,
-		"name": "Iban's staff"
-	},
-	{
-		"id": 1410,
-		"name": "Iban's staff"
-	},
-	{
 		"id": 4097,
 		"name": "Mystic boots"
 	},
@@ -32,8 +24,32 @@
 		"name": "Ancient staff"
 	},
 	{
+		"id": 4736,
+		"name": "Karil's leathertop"
+	},
+	{
+		"id": 4738,
+		"name": "Karil's leatherskirt"
+	},
+	{
+		"id": 6570,
+		"name": "Fire cape"
+	},
+	{
+		"id": 6585,
+		"name": "Amulet of fury"
+	},
+	{
+		"id": 6737,
+		"name": "Berserker ring"
+	},
+	{
 		"id": 6914,
 		"name": "Master wand"
+	},
+	{
+		"id": 7462,
+		"name": "Barrows gloves"
 	},
 	{
 		"id": 8839,
@@ -46,6 +62,10 @@
 	{
 		"id": 8842,
 		"name": "Void knight gloves"
+	},
+	{
+		"id": 10566,
+		"name": "Fire cape"
 	},
 	{
 		"id": 11212,
@@ -72,12 +92,64 @@
 		"name": "Armadyl crossbow"
 	},
 	{
+		"id": 11806,
+		"name": "Saradomin godsword"
+	},
+	{
+		"id": 11826,
+		"name": "Armadyl helmet"
+	},
+	{
+		"id": 11830,
+		"name": "Armadyl chainskirt"
+	},
+	{
+		"id": 11832,
+		"name": "Bandos chestplate"
+	},
+	{
+		"id": 11834,
+		"name": "Bandos tassets"
+	},
+	{
+		"id": 11864,
+		"name": "Slayer helmet"
+	},
+	{
+		"id": 11889,
+		"name": "Zamorakian hasta"
+	},
+	{
 		"id": 11907,
 		"name": "Trident of the seas"
 	},
 	{
+		"id": 12002,
+		"name": "Occult necklace"
+	},
+	{
+		"id": 12598,
+		"name": "Holy sandals"
+	},
+	{
+		"id": 12601,
+		"name": "Ring of the gods"
+	},
+	{
 		"id": 12612,
 		"name": "Book of darkness"
+	},
+	{
+		"id": 12817,
+		"name": "Elysian spirit shield"
+	},
+	{
+		"id": 12821,
+		"name": "Spectral spirit shield"
+	},
+	{
+		"id": 12825,
+		"name": "Arcane spirit shield"
 	},
 	{
 		"id": 12899,
@@ -86,6 +158,10 @@
 	{
 		"id": 12926,
 		"name": "Toxic blowpipe"
+	},
+	{
+		"id": 12954,
+		"name": "Dragon defender"
 	},
 	{
 		"id": 13072,
@@ -98,6 +174,14 @@
 	{
 		"id": 13235,
 		"name": "Eternal boots"
+	},
+	{
+		"id": 13237,
+		"name": "Pegasian boots"
+	},
+	{
+		"id": 13239,
+		"name": "Primordial boots"
 	},
 	{
 		"id": 13263,
@@ -116,12 +200,20 @@
 		"name": "Tormented bracelet"
 	},
 	{
+		"id": 19547,
+		"name": "Necklace of anguish"
+	},
+	{
 		"id": 19550,
 		"name": "Ring of suffering"
 	},
 	{
 		"id": 19553,
 		"name": "Amulet of torture"
+	},
+	{
+		"id": 19559,
+		"name": "Elysian spirit shield"
 	},
 	{
 		"id": 19675,
@@ -172,8 +264,36 @@
 		"name": "Twisted bow"
 	},
 	{
+		"id": 21000,
+		"name": "Twisted buckler"
+	},
+	{
 		"id": 21006,
 		"name": "Kodai wand"
+	},
+	{
+		"id": 21018,
+		"name": "Ancestral hat"
+	},
+	{
+		"id": 21021,
+		"name": "Ancestral robe top"
+	},
+	{
+		"id": 21024,
+		"name": "Ancestral robe bottom"
+	},
+	{
+		"id": 21295,
+		"name": "Infernal cape"
+	},
+	{
+		"id": 21297,
+		"name": "Infernal cape"
+	},
+	{
+		"id": 21733,
+		"name": "Guardian boots"
 	},
 	{
 		"id": 21791,
@@ -188,6 +308,14 @@
 		"name": "Imbued zamorak cape"
 	},
 	{
+		"id": 22109,
+		"name": "Ava's assembler"
+	},
+	{
+		"id": 22322,
+		"name": "Avernic defender"
+	},
+	{
 		"id": 22323,
 		"name": "Sanguinesti staff"
 	},
@@ -200,12 +328,40 @@
 		"name": "Scythe of vitur"
 	},
 	{
+		"id": 22326,
+		"name": "Justiciar faceguard"
+	},
+	{
+		"id": 22327,
+		"name": "Justiciar chestguard"
+	},
+	{
+		"id": 22328,
+		"name": "Justiciar legguards"
+	},
+	{
 		"id": 22664,
 		"name": "Scythe of vitur"
 	},
 	{
 		"id": 22803,
 		"name": "Rada's blessing"
+	},
+	{
+		"id": 22981,
+		"name": "Ferocious gloves"
+	},
+	{
+		"id": 23593,
+		"name": "Barrows gloves"
+	},
+	{
+		"id": 23595,
+		"name": "Berserker ring"
+	},
+	{
+		"id": 23597,
+		"name": "Dragon defender"
 	},
 	{
 		"id": 23603,
@@ -224,6 +380,10 @@
 		"name": "Armadyl crossbow"
 	},
 	{
+		"id": 23622,
+		"name": "Infernal cape"
+	},
+	{
 		"id": 23626,
 		"name": "Kodai wand"
 	},
@@ -232,8 +392,44 @@
 		"name": "Ghrazi rapier"
 	},
 	{
+		"id": 23632,
+		"name": "Karil's leathertop"
+	},
+	{
+		"id": 23640,
+		"name": "Amulet of fury"
+	},
+	{
 		"id": 23644,
 		"name": "Eternal boots"
+	},
+	{
+		"id": 23646,
+		"name": "Bandos tassets"
+	},
+	{
+		"id": 23654,
+		"name": "Occult necklace"
+	},
+	{
+		"id": 24271,
+		"name": "Neitiznot faceguard"
+	},
+	{
+		"id": 24417,
+		"name": "Inquisitor's mace"
+	},
+	{
+		"id": 24419,
+		"name": "Inquisitor's great helm"
+	},
+	{
+		"id": 24420,
+		"name": "Inquisitor's hauberk"
+	},
+	{
+		"id": 24421,
+		"name": "Inquisitor's plateskirt"
 	},
 	{
 		"id": 24422,
@@ -250,5 +446,9 @@
 	{
 		"id": 24425,
 		"name": "Eldritch nightmare staff"
+	},
+	{
+		"id": 24780,
+		"name": "Amulet of blood fury"
 	}
 ]

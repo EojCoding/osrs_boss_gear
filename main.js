@@ -39,7 +39,7 @@ client.on("message", (message) => {
     const withoutPrefix = message.content.slice(PREFIX.length);
     const split = withoutPrefix.split(/ +/);
     const args = split.slice(1);
-    const pattern = /^![a-zA-Z]+\s[0-9]+/;
+    const pattern = /^~[a-zA-Z]+\s[0-9]+/;
 
     // Get the boss and budget from the user input
     const command = split[0].toLowerCase();
@@ -52,14 +52,14 @@ client.on("message", (message) => {
     logActivity(command, args);
 
     // If a new boss is being requested
-    if (message.content.startsWith("!requestboss") && args.length > 0) {
+    if (message.content.startsWith("~requestboss") && args.length > 0) {
         client.commands.get("requestboss").execute(message, args);
     }
     // If the messages does not start with the prefix or does not match the pattern
     else if (message.content.startsWith(PREFIX) && !message.content.match(pattern)) {
-        message.reply("The proper usage is: !boss_name budget\n" +
-            "For example: !scorpia 5000000\n" +
-            "Or for requesting a new feature use: !requestboss [type here]");
+        message.reply("The proper usage is: ~boss_name budget\n" +
+            "For example: ~scorpia 5000000\n" +
+            "Or for requesting a new feature use: ~requestboss [type here]");
         return;
     }
     else if (message.content.startsWith(PREFIX) && !client.commands.has(command)) {
@@ -69,6 +69,9 @@ client.on("message", (message) => {
     switch (command) {
         case "scorpia":
             client.commands.get("scorpia").execute(message, Number(budget));
+            break;
+        case "tob":
+            client.commands.get("tob").execute(message, Number(budget));
             break;
     }
 });
