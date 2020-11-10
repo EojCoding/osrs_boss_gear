@@ -1,10 +1,11 @@
 const fs = require("fs");
+const logger = require("../Logs/logger");
 const setups = {};
+
 fs.readdir("/OSRS_Boss_Gear/Setups/TOB/", (err, files) => {
     if (err) {
-        return console.log(err);
+        logger.logErrors(err);
     }
-
     files.forEach((file) => {
         const setup = require(`/OSRS_Boss_Gear/Setups/TOB/${file}`);
         setups[setup.name] = setup;
@@ -24,11 +25,12 @@ module.exports = {
                     response += "["+key+"] -> "+temp[key]+"\n";
                 }
             }
+            response += "[inventory] -> { WIP }\n";
             response += "```";
             message.channel.send(response);
         }
         else {
-            message.channel.send("You're too poor");
+            message.channel.send("Minimum budget is 145m");
         }
     }
 }

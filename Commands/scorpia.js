@@ -1,8 +1,10 @@
 const fs = require("fs");
+const logger = require("../Logs/logger");
 const setups = {};
+
 fs.readdir("/OSRS_Boss_Gear/Setups/Scorpia/", (err, files) => {
     if (err) {
-        return console.log(err);
+        logger.logErrors(err);
     }
 
     files.forEach((file) => {
@@ -24,11 +26,12 @@ module.exports = {
                     response += "["+key+"] -> "+temp[key]+"\n";
                 }
             }
+            response += "[inventory] -> { WIP }\n";
             response += "```";
             message.channel.send(response);
         }
         else {
-            message.channel.send("You're too poor");
+            message.channel.send("Minimum budget is 5m");
         }
     }
 }

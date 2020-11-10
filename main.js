@@ -12,6 +12,7 @@ const client = new Discord.Client();
 const { PREFIX, TOKEN } = require("./config.json");
 const fs = require("fs");
 const commandFiles = fs.readdirSync("./Commands/").filter(file => file.endsWith(".js"));
+const logger = require("./Logs/logger");
 
 // Store commands in this
 client.commands = new Discord.Collection();
@@ -21,9 +22,7 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-/**
- * Begin the bot client
- */
+// Begin the bot client
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}`);
 
@@ -45,11 +44,13 @@ client.on("message", (message) => {
     const command = split[0].toLowerCase();
     const budget = split[1];
 
+    // Ignore the message if it doesn't start with the prefix
     if (!message.content.startsWith(PREFIX)) {
         return;
     }
 
-    logActivity(command, args);
+    // Log all messages if the message starts with the prefix
+    logger.logCommands(command, args);
 
     // If a new boss is being requested
     if (message.content.startsWith("~requestboss") && args.length > 0) {
@@ -62,10 +63,12 @@ client.on("message", (message) => {
             "Or for requesting a new feature use: ~requestboss [type here]");
         return;
     }
+    // If the message starts with the prefix, but the command is not recognised
     else if (message.content.startsWith(PREFIX) && !client.commands.has(command)) {
         message.reply("That command was not found");
     }
 
+    // Switch block for commands
     switch (command) {
         case "scorpia":
             client.commands.get("scorpia").execute(message, Number(budget));
@@ -77,15 +80,3 @@ client.on("message", (message) => {
 });
 
 client.login(TOKEN);
-
-function logActivity(command, args) {
-    // Credit from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-    let [month, date, year] = new Date().toLocaleDateString("en-US").split("/");
-    let fullDate = year+"-"+month+"-"+date;
-
-    fs.appendFile("./Logs/logfile.txt", "["+fullDate+"]"+": Command: " + command + " -> Args: " + args.join(" ") + "\n", (error) => {
-        if (error) {
-            return "Error occurred" + error;
-        }
-    });
-}

@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js",
-    "items": "node ./Items/items.js"
+    "start": "nodemon main.js",
+    "update": "node ./Items/UpdateItems.js"
   },
   "author": "Joe Reynolds",
   "license": "ISC",

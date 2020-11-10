@@ -1,67 +1,93 @@
 [
 	{
 		"id": 861,
-		"name": "Magic shortbow"
+		"name": "Magic shortbow",
+		"slot": "2h",
+		"price": 898
 	},
 	{
 		"id": 4097,
-		"name": "Mystic boots"
+		"name": "Mystic boots",
+		"price": 6433,
+		"slot": "feet"
 	},
 	{
 		"id": 4151,
-		"name": "Abyssal whip"
+		"name": "Abyssal whip",
+		"price": 2769511,
+		"slot": "weapon"
 	},
 	{
 		"id": 4178,
-		"name": "Abyssal whip"
+		"name": "Abyssal whip",
+		"slot": "weapon"
 	},
 	{
 		"id": 4587,
-		"name": "Dragon scimitar"
+		"name": "Dragon scimitar",
+		"price": 0,
+		"slot": "weapon"
 	},
 	{
 		"id": 4675,
-		"name": "Ancient staff"
+		"name": "Ancient staff",
+		"price": 0,
+		"slot": "weapon"
 	},
 	{
 		"id": 4736,
-		"name": "Karil's leathertop"
+		"name": "Karil's leathertop",
+		"price": 1862997,
+		"slot": "body"
 	},
 	{
 		"id": 4738,
-		"name": "Karil's leatherskirt"
+		"name": "Karil's leatherskirt",
+		"price": 219975,
+		"slot": "legs"
 	},
 	{
 		"id": 6570,
-		"name": "Fire cape"
+		"name": "Fire cape",
+		"slot": "cape"
 	},
 	{
 		"id": 6585,
-		"name": "Amulet of fury"
+		"name": "Amulet of fury",
+		"price": 1642998,
+		"slot": "neck"
 	},
 	{
 		"id": 6737,
-		"name": "Berserker ring"
+		"name": "Berserker ring",
+		"price": 2337786,
+		"slot": "ring"
 	},
 	{
 		"id": 6914,
-		"name": "Master wand"
+		"name": "Master wand",
+		"price": 0,
+		"slot": "weapon"
 	},
 	{
 		"id": 7462,
-		"name": "Barrows gloves"
+		"name": "Barrows gloves",
+		"slot": "hands"
 	},
 	{
 		"id": 8839,
-		"name": "Void knight top"
+		"name": "Void knight top",
+		"slot": "body"
 	},
 	{
 		"id": 8840,
-		"name": "Void knight robe"
+		"name": "Void knight robe",
+		"slot": "legs"
 	},
 	{
 		"id": 8842,
-		"name": "Void knight gloves"
+		"name": "Void knight gloves",
+		"slot": "hands"
 	},
 	{
 		"id": 10566,
@@ -69,147 +95,208 @@
 	},
 	{
 		"id": 11212,
-		"name": "Dragon arrow"
+		"name": "Dragon arrow",
+		"slot": "ammo",
+		"price": 590
 	},
 	{
 		"id": 11230,
-		"name": "Dragon dart"
+		"name": "Dragon dart",
+		"price": 0,
+		"slot": "weapon"
 	},
 	{
 		"id": 11663,
-		"name": "Void mage helm"
+		"name": "Void mage helm",
+		"slot": "head"
 	},
 	{
 		"id": 11664,
-		"name": "Void ranger helm"
+		"name": "Void ranger helm",
+		"slot": "head"
 	},
 	{
 		"id": 11665,
-		"name": "Void melee helm"
+		"name": "Void melee helm",
+		"slot": "head"
 	},
 	{
 		"id": 11785,
-		"name": "Armadyl crossbow"
+		"name": "Armadyl crossbow",
+		"price": 0,
+		"slot": "weapon"
 	},
 	{
 		"id": 11806,
-		"name": "Saradomin godsword"
+		"name": "Saradomin godsword",
+		"slot": "2h",
+		"price": 0
 	},
 	{
 		"id": 11826,
-		"name": "Armadyl helmet"
+		"name": "Armadyl helmet",
+		"price": 5096121,
+		"slot": "head"
 	},
 	{
 		"id": 11830,
-		"name": "Armadyl chainskirt"
+		"name": "Armadyl chainskirt",
+		"price": 33749498,
+		"slot": "legs"
 	},
 	{
 		"id": 11832,
-		"name": "Bandos chestplate"
+		"name": "Bandos chestplate",
+		"price": 20612542,
+		"slot": "body"
 	},
 	{
 		"id": 11834,
-		"name": "Bandos tassets"
+		"name": "Bandos tassets",
+		"price": 29259837,
+		"slot": "legs"
 	},
 	{
 		"id": 11864,
-		"name": "Slayer helmet"
+		"name": "Slayer helmet",
+		"slot": "head"
 	},
 	{
 		"id": 11889,
-		"name": "Zamorakian hasta"
+		"name": "Zamorakian hasta",
+		"price": 0,
+		"slot": "weapon"
 	},
 	{
 		"id": 11907,
-		"name": "Trident of the seas"
+		"name": "Trident of the seas",
+		"slot": "weapon"
 	},
 	{
 		"id": 12002,
-		"name": "Occult necklace"
+		"name": "Occult necklace",
+		"price": 370203,
+		"slot": "neck"
 	},
 	{
 		"id": 12598,
-		"name": "Holy sandals"
+		"name": "Holy sandals",
+		"price": 1054000,
+		"slot": "feet"
 	},
 	{
 		"id": 12601,
-		"name": "Ring of the gods"
+		"name": "Ring of the gods",
+		"price": 0,
+		"slot": "ring"
 	},
 	{
 		"id": 12612,
-		"name": "Book of darkness"
+		"name": "Book of darkness",
+		"slot": "shield"
 	},
 	{
 		"id": 12817,
-		"name": "Elysian spirit shield"
+		"name": "Elysian spirit shield",
+		"price": 0,
+		"slot": "shield"
 	},
 	{
 		"id": 12821,
-		"name": "Spectral spirit shield"
+		"name": "Spectral spirit shield",
+		"price": 0,
+		"slot": "shield"
 	},
 	{
 		"id": 12825,
-		"name": "Arcane spirit shield"
+		"name": "Arcane spirit shield",
+		"price": 0,
+		"slot": "shield"
 	},
 	{
 		"id": 12899,
-		"name": "Trident of the swamp"
+		"name": "Trident of the swamp",
+		"slot": "weapon"
 	},
 	{
 		"id": 12926,
-		"name": "Toxic blowpipe"
+		"name": "Toxic blowpipe",
+		"slot": "2h"
 	},
 	{
 		"id": 12954,
-		"name": "Dragon defender"
+		"name": "Dragon defender",
+		"slot": "shield"
 	},
 	{
 		"id": 13072,
-		"name": "Elite void top"
+		"name": "Elite void top",
+		"slot": "body"
 	},
 	{
 		"id": 13073,
-		"name": "Elite void robe"
+		"name": "Elite void robe",
+		"slot": "legs"
 	},
 	{
 		"id": 13235,
-		"name": "Eternal boots"
+		"name": "Eternal boots",
+		"price": 3348197,
+		"slot": "feet"
 	},
 	{
 		"id": 13237,
-		"name": "Pegasian boots"
+		"name": "Pegasian boots",
+		"price": 37313758,
+		"slot": "feet"
 	},
 	{
 		"id": 13239,
-		"name": "Primordial boots"
+		"name": "Primordial boots",
+		"price": 31212701,
+		"slot": "feet"
 	},
 	{
 		"id": 13263,
-		"name": "Abyssal bludgeon"
+		"name": "Abyssal bludgeon",
+		"slot": "2h",
+		"price": 38294825
 	},
 	{
 		"id": 13576,
-		"name": "Dragon warhammer"
+		"name": "Dragon warhammer",
+		"price": 40762466,
+		"slot": "weapon"
 	},
 	{
 		"id": 13652,
-		"name": "Dragon claws"
+		"name": "Dragon claws",
+		"slot": "2h",
+		"price": 61166000
 	},
 	{
 		"id": 19544,
-		"name": "Tormented bracelet"
+		"name": "Tormented bracelet",
+		"price": 12791707,
+		"slot": "hands"
 	},
 	{
 		"id": 19547,
-		"name": "Necklace of anguish"
+		"name": "Necklace of anguish",
+		"price": 12850762,
+		"slot": "neck"
 	},
 	{
 		"id": 19550,
-		"name": "Ring of suffering"
+		"name": "Ring of suffering",
+		"price": 0,
+		"slot": "ring"
 	},
 	{
 		"id": 19553,
-		"name": "Amulet of torture"
+		"name": "Amulet of torture",
+		"price": 12869850,
+		"slot": "neck"
 	},
 	{
 		"id": 19559,
@@ -217,75 +304,99 @@
 	},
 	{
 		"id": 19675,
-		"name": "Arclight"
+		"name": "Arclight",
+		"slot": "weapon"
 	},
 	{
 		"id": 20389,
-		"name": "Dragon arrow"
+		"name": "Dragon arrow",
+		"slot": "ammo"
 	},
 	{
 		"id": 20405,
-		"name": "Abyssal whip"
+		"name": "Abyssal whip",
+		"slot": "weapon"
 	},
 	{
 		"id": 20406,
-		"name": "Dragon scimitar"
+		"name": "Dragon scimitar",
+		"slot": "weapon"
 	},
 	{
 		"id": 20431,
-		"name": "Ancient staff"
+		"name": "Ancient staff",
+		"slot": "weapon"
 	},
 	{
 		"id": 20558,
-		"name": "Magic shortbow"
+		"name": "Magic shortbow",
+		"slot": "2h"
 	},
 	{
 		"id": 20560,
-		"name": "Master wand"
+		"name": "Master wand",
+		"slot": "weapon"
 	},
 	{
 		"id": 20579,
-		"name": "Mystic boots"
+		"name": "Mystic boots",
+		"slot": "feet"
 	},
 	{
 		"id": 20714,
-		"name": "Tome of fire"
+		"name": "Tome of fire",
+		"slot": "shield"
 	},
 	{
 		"id": 20784,
-		"name": "Dragon claws"
+		"name": "Dragon claws",
+		"slot": "2h"
 	},
 	{
 		"id": 20785,
-		"name": "Dragon warhammer"
+		"name": "Dragon warhammer",
+		"slot": "weapon"
 	},
 	{
 		"id": 20997,
-		"name": "Twisted bow"
+		"name": "Twisted bow",
+		"slot": "2h",
+		"price": 1111000000
 	},
 	{
 		"id": 21000,
-		"name": "Twisted buckler"
+		"name": "Twisted buckler",
+		"price": 0,
+		"slot": "shield"
 	},
 	{
 		"id": 21006,
-		"name": "Kodai wand"
+		"name": "Kodai wand",
+		"price": 85157712,
+		"slot": "weapon"
 	},
 	{
 		"id": 21018,
-		"name": "Ancestral hat"
+		"name": "Ancestral hat",
+		"price": 0,
+		"slot": "head"
 	},
 	{
 		"id": 21021,
-		"name": "Ancestral robe top"
+		"name": "Ancestral robe top",
+		"price": 66850335,
+		"slot": "body"
 	},
 	{
 		"id": 21024,
-		"name": "Ancestral robe bottom"
+		"name": "Ancestral robe bottom",
+		"price": 75064343,
+		"slot": "legs"
 	},
 	{
 		"id": 21295,
-		"name": "Infernal cape"
+		"name": "Infernal cape",
+		"slot": "cape"
 	},
 	{
 		"id": 21297,
@@ -293,51 +404,68 @@
 	},
 	{
 		"id": 21733,
-		"name": "Guardian boots"
+		"name": "Guardian boots",
+		"price": 0,
+		"slot": "feet"
 	},
 	{
 		"id": 21791,
-		"name": "Imbued saradomin cape"
+		"name": "Imbued saradomin cape",
+		"slot": "cape"
 	},
 	{
 		"id": 21793,
-		"name": "Imbued guthix cape"
+		"name": "Imbued guthix cape",
+		"slot": "cape"
 	},
 	{
 		"id": 21795,
-		"name": "Imbued zamorak cape"
+		"name": "Imbued zamorak cape",
+		"slot": "cape"
 	},
 	{
 		"id": 22109,
-		"name": "Ava's assembler"
+		"name": "Ava's assembler",
+		"slot": "cape"
 	},
 	{
 		"id": 22322,
-		"name": "Avernic defender"
+		"name": "Avernic defender",
+		"slot": "shield"
 	},
 	{
 		"id": 22323,
-		"name": "Sanguinesti staff"
+		"name": "Sanguinesti staff",
+		"slot": "weapon"
 	},
 	{
 		"id": 22324,
-		"name": "Ghrazi rapier"
+		"name": "Ghrazi rapier",
+		"price": 153235000,
+		"slot": "weapon"
 	},
 	{
 		"id": 22325,
-		"name": "Scythe of vitur"
+		"name": "Scythe of vitur",
+		"slot": "2h"
 	},
 	{
 		"id": 22326,
-		"name": "Justiciar faceguard"
+		"name": "Justiciar faceguard",
+		"price": 0,
+		"slot": "head"
 	},
 	{
 		"id": 22327,
-		"name": "Justiciar chestguard"
+		"name": "Justiciar chestguard",
+		"price": 0,
+		"slot": "body"
 	},
 	{
 		"id": 22328,
-		"name": "Justiciar legguards"
+		"name": "Justiciar legguards",
+		"price": 0,
+		"slot": "legs"
 	},
 	{
 		"id": 22664,
@@ -349,106 +477,137 @@
 	},
 	{
 		"id": 22981,
-		"name": "Ferocious gloves"
+		"name": "Ferocious gloves",
+		"slot": "hands"
 	},
 	{
 		"id": 23593,
-		"name": "Barrows gloves"
+		"name": "Barrows gloves",
+		"slot": "hands"
 	},
 	{
 		"id": 23595,
-		"name": "Berserker ring"
+		"name": "Berserker ring",
+		"slot": "ring"
 	},
 	{
 		"id": 23597,
-		"name": "Dragon defender"
+		"name": "Dragon defender",
+		"slot": "shield"
 	},
 	{
 		"id": 23603,
-		"name": "Imbued guthix cape"
+		"name": "Imbued guthix cape",
+		"slot": "cape"
 	},
 	{
 		"id": 23605,
-		"name": "Imbued zamorak cape"
+		"name": "Imbued zamorak cape",
+		"slot": "cape"
 	},
 	{
 		"id": 23607,
-		"name": "Imbued saradomin cape"
+		"name": "Imbued saradomin cape",
+		"slot": "cape"
 	},
 	{
 		"id": 23611,
-		"name": "Armadyl crossbow"
+		"name": "Armadyl crossbow",
+		"slot": "weapon"
 	},
 	{
 		"id": 23622,
-		"name": "Infernal cape"
+		"name": "Infernal cape",
+		"slot": "cape"
 	},
 	{
 		"id": 23626,
-		"name": "Kodai wand"
+		"name": "Kodai wand",
+		"slot": "weapon"
 	},
 	{
 		"id": 23628,
-		"name": "Ghrazi rapier"
+		"name": "Ghrazi rapier",
+		"slot": "weapon"
 	},
 	{
 		"id": 23632,
-		"name": "Karil's leathertop"
+		"name": "Karil's leathertop",
+		"slot": "body"
 	},
 	{
 		"id": 23640,
-		"name": "Amulet of fury"
+		"name": "Amulet of fury",
+		"slot": "neck"
 	},
 	{
 		"id": 23644,
-		"name": "Eternal boots"
+		"name": "Eternal boots",
+		"slot": "feet"
 	},
 	{
 		"id": 23646,
-		"name": "Bandos tassets"
+		"name": "Bandos tassets",
+		"slot": "legs"
 	},
 	{
 		"id": 23654,
-		"name": "Occult necklace"
+		"name": "Occult necklace",
+		"slot": "neck"
 	},
 	{
 		"id": 24271,
-		"name": "Neitiznot faceguard"
+		"name": "Neitiznot faceguard",
+		"slot": "head"
 	},
 	{
 		"id": 24417,
-		"name": "Inquisitor's mace"
+		"name": "Inquisitor's mace",
+		"price": 0,
+		"slot": "weapon"
 	},
 	{
 		"id": 24419,
-		"name": "Inquisitor's great helm"
+		"name": "Inquisitor's great helm",
+		"price": 0,
+		"slot": "head"
 	},
 	{
 		"id": 24420,
-		"name": "Inquisitor's hauberk"
+		"name": "Inquisitor's hauberk",
+		"price": 0,
+		"slot": "body"
 	},
 	{
 		"id": 24421,
-		"name": "Inquisitor's plateskirt"
+		"name": "Inquisitor's plateskirt",
+		"price": 0,
+		"slot": "legs"
 	},
 	{
 		"id": 24422,
-		"name": "Nightmare staff"
+		"name": "Nightmare staff",
+		"price": 19098000,
+		"slot": "weapon"
 	},
 	{
 		"id": 24423,
-		"name": "Harmonised nightmare staff"
+		"name": "Harmonised nightmare staff",
+		"slot": "weapon"
 	},
 	{
 		"id": 24424,
-		"name": "Volatile nightmare staff"
+		"name": "Volatile nightmare staff",
+		"slot": "weapon"
 	},
 	{
 		"id": 24425,
-		"name": "Eldritch nightmare staff"
+		"name": "Eldritch nightmare staff",
+		"slot": "weapon"
 	},
 	{
 		"id": 24780,
-		"name": "Amulet of blood fury"
+		"name": "Amulet of blood fury",
+		"slot": "neck"
 	}
 ]
