@@ -2,9 +2,10 @@ const https = require("https");
 const fs = require("fs");
 const logger = require("../Logs/logger");
 const equipment = require("./items");
+const slotsList = ["2h", "ammo", "body", "cape", "feet", "hands", "head", "legs", "neck", "ring", "shield", "weapon"];
 
 // Creating an API call to rsbuddy to obtain up-to-date GE pricing
-const updatePrices = https.get("https://rsbuddy.com/exchange/summary.json", (res) => {
+const updatePrices = () => https.get("https://rsbuddy.com/exchange/summary.json", (res) => {
     let data = "";
 
     res.on("data", (chunk) => {
@@ -28,8 +29,6 @@ const updatePrices = https.get("https://rsbuddy.com/exchange/summary.json", (res
        logger.logErrors(err);
     });
 });
-
-const slotsList = ["2h", "ammo", "body", "cape", "feet", "hands", "head", "legs", "neck", "ring", "shield", "weapon"];
 
 const updateSlots = (slot) => https.get("https://www.osrsbox.com/osrsbox-db/items-json-slot/items-"+slot+".json", (res) => {
 
@@ -60,11 +59,13 @@ const updateSlots = (slot) => https.get("https://www.osrsbox.com/osrsbox-db/item
     });
 });
 
-slotsList.forEach((slot) => {
-    updateSlots(slot);
-});
+function updateAll() {
+    updatePrices();
+    slotsList.forEach((slot) => {
+        updateSlots(slot);
+    });
+}
 
 module.exports = {
-    updatePrices,
-    updateSlots
+    updateAll
 };
