@@ -9,17 +9,16 @@ function buildResponse(setupJson) {
         }
         if (key === "inventory") {
             response += "[inventory] -> {\n";
-            // This is an array of items
-            let temp = setupJson[key];
             // Look up each item in equipment.json and output them to a "inventory" section
-            temp.forEach((item) => {
+            setupJson[key].forEach((item) => {
+                // If equipment.json has this item
                 if (equipment.hasOwnProperty(item)) {
-
+                    response += "\t"+item+"\n";
                 }
             });
+            response += "}\n"
         }
     }
-    response += "[inventory] -> { WIP }\n";
     response += "```";
 
     return response;

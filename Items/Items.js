@@ -1,6 +1,8 @@
 const fs = require("fs");
-const allItems = require("./item_summary.json");
-let textArray = fs.readFileSync("/OSRS_Boss_Gear/Items/all_equippable_items.txt", "utf-8").split("\r\n");
+const path = require("path");
+const allItems = require("./items_complete.json");
+let textArray = fs.readFileSync(path.resolve(__dirname, "./all_equippable_items.txt"), "utf-8")
+                    .split("\r\n");
 const equipment = {};
 
 // For each key:value pair in the huge JSON file with all items
@@ -13,16 +15,28 @@ for (const [key, value] of Object.entries(allItems)) {
         if (temp === itemName) {
             // Capitalise the first letter to match other APIs used
             itemName = itemName.charAt(0).toUpperCase() + itemName.slice(1);
+            console.log(itemName + "\n");
             // If the item is not already present in the list, add it
             if (!equipment.hasOwnProperty(itemName)) {
-                equipment[itemName] = allItems[key];
+                console.log("Adding " + itemName + " to equipment\n");
+                let itemToAdd = {
+                    "id": allItems[key].id,
+                    "name": allItems[key].name,
+                    "icon": allItems[key].icon
+                };
+                equipment[itemName] = itemToAdd;
+                // Use the icon base64 string to create icons
+                fs.writeFile(path.resolve(__dirname, "./Icons/"+itemToAdd.id+".png"),
+                    itemToAdd.icon, "base64", (err) => {
+                        console.log("Icon not found for "+itemToAdd.name+": " + err);
+                    });
             }
         }
     }
 }
 
 // Write the JSON object to a .json file
-fs.writeFileSync("/OSRS_Boss_Gear/Items/equipment.json", JSON.stringify(equipment, null, "\t"));
+fs.writeFileSync(path.resolve(__dirname, "./equipment.json"), JSON.stringify(equipment, null, "\t"));
 
 // To be used as a standard across all item files
 module.exports = equipment;
