@@ -1,5 +1,6 @@
 const https = require("https");
 const fs = require("fs");
+const path = require("path");
 const logger = require("../Logs/Logger");
 const equipment = require("./Items");
 const slotsList = ["2h", "ammo", "body", "cape", "feet", "hands", "head", "legs", "neck", "ring", "shield", "weapon"];
@@ -30,7 +31,7 @@ const updatePrices = () => https.get("https://storage.googleapis.com/osb-exchang
         }
 
         // Update equipment.json with pricing
-        fs.writeFileSync("/OSRS_Boss_Gear/Items/equipment.json", JSON.stringify(equipment, null, "\t"));
+        fs.writeFileSync(path.resolve(__dirname, "./equipment.json"), JSON.stringify(equipment, null, "\t"));
     });
 
     res.on("error", (err) => {
@@ -62,7 +63,7 @@ const updateSlots = (slot) => https.get("https://www.osrsbox.com/osrsbox-db/item
         }
 
         // Update equipment.json with pricing
-        fs.writeFileSync("/OSRS_Boss_Gear/Items/equipment.json", JSON.stringify(equipment, null, "\t"));
+        fs.writeFileSync(path.resolve(__dirname, "./equipment.json"), JSON.stringify(equipment, null, "\t"));
     });
     res.on("error", (err) => {
        logger.logErrors(err);

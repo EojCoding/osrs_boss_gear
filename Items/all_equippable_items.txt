@@ -103,3 +103,4 @@ Rune crossbow
 Rune pickaxe
 Salve amulet(ei)
 Imbued heart
+Ruby dragon bolts (e)
