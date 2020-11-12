@@ -104,3 +104,6 @@ Rune pickaxe
 Salve amulet(ei)
 Imbued heart
 Ruby dragon bolts (e)
+Avernic defender hilt
+Serpentine helm (uncharged)
+Serpentine helm
