@@ -107,3 +107,4 @@ Ruby dragon bolts (e)
 Avernic defender hilt
 Serpentine helm (uncharged)
 Serpentine helm
+Crystal halberd
