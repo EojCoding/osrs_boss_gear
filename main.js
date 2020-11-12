@@ -12,7 +12,7 @@ const client = new Discord.Client();
 const { PREFIX, TOKEN } = require("./config.json");
 const fs = require("fs");
 const commandFiles = fs.readdirSync("./Commands/").filter(file => file.endsWith(".js"));
-const logger = require("./Logs/logger");
+const logger = require("./Logs/Logger");
 const updater = require("./Items/UpdateItems");
 
 // Store commands in this
@@ -24,14 +24,24 @@ for (const file of commandFiles) {
 }
 
 // If it is 5pm local time, update all items
-let hour = new Date().getHours();
-if (hour === 17) {
-    updater.updateAll();
-}
+// let hour = new Date().getHours();
+// if (hour === 17) {
+//     updater.updateAll();
+// }
+
+// const updateLoop = () => setInterval( () => {
+//     console.log("Updating in 30 min..")
+//     updater.updateAll()
+// }, 1800000);
+//
+// updateLoop();
 
 // Begin the bot client
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}`);
+    console.log("Updating items..");
+    updater.updateAll();
+    console.log("Finished updating");
 });
 
 client.on("message", (message) => {

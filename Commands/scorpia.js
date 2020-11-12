@@ -1,5 +1,5 @@
 const fs = require("fs");
-const logger = require("../Logs/logger");
+const logger = require("../Logs/Logger");
 const setups = {};
 
 fs.readdir("/OSRS_Boss_Gear/Setups/Scorpia/", (err, files) => {

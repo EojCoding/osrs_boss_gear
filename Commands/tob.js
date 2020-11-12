@@ -1,5 +1,6 @@
 const fs = require("fs");
-const logger = require("../Logs/logger");
+const logger = require("../Logs/Logger");
+const response = require("../Setups/Response");
 const setups = {};
 
 fs.readdir("/OSRS_Boss_Gear/Setups/TOB/", (err, files) => {
@@ -17,17 +18,8 @@ module.exports = {
     description : "Gear for TOB",
     execute(message, budget) {
         message.channel.send("**Boss:** Theatre of Blood \n**Budget:** " + budget + " gp");
-        let response = "```ini\n";
         if (budget > 145000000) {
-            const temp = setups["145mPlus"];
-            for (const key in temp) {
-                if (key !== "name") {
-                    response += "["+key+"] -> "+temp[key]+"\n";
-                }
-            }
-            response += "[inventory] -> { WIP }\n";
-            response += "```";
-            message.channel.send(response);
+            message.channel.send(response(setups["145mPlus"]));
         }
         else {
             message.channel.send("Minimum budget is 145m");

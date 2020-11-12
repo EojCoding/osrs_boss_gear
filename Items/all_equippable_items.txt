@@ -19,11 +19,11 @@ Nightmare staff
 Eldritch nightmare staff
 Harmonised nightmare staff
 Volatile nightmare staff
-Trident of the seas
-Trident of the swamp
+Trident of the seas (full)
+Uncharged toxic trident
 Sanguinesti staff
 Magic shortbow
-Toxic blowpipe
+Toxic blowpipe (empty)
 Armadyl crossbow
 Aramdyl chestplate
 Armadyl chainskirt
@@ -87,3 +87,19 @@ Mystic boots
 Saradomin godsword
 Book of darkness
 Tome of fire
+Ahrim's hood
+Ahrim's robetop
+Ahrim's robeskirt
+Fighter torso
+Abyssal dagger
+Bandos godsword
+Abyssal tentacle
+Helm of neitiznot
+Dragon sword
+Dragon pickaxe
+Dragon boots
+Dragon crossbow
+Rune crossbow
+Rune pickaxe
+Salve amulet(ei)
+Imbued heart
