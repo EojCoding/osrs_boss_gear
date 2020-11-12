@@ -13,6 +13,8 @@
   "dependencies": {
     "discord.js": "^12.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "runescape-api": "^2.1.1"
+  },
   "keywords": []
 }

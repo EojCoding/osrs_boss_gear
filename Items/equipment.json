@@ -9,43 +9,43 @@
 		"id": 1275,
 		"name": "Rune pickaxe",
 		"slot": "weapon",
-		"price": 18822
+		"price": 18784
 	},
 	"Mystic boots": {
 		"id": 4097,
 		"name": "Mystic boots",
 		"slot": "feet",
-		"price": 5852
+		"price": 7499
 	},
 	"Abyssal whip": {
 		"id": 4151,
 		"name": "Abyssal whip",
 		"slot": "weapon",
-		"price": 2784376
+		"price": 2784449
 	},
 	"Dragon scimitar": {
 		"id": 4587,
 		"name": "Dragon scimitar",
 		"slot": "weapon",
-		"price": 59878
+		"price": 59881
 	},
 	"Ancient staff": {
 		"id": 4675,
 		"name": "Ancient staff",
 		"slot": "weapon",
-		"price": 63513
+		"price": 63436
 	},
 	"Ahrim's hood": {
 		"id": 4708,
 		"name": "Ahrim's hood",
 		"slot": "head",
-		"price": 46366
+		"price": 44011
 	},
 	"Ahrim's robetop": {
 		"id": 4712,
 		"name": "Ahrim's robetop",
 		"slot": "body",
-		"price": 1548578
+		"price": 1543309
 	},
 	"Ahrim's robeskirt": {
 		"id": 4714,
@@ -57,7 +57,7 @@
 		"id": 4736,
 		"name": "Karil's leathertop",
 		"slot": "body",
-		"price": 1744000
+		"price": 1743999
 	},
 	"Karil's leatherskirt": {
 		"id": 4738,
@@ -74,13 +74,13 @@
 		"id": 6585,
 		"name": "Amulet of fury",
 		"slot": "neck",
-		"price": 1572530
+		"price": 1577658
 	},
 	"Berserker ring": {
 		"id": 6737,
 		"name": "Berserker ring",
 		"slot": "ring",
-		"price": 2311285
+		"price": 2312883
 	},
 	"Master wand": {
 		"id": 6914,
@@ -111,7 +111,7 @@
 		"id": 9185,
 		"name": "Rune crossbow",
 		"slot": "weapon",
-		"price": 9584
+		"price": 9617
 	},
 	"Fighter torso": {
 		"id": 10551,
@@ -122,7 +122,7 @@
 		"id": 10828,
 		"name": "Helm of neitiznot",
 		"slot": "head",
-		"price": 50107
+		"price": 50416
 	},
 	"Dragon arrow": {
 		"id": 11212,
@@ -134,7 +134,7 @@
 		"id": 11230,
 		"name": "Dragon dart",
 		"slot": "weapon",
-		"price": 2049
+		"price": 2071
 	},
 	"Void mage helm": {
 		"id": 11663,
@@ -155,19 +155,19 @@
 		"id": 11785,
 		"name": "Armadyl crossbow",
 		"slot": "weapon",
-		"price": 25805009
+		"price": 25812924
 	},
 	"Bandos godsword": {
 		"id": 11804,
 		"name": "Bandos godsword",
 		"slot": "2h",
-		"price": 10086287
+		"price": 10100961
 	},
 	"Saradomin godsword": {
 		"id": 11806,
 		"name": "Saradomin godsword",
 		"slot": "2h",
-		"price": 42796672
+		"price": 42765424
 	},
 	"Armadyl helmet": {
 		"id": 11826,
@@ -179,25 +179,25 @@
 		"id": 11830,
 		"name": "Armadyl chainskirt",
 		"slot": "legs",
-		"price": 32868421
+		"price": 32874562
 	},
 	"Bandos chestplate": {
 		"id": 11832,
 		"name": "Bandos chestplate",
 		"slot": "body",
-		"price": 19858740
+		"price": 19850063
 	},
 	"Bandos tassets": {
 		"id": 11834,
 		"name": "Bandos tassets",
 		"slot": "legs",
-		"price": 28616705
+		"price": 28622899
 	},
 	"Dragon boots": {
 		"id": 11840,
 		"name": "Dragon boots",
 		"slot": "feet",
-		"price": 250352
+		"price": 249607
 	},
 	"Slayer helmet": {
 		"id": 11864,
@@ -208,7 +208,7 @@
 		"id": 11889,
 		"name": "Zamorakian hasta",
 		"slot": "weapon",
-		"price": 14237917
+		"price": 14237799
 	},
 	"Trident of the seas (full)": {
 		"id": 11905,
@@ -226,7 +226,7 @@
 		"id": 12002,
 		"name": "Occult necklace",
 		"slot": "neck",
-		"price": 378067
+		"price": 378187
 	},
 	"Abyssal tentacle": {
 		"id": 12006,
@@ -242,7 +242,7 @@
 		"id": 12598,
 		"name": "Holy sandals",
 		"slot": "feet",
-		"price": 1037000
+		"price": 976000
 	},
 	"Ring of the gods": {
 		"id": 12601,
@@ -270,18 +270,18 @@
 		"id": 12825,
 		"name": "Arcane spirit shield",
 		"slot": "shield",
-		"price": 154847666
+		"price": 154778200
 	},
 	"Uncharged toxic trident": {
 		"id": 12900,
 		"name": "Uncharged toxic trident",
 		"slot": "weapon",
-		"price": 3262957
+		"price": 3265605
 	},
 	"Toxic blowpipe (empty)": {
 		"id": 12924,
 		"name": "Toxic blowpipe (empty)",
-		"price": 3268398
+		"price": 3265230
 	},
 	"Dragon defender": {
 		"id": 12954,
@@ -302,19 +302,19 @@
 		"id": 13235,
 		"name": "Eternal boots",
 		"slot": "feet",
-		"price": 3311223
+		"price": 3309699
 	},
 	"Pegasian boots": {
 		"id": 13237,
 		"name": "Pegasian boots",
 		"slot": "feet",
-		"price": 37335008
+		"price": 37334174
 	},
 	"Primordial boots": {
 		"id": 13239,
 		"name": "Primordial boots",
 		"slot": "feet",
-		"price": 30914273
+		"price": 30926755
 	},
 	"Abyssal bludgeon": {
 		"id": 13263,
@@ -331,37 +331,36 @@
 		"id": 13576,
 		"name": "Dragon warhammer",
 		"slot": "weapon",
-		"price": 40343333
+		"price": 40344000
 	},
 	"Dragon claws": {
 		"id": 13652,
 		"name": "Dragon claws",
 		"slot": "2h",
-		"price": 60768006
+		"price": 60763276
 	},
 	"Tormented bracelet": {
 		"id": 19544,
 		"name": "Tormented bracelet",
 		"slot": "hands",
-		"price": 12659843
+		"price": 12637810
 	},
 	"Necklace of anguish": {
 		"id": 19547,
 		"name": "Necklace of anguish",
 		"slot": "neck",
-		"price": 12660907
+		"price": 12663939
 	},
 	"Ring of suffering": {
 		"id": 19550,
 		"name": "Ring of suffering",
-		"slot": "ring",
-		"price": 12707176
+		"slot": "ring"
 	},
 	"Amulet of torture": {
 		"id": 19553,
 		"name": "Amulet of torture",
 		"slot": "neck",
-		"price": 12598245
+		"price": 12614566
 	},
 	"Arclight": {
 		"id": 19675,
@@ -376,19 +375,18 @@
 	"Imbued heart": {
 		"id": 20724,
 		"name": "Imbued heart",
-		"price": 31342587
+		"price": 31250522
 	},
 	"Twisted bow": {
 		"id": 20997,
 		"name": "Twisted bow",
-		"slot": "2h",
-		"price": 1097213213
+		"slot": "2h"
 	},
 	"Twisted buckler": {
 		"id": 21000,
 		"name": "Twisted buckler",
 		"slot": "shield",
-		"price": 5073159
+		"price": 5084843
 	},
 	"Kodai wand": {
 		"id": 21006,
@@ -412,13 +410,12 @@
 		"id": 21021,
 		"name": "Ancestral robe top",
 		"slot": "body",
-		"price": 66132507
+		"price": 66120020
 	},
 	"Ancestral robe bottom": {
 		"id": 21024,
 		"name": "Ancestral robe bottom",
-		"slot": "legs",
-		"price": 74589998
+		"slot": "legs"
 	},
 	"Infernal cape": {
 		"id": 21295,
@@ -429,7 +426,7 @@
 		"id": 21733,
 		"name": "Guardian boots",
 		"slot": "feet",
-		"price": 3264295
+		"price": 3259555
 	},
 	"Imbued saradomin cape": {
 		"id": 21791,
@@ -450,7 +447,7 @@
 		"id": 21902,
 		"name": "Dragon crossbow",
 		"slot": "weapon",
-		"price": 1811138
+		"price": 1811302
 	},
 	"Ava's assembler": {
 		"id": 22109,
@@ -471,7 +468,7 @@
 		"id": 22324,
 		"name": "Ghrazi rapier",
 		"slot": "weapon",
-		"price": 151105854
+		"price": 151078451
 	},
 	"Scythe of vitur": {
 		"id": 22325,
@@ -488,7 +485,7 @@
 		"id": 22327,
 		"name": "Justiciar chestguard",
 		"slot": "body",
-		"price": 9072000
+		"price": 9071000
 	},
 	"Justiciar legguards": {
 		"id": 22328,

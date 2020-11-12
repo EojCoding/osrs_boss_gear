@@ -9,17 +9,17 @@ for (const [key, value] of Object.entries(allItems)) {
     for (let j = 0; j < textArray.length; j++) {
         let itemName = textArray[j].toLowerCase();
         let temp = value.name.toLowerCase();
+        // Could consider removing this and just checking for hasOwnProperty() (as below)
         if (temp === itemName) {
             // Capitalise the first letter to match other APIs used
             itemName = itemName.charAt(0).toUpperCase() + itemName.slice(1);
-            // If the item is not already present in the list
+            // If the item is not already present in the list, add it
             if (!equipment.hasOwnProperty(itemName)) {
                 equipment[itemName] = allItems[key];
             }
         }
     }
 }
-
 
 // Write the JSON object to a .json file
 fs.writeFileSync("/OSRS_Boss_Gear/Items/equipment.json", JSON.stringify(equipment, null, "\t"));
