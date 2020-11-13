@@ -1,7 +1,7 @@
 {
-  "name" : "145mPlus",
+  "name" : 3,
   "head" : "Void melee helm",
-  "amulet" : "Amulet of fury",
+  "amulet" : "Amulet of torture",
   "cloak" : "Fire cape",
   "chest" : "Elite void top",
   "legs" : "Elite void robe",
@@ -9,10 +9,11 @@
   "off-hand" : "Dragon defender",
   "ammo" : "Ruby dragon bolts (e)",
   "gloves" : "Void knight gloves",
-  "feet" : "Dragon boots",
+  "feet" : "Primordial boots",
   "ring" : "Berserker ring",
   "inventory" : ["Void ranger helm", "Toxic blowpipe (empty)", "Void mage helm",
-                  "Trident of the swamp", "Necklace of anguish", "Ava's assembler",
-                  "Occult necklace", "Imbued saradomin cape", "Dragon warhammer",
-                  "Dragon claws", "Rune crossbow", "Salve amulet (e)"]
+                  "Uncharged toxic trident", "Necklace of anguish", "Ava's assembler",
+                  "Occult necklace", "Dragon warhammer",
+                  "Dragon claws", "Dragon crossbow", "Salve amulet (e)", "Crystal halberd",
+                  "Book of darkness"]
 }

@@ -32,22 +32,25 @@ function buildResponse(client, budget, message, setupJson) {
         // Don't display the "name" key
         if (key !== "name" && key !== "inventory") {
             // Get the emoji that matches this item
-            itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
-            price = equipment[itemName].price;
-            wornTotal += price;
-            embedWorn.addField(itemName, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
-            //embedWorn.addField(itemName, itemEmoji, true);
+            console.log(itemName);
+            if (itemName !== "none") {
+                itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
+                price = equipment[itemName].price;
+                wornTotal += price;
+                embedWorn.addField(itemName, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+            }
         }
         if (key === "inventory") {
             // Look up each item in equipment.json and output them to a "inventory" section
             itemName.forEach((prop) => {
                 // If equipment.json has this property
                 if (equipment.hasOwnProperty(prop)) {
-                    itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
-                    price = equipment[prop].price;
-                    invTotal += price;
-                    embedInventory.addField(prop, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
-                    //embedInventory.addField(prop, itemEmoji + " " + price + "gp", true);
+                    if (itemName !== null) {
+                        itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
+                        price = equipment[prop].price;
+                        invTotal += price;
+                        embedInventory.addField(prop, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+                    }
                 }
             });
         }
