@@ -7,6 +7,5 @@ module.exports = {
         const playerName = args.join(" ");
         message.channel.send(`Fetching information for ${playerName}...`)
         await player.createPlayer(message, playerName);
-        message.reply(`Successfully set your RSN to ${playerName}`);
     }
 }

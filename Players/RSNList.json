@@ -3,124 +3,124 @@
 		"authorRSN": "karepow",
 		"skills": {
 			"overall": {
-				"rank": 36712,
+				"rank": 36720,
 				"level": 2167,
-				"experience": 283185085
+				"experience": 283603476
 			},
 			"attack": {
-				"rank": 113306,
+				"rank": 113148,
 				"level": 99,
-				"experience": 14083199
+				"experience": 14089293
 			},
 			"defence": {
-				"rank": 97438,
+				"rank": 97176,
 				"level": 99,
-				"experience": 13851387
+				"experience": 13858925
 			},
 			"strength": {
-				"rank": 55647,
+				"rank": 55623,
 				"level": 99,
-				"experience": 20213774
+				"experience": 20219272
 			},
 			"constitution": {
-				"rank": 44265,
+				"rank": 44221,
 				"level": 99,
-				"experience": 32594889
+				"experience": 32609994
 			},
 			"ranged": {
-				"rank": 37267,
+				"rank": 37239,
 				"level": 99,
-				"experience": 33376730
+				"experience": 33392900
 			},
 			"prayer": {
-				"rank": 69452,
+				"rank": 68553,
 				"level": 96,
-				"experience": 9686216
+				"experience": 10045820
 			},
 			"magic": {
-				"rank": 41405,
+				"rank": 41366,
 				"level": 99,
-				"experience": 17741290
+				"experience": 17746756
 			},
 			"cooking": {
-				"rank": 172358,
+				"rank": 172389,
 				"level": 99,
 				"experience": 13035650
 			},
 			"woodcutting": {
-				"rank": 59829,
+				"rank": 59623,
 				"level": 99,
-				"experience": 13048821
+				"experience": 13049659
 			},
 			"fletching": {
-				"rank": 265944,
+				"rank": 266001,
 				"level": 86,
 				"experience": 3691557
 			},
 			"fishing": {
-				"rank": 51563,
+				"rank": 51586,
 				"level": 99,
 				"experience": 13036405
 			},
 			"firemaking": {
-				"rank": 56545,
+				"rank": 56500,
 				"level": 99,
-				"experience": 13136096
+				"experience": 13136560
 			},
 			"crafting": {
-				"rank": 47073,
+				"rank": 47093,
 				"level": 99,
 				"experience": 13071649
 			},
 			"smithing": {
-				"rank": 46385,
+				"rank": 46406,
 				"level": 93,
 				"experience": 7447004
 			},
 			"mining": {
-				"rank": 240776,
+				"rank": 240850,
 				"level": 78,
 				"experience": 1724772
 			},
 			"herblore": {
-				"rank": 30478,
+				"rank": 30295,
 				"level": 99,
-				"experience": 13048530
+				"experience": 13049526
 			},
 			"agility": {
-				"rank": 110049,
+				"rank": 110081,
 				"level": 82,
-				"experience": 2568109
+				"experience": 2568124
 			},
 			"thieving": {
-				"rank": 108864,
+				"rank": 108891,
 				"level": 87,
 				"experience": 4067672
 			},
 			"slayer": {
-				"rank": 66137,
+				"rank": 66148,
 				"level": 99,
 				"experience": 13035785
 			},
 			"farming": {
-				"rank": 66505,
+				"rank": 66503,
 				"level": 99,
-				"experience": 13320661
+				"experience": 13320964
 			},
 			"runecrafting": {
-				"rank": 110545,
+				"rank": 110577,
 				"level": 79,
 				"experience": 1898076
 			},
 			"hunter": {
-				"rank": 156033,
+				"rank": 156064,
 				"level": 81,
 				"experience": 2355384
 			},
 			"construction": {
-				"rank": 12076,
+				"rank": 12054,
 				"level": 99,
-				"experience": 13151429
+				"experience": 13151729
 			}
 		}
 	}

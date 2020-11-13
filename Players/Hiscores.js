@@ -4,11 +4,19 @@ const fs = require("fs");
 const path = require("path");
 const RSNList = require("../Players/RSNList.json");
 const Discord = require("discord.js");
+const logger = require("../Logs/Logger");
 
 // Async function because it is necessary to get the proper information
 async function createPlayer(message, playerName) {
     console.log(playerName);
-    const stats = await hiscores.getPlayer(String(playerName));
+    let stats;
+    try {
+        stats = await hiscores.getPlayer(String(playerName));
+    } catch (e) {
+        logger.logErrors(e);
+        message.channel.send("That player does not exist");
+        return;
+    }
     const authorID = message.author.id;
     let playerToAdd = {};
 
@@ -20,6 +28,8 @@ async function createPlayer(message, playerName) {
     RSNList[authorID] = playerToAdd;
 
     fs.writeFileSync(path.resolve(__dirname, "../Players/RSNList.json"), JSON.stringify(RSNList, null, "\t"));
+
+    message.reply(`Successfully set your RSN to ${playerName}`);
 }
 
 function displayStats(message, playerName) {
