@@ -1,3 +1,8 @@
+/**
+ * The functions here are executed multiple times daily to ensure that the items in equipment.json
+ * are as up to date as possible.
+ */
+
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
@@ -12,14 +17,14 @@ const updatePrices = () => https.get("https://storage.googleapis.com/osb-exchang
     res.on("data", (chunk) => {
         data += chunk;
     });
-
     // When no more data is to be received
     res.on("end", () => {
         // Save the parsed JSON to a variable
         let result = JSON.parse(data);
-
+        // Look at every item in equipment.json
         for (const [key, value] of Object.entries(equipment)) {
             let id = equipment[key].id;
+            // If the returned JSON has a same ID as equipment, check the prices
             if (result.hasOwnProperty(id)) {
                 if (result[id].buy_average > 0) {
                     value.price = result[id].buy_average;
@@ -29,7 +34,6 @@ const updatePrices = () => https.get("https://storage.googleapis.com/osb-exchang
                 }
             }
         }
-
         // Update equipment.json with pricing
         fs.writeFileSync(path.resolve(__dirname, "./equipment.json"), JSON.stringify(equipment, null, "\t"));
     });
@@ -39,8 +43,8 @@ const updatePrices = () => https.get("https://storage.googleapis.com/osb-exchang
     });
 });
 
+// Create an API call to update the slot property of each item in equipment.json
 const updateSlots = (slot) => https.get("https://www.osrsbox.com/osrsbox-db/items-json-slot/items-"+slot+".json", (res) => {
-
     let data = "";
 
     res.on("data", (chunk) => {
@@ -76,6 +80,9 @@ const updateSlots = (slot) => https.get("https://www.osrsbox.com/osrsbox-db/item
     });
 });
 
+/**
+ * Condenses both functions above and executed them consecutively.
+ */
 function updateAll() {
     updatePrices();
     slotsList.forEach((slot) => {
@@ -86,6 +93,7 @@ function updateAll() {
 
 updateAll();
 
+// Export JSON (not in use currently)
 module.exports = {
     updateAll
 };

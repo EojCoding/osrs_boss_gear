@@ -1,15 +1,23 @@
+/**
+ * The ~report commands allows users to submit feedback about features or bugs
+ * and saves their messages to a local text file ../Requests/requests.txt
+ * @type {module:fs}
+ */
+
 const fs = require("fs");
 
+// Export JSON
 module.exports = {
-    name : "requestboss",
+    name : "report",
     description : "feature requests",
     execute(message, args) {
+        // Build the string that gets written to the output text file
         let newRequest = "New request: ";
         fs.appendFile("./Requests/requests.txt", newRequest + args.join(" ") + "\n", error => {
             if (error) {
                 return "Error occurred" + error;
             }
         });
-        message.channel.send(`Hi ${message.author}! Your request was added.`);
+        message.channel.send(`Thanks for your feedback!`);
     }
 }

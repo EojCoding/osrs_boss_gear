@@ -1,5 +1,15 @@
+/**
+ * This file serves to help get the total cost of each setup
+ */
+
 const equipment = require("./equipment.json");
 
+/**
+ * With a given JSON object containing a gear set from ../Setups/ - look up each
+ * item and sum the total of all their prices
+ * @param setupJson
+ * @returns {number}
+ */
 function getTotal(setupJson) {
     let total = 0;
     // Look at each JSON key value pair in equipment.json

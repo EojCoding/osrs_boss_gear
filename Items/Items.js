@@ -1,3 +1,8 @@
+/**
+ * This file is rarely ever executed and mainly served as a convenient way to initially setup equipment.json
+ * @type {module:fs}
+ */
+
 const fs = require("fs");
 const path = require("path");
 const allItems = require("./items_complete.json");
@@ -30,8 +35,8 @@ for (const [key, value] of Object.entries(allItems)) {
         }
     }
 }
-// fs.writeFile(path.resolve(__dirname, "./Icons/10588.png"),
-//     equipment["Salve amulet (e)"].icon, "base64", () => {});
+// fs.writeFile(path.resolve(__dirname, "./Icons/24926.png"),
+//     equipment["Toxic blowpipe"].icon, "base64", () => {});
 
 // Write the JSON object to a .json file
 fs.writeFileSync(path.resolve(__dirname, "./equipment.json"), JSON.stringify(equipment, null, "\t"));

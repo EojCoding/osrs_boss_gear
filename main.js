@@ -13,8 +13,6 @@ const { PREFIX, TOKEN } = require("./config.json");
 const fs = require("fs");
 const commandFiles = fs.readdirSync("./Commands/").filter(file => file.endsWith(".js"));
 const logger = require("./Logs/Logger");
-const emojis = [];
-const equipment = require("./Items/equipment.json");
 
 // Store commands in this
 client.commands = new Discord.Collection();
@@ -54,13 +52,18 @@ client.on("message", (message) => {
     logger.logCommands(command, args);
 
     // If a new boss is being requested
-    if (message.content.startsWith("~requestboss") && args.length > 0) {
-        client.commands.get("requestboss").execute(message, args);
+    if (message.content.startsWith("~report") && args.length > 0) {
+        client.commands.get("report").execute(message, args);
+        return;
+    }
+    if (message.content.startsWith("~help") && args.length === 0) {
+        client.commands.get("help").execute(message);
+        return;
     }
     // If the messages does not start with the prefix or does not match the pattern
     else if (message.content.startsWith(PREFIX) && !message.content.match(pattern)) {
         message.reply("The proper usage is: ~boss_name budget\n" +
-            "For example: ~scorpia 5000000\n" +
+            "For example: ~tob 500000000 OR ~tob 500m OR ~tob 180.7m\n" +
             "Or for requesting a new feature use: ~requestboss [type here]");
         return;
     }
@@ -72,7 +75,7 @@ client.on("message", (message) => {
     // Switch block for commands
     switch (command) {
         case "tob":
-            client.commands.get("tob").execute(client, message, Number(budget));
+            client.commands.get("tob").execute(client, message, budget);
             break;
     }
 });

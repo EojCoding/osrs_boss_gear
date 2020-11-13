@@ -17,11 +17,9 @@ function buildResponse(client, budget, message, setupJson) {
 
     embedWorn.setColor("#0099ff");
     embedWorn.setThumbnail("https://oldschool.runescape.wiki/images/5/50/Worn_equipment.png?124cf");
-    embedWorn.setTitle("Worn");
 
     embedInventory.setColor("#0099ff");
     embedInventory.setThumbnail("https://oldschool.runescape.wiki/images/d/db/Inventory.png?1e52e");
-    embedInventory.setTitle("Inventory");
 
     let wornTotal = 0;
     let invTotal = 0;

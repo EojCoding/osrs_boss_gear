@@ -24,6 +24,7 @@ Uncharged toxic trident
 Sanguinesti staff
 Magic shortbow
 Toxic blowpipe (empty)
+Toxic blowpipe
 Armadyl crossbow
 Armadyl chestplate
 Armadyl chainskirt
