@@ -1,0 +1,19 @@
+{
+  "name" : 18,
+  "head" : "Serpentine helm",
+  "amulet" : "Amulet of torture",
+  "cloak" : "Infernal cape",
+  "chest" : "Elite void top",
+  "legs" : "Elite void robe",
+  "main-hand" : "Scythe of vitur",
+  "off-hand" : "none",
+  "ammo" : "Dragon arrow",
+  "gloves" : "Ferocious gloves",
+  "feet" : "Primordial boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Void ranger helm", "Toxic blowpipe", "Void mage helm",
+    "Uncharged toxic trident", "Necklace of anguish", "Ava's assembler",
+    "Occult necklace", "Dragon warhammer", "Avernic defender",
+    "Dragon claws", "Twisted bow", "Salve amulet (e)", "Crystal halberd",
+    "Arcane spirit shield", "Void knight gloves"]
+}

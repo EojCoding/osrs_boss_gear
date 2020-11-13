@@ -31,6 +31,7 @@ function buildResponse(client, budget, message, setupJson) {
         if (key !== "name" && key !== "inventory") {
             // Get the emoji that matches this item
             if (itemName !== "none") {
+                console.log(itemName);
                 itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
                 price = equipment[itemName].price;
                 wornTotal += price;

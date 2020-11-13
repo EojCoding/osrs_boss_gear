@@ -39,14 +39,24 @@ module.exports = {
         console.log("Min budget is "+total(setups["1"]));
         // If the budget matches and is greater than the minimum
         if (result >= total(setups["1"])) {
-            // Begin at the most expensive gear setup and work backwards
+            let map = new Map();
+            let setupToUse;
             for (let i = setups.size; i >= 1; i--) {
-                if (result >= total(setups[i.toString()])) {
-                    // See ../Setups/Response.js for implementation
-                    response(client, result, message, setups[i.toString()]);
-                    return;
+                console.log(i);
+                map.set(total(setups[i.toString()]), setups[i.toString()]);
+            }
+            // Sort the map by total value of the set
+            let sortedMap = new Map([...map.entries()].sort());
+            let biggest = 0;
+            for (const [key,value] of sortedMap.entries()) {
+                // If the given budget is bigger than the key, set this setup as the one to use, then go next
+                if (result >= key && key >= biggest) {
+                    biggest = key;
+                    setupToUse = value;
                 }
             }
+            console.log(sortedMap.keys());
+            response(client, result, message, setupToUse);
         }
         else {
             message.channel.send("Minimum budget is " + total(setups["1"]).toLocaleString() + "gp");
