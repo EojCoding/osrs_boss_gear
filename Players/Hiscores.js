@@ -14,7 +14,7 @@ async function createPlayer(message, playerName) {
 
     // Set the discord ID as the key and the player name as the value
     // Then pick out the parts of the returned JSON that we want
-    playerToAdd.authorID = playerName;
+    playerToAdd.authorRSN = playerName;
     playerToAdd.skills = stats.skills;
 
     RSNList[authorID] = playerToAdd;
@@ -41,10 +41,8 @@ function displayStats(message, playerName) {
             }
         }
     }
-
     console.log("Sending reply");
     message.channel.send(embedReply);
-    //return embedReply;
 }
 
 module.exports = {

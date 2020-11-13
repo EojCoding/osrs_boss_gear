@@ -1,9 +1,9 @@
 {
 	"134810107442626561": {
-		"authorID": "karepow",
+		"authorRSN": "karepow",
 		"skills": {
 			"overall": {
-				"rank": 36711,
+				"rank": 36712,
 				"level": 2167,
 				"experience": 283185085
 			},
@@ -43,7 +43,7 @@
 				"experience": 17741290
 			},
 			"cooking": {
-				"rank": 172356,
+				"rank": 172358,
 				"level": 99,
 				"experience": 13035650
 			},
@@ -53,7 +53,7 @@
 				"experience": 13048821
 			},
 			"fletching": {
-				"rank": 265943,
+				"rank": 265944,
 				"level": 86,
 				"experience": 3691557
 			},
@@ -88,12 +88,12 @@
 				"experience": 13048530
 			},
 			"agility": {
-				"rank": 110047,
+				"rank": 110049,
 				"level": 82,
 				"experience": 2568109
 			},
 			"thieving": {
-				"rank": 108863,
+				"rank": 108864,
 				"level": 87,
 				"experience": 4067672
 			},
@@ -108,7 +108,7 @@
 				"experience": 13320661
 			},
 			"runecrafting": {
-				"rank": 110544,
+				"rank": 110545,
 				"level": 79,
 				"experience": 1898076
 			},
