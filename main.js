@@ -80,6 +80,9 @@ client.on("message", (message) => {
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);
             break;
+        case "showstats":
+            client.commands.get("showstats").execute(message, args);
+            break;
     }
 });
 

@@ -16,7 +16,9 @@ module.exports = {
         helpList.setColor("0099ff");
         helpList.setThumbnail("https://oldschool.runescape.wiki/images/thumb/e/e4/Lumbridge_Guide.png/320px-Lumbridge_Guide.png?426c8");
         helpList.addField("~report [message]", "eg: ~report XYZ is bugged");
-        helpList.addField("~tob [budget]", "eg: ~tob 510.27m", true);
+        helpList.addField("~tob [budget]", "eg: ~tob 510.27m");
+        helpList.addField("~setrsn [player name]", "eg: ~setrsn lynx titan");
+        helpList.addField("~showstats", "eg: ~showstats");
         // Send the message
         message.channel.send(helpList);
     }

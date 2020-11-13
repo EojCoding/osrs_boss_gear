@@ -3,10 +3,10 @@ const {hiscores} = require("runescape-api/osrs");
 const fs = require("fs");
 const path = require("path");
 const RSNList = require("../Players/RSNList.json");
+const Discord = require("discord.js");
 
 // Async function because it is necessary to get the proper information
-async function createPlayer(message, args) {
-    let playerName = args.join(" ");
+async function createPlayer(message, playerName) {
     console.log(playerName);
     const stats = await hiscores.getPlayer(String(playerName));
     const authorID = message.author.id;
@@ -22,6 +22,32 @@ async function createPlayer(message, args) {
     fs.writeFileSync(path.resolve(__dirname, "../Players/RSNList.json"), JSON.stringify(RSNList, null, "\t"));
 }
 
+function displayStats(message, playerName) {
+    const id = message.author.id;
+    const embedReply = new Discord.MessageEmbed();
+
+    // If the message author hasn't set a RSN yet
+    if (!RSNList.hasOwnProperty(id)) {
+        return;
+    }
+    else {
+        embedReply
+            .setTitle("Total: " + RSNList[id].skills.overall.level)
+            .setColor("0099ff")
+            .setThumbnail("https://oldschool.runescape.wiki/images/b/bd/Stats_icon.png?1b467");
+        for (const [key, value] of Object.entries(RSNList[id].skills)) {
+            if (key !== "overall") {
+                embedReply.addField(key, value.level, true);
+            }
+        }
+    }
+
+    console.log("Sending reply");
+    message.channel.send(embedReply);
+    //return embedReply;
+}
+
 module.exports = {
-    createPlayer
+    createPlayer,
+    displayStats
 }
