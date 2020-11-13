@@ -1,49 +1,65 @@
 const equipment = require("../Items/equipment.json");
 const Discord = require("discord.js");
-const embedWorn = new Discord.MessageEmbed();
-const embedInventory = new Discord.MessageEmbed();
-const embedBoss = new Discord.MessageEmbed();
-const embedBudget = new Discord.MessageEmbed();
+let itemEmoji = "";
 
-function buildResponse(budget, message, setupJson) {
+function buildResponse(client, budget, message, setupJson) {
+
+    const embedWorn = new Discord.MessageEmbed();
+    const embedInventory = new Discord.MessageEmbed();
+    const embedBoss = new Discord.MessageEmbed();
+    const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
 
     embedBoss.setColor("0099ff");
     embedBoss.setTitle("Theatre of Blood");
+    embedBoss.setURL("https://oldschool.runescape.wiki/w/Theatre_of_Blood/Strategies");
+    embedBoss.setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**`);
     embedBoss.setThumbnail("https://oldschool.runescape.wiki/images/7/74/Verzik_Vitur.png?28c0a");
-
-    embedBudget.setColor("0099ff");
-    embedBudget.setTitle("Budget \n" + budget + "gp");
-    embedBudget.setThumbnail("https://oldschool.runescape.wiki/images/3/30/Coins_10000.png?7fa38");
 
     embedWorn.setColor("#0099ff");
     embedWorn.setThumbnail("https://oldschool.runescape.wiki/images/5/50/Worn_equipment.png?124cf");
     embedWorn.setTitle("Worn");
 
-    let icons = [];
+    embedInventory.setColor("#0099ff");
+    embedInventory.setThumbnail("https://oldschool.runescape.wiki/images/d/db/Inventory.png?1e52e");
+    embedInventory.setTitle("Inventory");
+
+    let wornTotal = 0;
+    let invTotal = 0;
 
     for (const key in setupJson) {
         let itemName = setupJson[key];
+        let price = 0;
         // Don't display the "name" key
         if (key !== "name" && key !== "inventory") {
-            embedWorn.addField(equipment[itemName].slot, itemName, true);
-            icons.push("/osrs_boss_gear/Items/Icons/"+equipment[itemName].id+".png");
+            // Get the emoji that matches this item
+            itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
+            price = equipment[itemName].price;
+            wornTotal += price;
+            embedWorn.addField(itemName, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+            //embedWorn.addField(itemName, itemEmoji, true);
         }
         if (key === "inventory") {
-            embedInventory.setColor("#0099ff");
-            embedInventory.setThumbnail("https://oldschool.runescape.wiki/images/d/db/Inventory.png?1e52e");
-            embedInventory.setTitle("Inventory");
             // Look up each item in equipment.json and output them to a "inventory" section
             itemName.forEach((prop) => {
                 // If equipment.json has this property
                 if (equipment.hasOwnProperty(prop)) {
-                    embedInventory.addField(equipment[prop].slot, prop, true);
+                    itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
+                    price = equipment[prop].price;
+                    invTotal += price;
+                    embedInventory.addField(prop, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+                    //embedInventory.addField(prop, itemEmoji + " " + price + "gp", true);
                 }
             });
         }
+        price = 0;
     }
+
+    let grandTotal = wornTotal + invTotal;
+
     message.channel.send(embedBoss);
-    message.channel.send(embedBudget);
     message.channel.send(embedWorn);
+    embedInventory.addField("\u200b", "\u200b"); // This creates a new line
+    embedInventory.addField("Grand total", `${coinsEmoji} ${grandTotal.toLocaleString()}gp`, true);
     message.channel.send(embedInventory);
 }
 

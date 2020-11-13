@@ -30,6 +30,8 @@ for (const [key, value] of Object.entries(allItems)) {
         }
     }
 }
+// fs.writeFile(path.resolve(__dirname, "./Icons/10588.png"),
+//     equipment["Salve amulet (e)"].icon, "base64", () => {});
 
 // Write the JSON object to a .json file
 fs.writeFileSync(path.resolve(__dirname, "./equipment.json"), JSON.stringify(equipment, null, "\t"));

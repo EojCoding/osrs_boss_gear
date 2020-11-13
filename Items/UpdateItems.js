@@ -55,10 +55,16 @@ const updateSlots = (slot) => https.get("https://www.osrsbox.com/osrsbox-db/item
             logger.logErrors(err);
         }
 
+        // For each key value pair in equipment.json
         for (const [key, value] of Object.entries(equipment)) {
             let id = equipment[key].id;
-            if (result.hasOwnProperty(id)) {
-                value.slot = result[id].equipment.slot;
+            // If the equipment.json item does not have the "slot" property (to combat overwriting manual changes made)
+            if (!equipment[key].hasOwnProperty(slot)) {
+                // And the JSON from the api call has the same id
+                if (result.hasOwnProperty(id)) {
+                    // Add the slot property
+                    value.slot = result[id].equipment.slot;
+                }
             }
         }
 

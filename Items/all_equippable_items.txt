@@ -25,7 +25,7 @@ Sanguinesti staff
 Magic shortbow
 Toxic blowpipe (empty)
 Armadyl crossbow
-Aramdyl chestplate
+Armadyl chestplate
 Armadyl chainskirt
 Armadyl helmet
 Pegasian boots
@@ -102,5 +102,10 @@ Dragon crossbow
 Rune crossbow
 Rune pickaxe
 Salve amulet(ei)
+Salve amulet (e)
 Imbued heart
 Ruby dragon bolts (e)
+Avernic defender hilt
+Serpentine helm (uncharged)
+Serpentine helm
+Crystal halberd

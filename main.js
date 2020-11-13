@@ -13,6 +13,8 @@ const { PREFIX, TOKEN } = require("./config.json");
 const fs = require("fs");
 const commandFiles = fs.readdirSync("./Commands/").filter(file => file.endsWith(".js"));
 const logger = require("./Logs/Logger");
+const emojis = [];
+const equipment = require("./Items/equipment.json");
 
 // Store commands in this
 client.commands = new Discord.Collection();
@@ -69,11 +71,8 @@ client.on("message", (message) => {
 
     // Switch block for commands
     switch (command) {
-        case "scorpia":
-            client.commands.get("scorpia").execute(message, Number(budget));
-            break;
         case "tob":
-            client.commands.get("tob").execute(message, Number(budget));
+            client.commands.get("tob").execute(client, message, Number(budget));
             break;
     }
 });
