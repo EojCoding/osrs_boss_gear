@@ -1,0 +1,127 @@
+{
+	"134810107442626561": {
+		"authorID": "lynx titan",
+		"skills": {
+			"overall": {
+				"rank": 1,
+				"level": 2277,
+				"experience": 4600000000
+			},
+			"attack": {
+				"rank": 15,
+				"level": 99,
+				"experience": 200000000
+			},
+			"defence": {
+				"rank": 28,
+				"level": 99,
+				"experience": 200000000
+			},
+			"strength": {
+				"rank": 18,
+				"level": 99,
+				"experience": 200000000
+			},
+			"constitution": {
+				"rank": 7,
+				"level": 99,
+				"experience": 200000000
+			},
+			"ranged": {
+				"rank": 8,
+				"level": 99,
+				"experience": 200000000
+			},
+			"prayer": {
+				"rank": 11,
+				"level": 99,
+				"experience": 200000000
+			},
+			"magic": {
+				"rank": 32,
+				"level": 99,
+				"experience": 200000000
+			},
+			"cooking": {
+				"rank": 161,
+				"level": 99,
+				"experience": 200000000
+			},
+			"woodcutting": {
+				"rank": 15,
+				"level": 99,
+				"experience": 200000000
+			},
+			"fletching": {
+				"rank": 12,
+				"level": 99,
+				"experience": 200000000
+			},
+			"fishing": {
+				"rank": 9,
+				"level": 99,
+				"experience": 200000000
+			},
+			"firemaking": {
+				"rank": 49,
+				"level": 99,
+				"experience": 200000000
+			},
+			"crafting": {
+				"rank": 4,
+				"level": 99,
+				"experience": 200000000
+			},
+			"smithing": {
+				"rank": 3,
+				"level": 99,
+				"experience": 200000000
+			},
+			"mining": {
+				"rank": 25,
+				"level": 99,
+				"experience": 200000000
+			},
+			"herblore": {
+				"rank": 5,
+				"level": 99,
+				"experience": 200000000
+			},
+			"agility": {
+				"rank": 24,
+				"level": 99,
+				"experience": 200000000
+			},
+			"thieving": {
+				"rank": 12,
+				"level": 99,
+				"experience": 200000000
+			},
+			"slayer": {
+				"rank": 2,
+				"level": 99,
+				"experience": 200000000
+			},
+			"farming": {
+				"rank": 19,
+				"level": 99,
+				"experience": 200000000
+			},
+			"runecrafting": {
+				"rank": 7,
+				"level": 99,
+				"experience": 200000000
+			},
+			"hunter": {
+				"rank": 4,
+				"level": 99,
+				"experience": 200000000
+			},
+			"construction": {
+				"rank": 4,
+				"level": 99,
+				"experience": 200000000
+			}
+		}
+	}
+}

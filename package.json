@@ -11,9 +11,11 @@
   "author": "Joe Reynolds",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.4.1"
+    "discord.js": "^12.4.1",
+    "nodemon": "^2.0.6"
   },
   "devDependencies": {
+    "osrs-json-hiscores": "^2.2.0",
     "runescape-api": "^2.1.1"
   },
   "keywords": []
