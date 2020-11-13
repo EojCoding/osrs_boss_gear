@@ -30,7 +30,6 @@ function buildResponse(client, budget, message, setupJson) {
         // Don't display the "name" key
         if (key !== "name" && key !== "inventory") {
             // Get the emoji that matches this item
-            console.log(itemName);
             if (itemName !== "none") {
                 itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
                 price = equipment[itemName].price;
