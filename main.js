@@ -68,7 +68,7 @@ client.on("message", (message) => {
     // Switch block for commands
     switch (command) {
         case "tob":
-            client.commands.get("tob").execute(client, message, budget);
+            client.commands.get("tob").execute(client, message, budget, command);
             break;
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);

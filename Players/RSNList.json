@@ -125,127 +125,127 @@
 		}
 	},
 	"436958331714666506": {
-		"authorRSN": "billgates",
+		"authorRSN": "jacob",
 		"skills": {
 			"overall": {
-				"rank": -1,
-				"level": 0,
-				"experience": 0
+				"rank": 5696,
+				"level": 2277,
+				"experience": 482476622
 			},
 			"attack": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 18389,
+				"level": 99,
+				"experience": 25897065
 			},
 			"defence": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 27205,
+				"level": 99,
+				"experience": 19055119
 			},
 			"strength": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 10393,
+				"level": 99,
+				"experience": 40403923
 			},
 			"constitution": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 13479,
+				"level": 99,
+				"experience": 49402984
 			},
 			"ranged": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 12504,
+				"level": 99,
+				"experience": 53242383
 			},
 			"prayer": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 28557,
+				"level": 99,
+				"experience": 13067055
 			},
 			"magic": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 14878,
+				"level": 99,
+				"experience": 23664063
 			},
 			"cooking": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 38603,
+				"level": 99,
+				"experience": 14258334
 			},
 			"woodcutting": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 15078,
+				"level": 99,
+				"experience": 15203709
 			},
 			"fletching": {
-				"rank": 1006952,
-				"level": 58,
-				"experience": 242778
+				"rank": 99119,
+				"level": 99,
+				"experience": 13036539
 			},
 			"fishing": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 21036,
+				"level": 99,
+				"experience": 13801055
 			},
 			"firemaking": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 77808,
+				"level": 99,
+				"experience": 13063745
 			},
 			"crafting": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 12916,
+				"level": 99,
+				"experience": 14348089
 			},
 			"smithing": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 6327,
+				"level": 99,
+				"experience": 14590006
 			},
 			"mining": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 14519,
+				"level": 99,
+				"experience": 13909984
 			},
 			"herblore": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 8336,
+				"level": 99,
+				"experience": 13499585
 			},
 			"agility": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 11931,
+				"level": 99,
+				"experience": 13233304
 			},
 			"thieving": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 7746,
+				"level": 99,
+				"experience": 16791957
 			},
 			"slayer": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 5807,
+				"level": 99,
+				"experience": 24279523
 			},
 			"farming": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 4046,
+				"level": 99,
+				"experience": 34528614
 			},
 			"runecrafting": {
-				"rank": -1,
-				"level": 1,
-				"experience": -1
+				"rank": 15406,
+				"level": 99,
+				"experience": 13080491
 			},
 			"hunter": {
-				"rank": 1993145,
-				"level": 1,
-				"experience": 0
+				"rank": 7111,
+				"level": 99,
+				"experience": 17005830
 			},
 			"construction": {
-				"rank": 1821045,
-				"level": 1,
-				"experience": 0
+				"rank": 16178,
+				"level": 99,
+				"experience": 13113265
 			}
 		}
 	}
