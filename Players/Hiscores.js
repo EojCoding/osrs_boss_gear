@@ -32,7 +32,7 @@ async function createPlayer(message, playerName) {
     message.reply(`Successfully set your RSN to ${playerName}`);
 }
 
-function displayStats(message, playerName) {
+function displayStats(message, client) {
     const id = message.author.id;
     const embedReply = new Discord.MessageEmbed();
 
@@ -47,7 +47,8 @@ function displayStats(message, playerName) {
             .setThumbnail("https://oldschool.runescape.wiki/images/b/bd/Stats_icon.png?1b467");
         for (const [key, value] of Object.entries(RSNList[id].skills)) {
             if (key !== "overall") {
-                embedReply.addField(key, value.level, true);
+                const skillEmoji = client.emojis.cache.find(emoji => emoji.name === "skill_"+key.toString());
+                embedReply.addField(skillEmoji, value.level, true);
             }
         }
     }

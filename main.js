@@ -60,13 +60,6 @@ client.on("message", (message) => {
         client.commands.get("help").execute(message);
         return;
     }
-    // If the messages does not start with the prefix or does not match the pattern
-    // else if (message.content.startsWith(PREFIX) && !message.content.match(pattern)) {
-    //     message.reply("The proper usage is: ~boss_name budget\n" +
-    //         "For example: ~tob 500000000 OR ~tob 500m OR ~tob 180.7m\n" +
-    //         "Or for requesting a new feature use: ~requestboss [type here]");
-    //     return;
-    // }
     // If the message starts with the prefix, but the command is not recognised
     else if (message.content.startsWith(PREFIX) && !client.commands.has(command)) {
         message.reply("That command was not found");
@@ -81,7 +74,7 @@ client.on("message", (message) => {
             client.commands.get("setrsn").execute(message, args);
             break;
         case "showstats":
-            client.commands.get("showstats").execute(message, args);
+            client.commands.get("showstats").execute(message, args, client);
             break;
     }
 });
