@@ -3,6 +3,7 @@
  */
 
 const equipment = require("./equipment.json");
+const logger = require("../Logs/Logger");
 
 /**
  * With a given JSON object containing a gear set from ../Setups/ - look up each
@@ -16,7 +17,12 @@ function getTotal(setupJson) {
     for (const [key,value] of Object.entries(setupJson)) {
         if (key === "inventory") {
             value.forEach((item) => {
-                total += equipment[item].price;
+                try {
+                    total += equipment[item].price;
+                } catch (e) {
+                    logger.logErrors("[TYPO?] " + e);
+                }
+
             });
         }
         else if (equipment.hasOwnProperty(value)) {

@@ -59,7 +59,7 @@ function successResponse(client, budget, message, setupJson) {
     const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
 
     embedBoss.setColor("0099ff");
-    embedBoss.setTitle("Theatre of Blood");
+    embedBoss.setTitle(links[boss].name);
     embedBoss.setURL(links[boss].strategy);
     embedBoss.setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**`);
     embedBoss.setThumbnail(links[boss].thumbnail);
