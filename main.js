@@ -37,7 +37,6 @@ client.on("message", (message) => {
     const withoutPrefix = message.content.slice(PREFIX.length);
     const split = withoutPrefix.split(/ +/);
     const args = split.slice(1);
-    const pattern = /^~[a-zA-Z]+\s[0-9]+/;
 
     // Get the boss and budget from the user input
     const command = split[0].toLowerCase();
@@ -69,6 +68,9 @@ client.on("message", (message) => {
     switch (command) {
         case "tob":
             client.commands.get("tob").execute(client, message, budget, command);
+            break;
+        case "dks":
+            client.commands.get("dks").execute(client, message, budget, command);
             break;
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);

@@ -2,5 +2,9 @@
   "tob": {
     "strategy": "https://oldschool.runescape.wiki/w/Theatre_of_Blood/Strategies",
     "thumbnail": "https://oldschool.runescape.wiki/images/7/74/Verzik_Vitur.png?28c0a"
+  },
+  "dks": {
+    "strategy": "https://oldschool.runescape.wiki/w/Dagannoth_Kings/Strategies",
+    "thumbnail": "https://oldschool.runescape.wiki/images/thumb/8/8b/Dagannoth_Prime.png/800px-Dagannoth_Prime.png?945b1"
   }
 }

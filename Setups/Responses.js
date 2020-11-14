@@ -27,7 +27,6 @@ function response(client, message, budget, boss) {
         return;
     }
     // If the budget matches and is greater than the minimum
-    console.log(setups);
     if (result >= total(setups["1"])) {
         let setupToUse = gearBudget.getSetupToUse(result, setups);
         successResponse(client, result, message, setupToUse);
