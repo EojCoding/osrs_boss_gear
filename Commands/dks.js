@@ -2,8 +2,8 @@ const responses = require("../Setups/Responses");
 
 // Export JSON
 module.exports = {
-    name: "tob",
-    description: "Gear for tob",
+    name: "dks",
+    description: "Gear for dks",
     execute(client, message, budget, boss) {
         responses.response(client, message, budget, boss);
     }

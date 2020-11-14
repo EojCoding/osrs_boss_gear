@@ -1,0 +1,19 @@
+{
+  "name" : 2,
+  "head" : "Slayer helmet",
+  "amulet" : "Amulet of torture",
+  "cloak" : "Infernal cape",
+  "chest" : "Bandos chestplate",
+  "legs" : "Bandos tassets",
+  "main-hand" : "Sanguinesti staff",
+  "off-hand" : "Spectral spirit shield",
+  "ammo" : "Dragon arrow",
+  "gloves" : "Ferocious gloves",
+  "feet" : "Primordial boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Ava's assembler", "Armadyl chestplate", "Armadyl chainskirt",
+                "Scythe of vitur", "Twisted bow", "Ancestral robe top",
+                "Ancestral robe bottom", "Necklace of anguish", "Barrows gloves",
+                "Occult necklace", "Tormented bracelet", "Dragon claws", "Saradomin godsword",
+                "Imbued heart"]
+}

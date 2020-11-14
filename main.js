@@ -37,7 +37,6 @@ client.on("message", (message) => {
     const withoutPrefix = message.content.slice(PREFIX.length);
     const split = withoutPrefix.split(/ +/);
     const args = split.slice(1);
-    const pattern = /^~[a-zA-Z]+\s[0-9]+/;
 
     // Get the boss and budget from the user input
     const command = split[0].toLowerCase();
@@ -60,13 +59,6 @@ client.on("message", (message) => {
         client.commands.get("help").execute(message);
         return;
     }
-    // If the messages does not start with the prefix or does not match the pattern
-    // else if (message.content.startsWith(PREFIX) && !message.content.match(pattern)) {
-    //     message.reply("The proper usage is: ~boss_name budget\n" +
-    //         "For example: ~tob 500000000 OR ~tob 500m OR ~tob 180.7m\n" +
-    //         "Or for requesting a new feature use: ~requestboss [type here]");
-    //     return;
-    // }
     // If the message starts with the prefix, but the command is not recognised
     else if (message.content.startsWith(PREFIX) && !client.commands.has(command)) {
         message.reply("That command was not found");
@@ -74,14 +66,20 @@ client.on("message", (message) => {
 
     // Switch block for commands
     switch (command) {
+        case "mybosses":
+            client.commands.get("mybosses").execute(client, message);
+            break;
         case "tob":
-            client.commands.get("tob").execute(client, message, budget);
+            client.commands.get("tob").execute(client, message, budget, command);
+            break;
+        case "dks":
+            client.commands.get("dks").execute(client, message, budget, command);
             break;
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);
             break;
         case "showstats":
-            client.commands.get("showstats").execute(message, args);
+            client.commands.get("showstats").execute(message, args, client);
             break;
     }
 });

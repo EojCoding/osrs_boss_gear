@@ -1,0 +1,28 @@
+{
+  "tob": {
+    "strategy": "https://oldschool.runescape.wiki/w/Theatre_of_Blood/Strategies",
+    "thumbnail": "https://oldschool.runescape.wiki/images/7/74/Verzik_Vitur.png?28c0a",
+    "name": "Theatre of Blood",
+    "minstats": {
+      "attack": 95,
+      "strength": 95,
+      "defence": 95,
+      "magic": 94,
+      "constitution": 99,
+      "prayer": 77
+    }
+  },
+  "dks": {
+    "strategy": "https://oldschool.runescape.wiki/w/Dagannoth_Kings/Strategies",
+    "thumbnail": "https://oldschool.runescape.wiki/images/thumb/8/8b/Dagannoth_Prime.png/800px-Dagannoth_Prime.png?945b1",
+    "name": "Dagganoth Kings",
+    "minstats": {
+      "attack": 70,
+      "strength": 70,
+      "defence": 70,
+      "magic": 75,
+      "constitution": 70,
+      "prayer": 45
+    }
+  }
+}

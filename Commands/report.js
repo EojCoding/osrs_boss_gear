@@ -12,8 +12,7 @@ module.exports = {
     description : "feature requests",
     execute(message, args) {
         // Build the string that gets written to the output text file
-        let newRequest = "New request: ";
-        fs.appendFile("./Requests/requests.txt", newRequest + args.join(" ") + "\n", error => {
+        fs.appendFile("./Requests/requests.txt", `[${message.member.user.tag}] says: ` +  args.join(" ") + "\n", error => {
             if (error) {
                 return "Error occurred" + error;
             }
