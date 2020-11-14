@@ -1,5 +1,4 @@
-// API provided by: https://github.com/maxswa/osrs-json-hiscores
-const {hiscores} = require("runescape-api/osrs");
+const {hiscores: player} = require("runescape-api/osrs");
 const fs = require("fs");
 const path = require("path");
 const RSNList = require("../Players/RSNList.json");
@@ -11,7 +10,7 @@ async function createPlayer(message, playerName) {
     console.log(playerName);
     let stats;
     try {
-        stats = await hiscores.getPlayer(String(playerName));
+        stats = await player.getPlayer(String(playerName));
     } catch (e) {
         logger.logErrors(e);
         message.channel.send("That player does not exist");
@@ -56,7 +55,18 @@ function displayStats(message, client) {
     message.channel.send(embedReply);
 }
 
+function checkStatRequirements(authorid, boss) {
+
+    return -1;
+}
+
+function getPlayer(id) {
+    return RSNList[id];
+}
+
 module.exports = {
     createPlayer,
-    displayStats
+    displayStats,
+    checkStatRequirements,
+    getPlayer
 }

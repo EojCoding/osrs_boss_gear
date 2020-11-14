@@ -5,6 +5,7 @@ const total = require("../Items/TotalPrices");
 const fs = require("fs");
 const path = require("path");
 const logger = require("../Logs/Logger");
+const player = require("../Players/Player");
 
 /**
  * This function serves as the entry point for Responses which grabs all the setups for the boss
@@ -24,6 +25,11 @@ function response(client, message, budget, boss) {
         message.channel.send("The proper usage is: ~boss_name budget\n" +
             "For example: ~tob 500000000 OR ~tob 500m OR ~tob 180.7m\n" +
             "Or for requesting a new feature use: ~report [type here]");
+        return;
+    }
+    //todo: add minstats property to bossinfo.json (rename it?) with combat levels
+    if (player.checkStatRequirements(String(message.author.id), boss) === -1) {
+        message.reply("You do not meet the minimum requirements for ");
         return;
     }
     // If the budget matches and is greater than the minimum
@@ -49,7 +55,7 @@ function successResponse(client, budget, message, setupJson) {
     const withoutPrefix = message.content.slice(1);
     const split = withoutPrefix.split(/ +/);
     const boss = split[0].toLowerCase();
-    const links = require("./links.json");
+    const links = require("./bossinfo.json");
 
     let itemEmoji = "";
 

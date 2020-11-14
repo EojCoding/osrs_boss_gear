@@ -1,4 +1,4 @@
-const player = require("../Players/Hiscores");
+const player = require("../Players/Player");
 
 module.exports = {
     name: "setrsn",
