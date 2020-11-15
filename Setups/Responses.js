@@ -66,17 +66,21 @@ async function successResponse(client, budget, message, setupJson) {
     const embedBoss = new Discord.MessageEmbed();
     const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
 
-    embedBoss.setColor("0099ff");
-    embedBoss.setTitle(links[boss].name);
-    embedBoss.setURL(links[boss].strategy);
-    embedBoss.setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**`);
-    embedBoss.setThumbnail(links[boss].thumbnail);
+    embedBoss
+        .setColor("0099ff")
+        .setTitle(links[boss].name)
+        .setURL(links[boss].strategy)
+        .setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**`)
+        .setThumbnail(links[boss].thumbnail)
+        .setFooter("Consumables not included");
 
-    embedWorn.setColor("#0099ff");
-    embedWorn.setThumbnail("https://oldschool.runescape.wiki/images/5/50/Worn_equipment.png?124cf");
+    embedWorn
+        .setColor("#0099ff")
+        .setThumbnail("https://oldschool.runescape.wiki/images/5/50/Worn_equipment.png?124cf");
 
-    embedInventory.setColor("#0099ff");
-    embedInventory.setThumbnail("https://oldschool.runescape.wiki/images/d/db/Inventory.png?1e52e");
+    embedInventory
+        .setColor("#0099ff")
+        .setThumbnail("https://oldschool.runescape.wiki/images/d/db/Inventory.png?1e52e");
 
     let wornTotal = 0;
     let invTotal = 0;
@@ -113,8 +117,10 @@ async function successResponse(client, budget, message, setupJson) {
 
     let grandTotal = wornTotal + invTotal;
 
-    embedInventory.addField("\u200b", "\u200b"); // This creates a new line
-    embedInventory.addField("Grand total", `${coinsEmoji} ${grandTotal.toLocaleString()}gp`, true);
+    // This creates a new line
+    embedInventory
+        .addField("\u200b", "\u200b")
+        .addField("Grand total", `${coinsEmoji} ${grandTotal.toLocaleString()}gp`, true);
 
     try {
         if (split[2] === "DM") {
