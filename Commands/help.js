@@ -11,17 +11,19 @@ module.exports = {
         const helpList = new Discord.MessageEmbed();
 
         // Build the embedded message
-        helpList.setTitle("Help");
-        helpList.setDescription("List of commands")
-        helpList.setColor("0099ff");
-        helpList.setThumbnail("https://oldschool.runescape.wiki/images/thumb/e/e4/Lumbridge_Guide.png/320px-Lumbridge_Guide.png?426c8");
-        helpList.addField("~report [message]", "eg: ~report XYZ is bugged");
-        helpList.addField("~setrsn [player name]", "eg: ~setrsn lynx titan");
-        helpList.addField("~mybosses [budget]", "eg: ~mybosses 500m");
-        helpList.addField("~showstats", "eg: ~showstats");
-        helpList.addField("~tob [budget]", "eg: ~tob 510.27m");
-        helpList.addField("~dks [budget]", "eg: ~dks 15m");
-        helpList.addField("~kree [budget]", "eg: ~kree 150.1m");
+        helpList
+            .setTitle("Help")
+            .setDescription("List of commands")
+            .setColor("0099ff")
+            .setThumbnail("https://oldschool.runescape.wiki/images/thumb/e/e4/Lumbridge_Guide.png/320px-Lumbridge_Guide.png?426c8")
+            .addField("~report [message]", "eg: ~report XYZ is bugged")
+            .addField("~setrsn [player name]", "eg: ~setrsn lynx titan")
+            .addField("~mybosses [budget]", "eg: ~mybosses 500m")
+            .addField("~showstats", "eg: ~showstats")
+            .addField("~tob [budget]", "eg: ~tob 510.27m")
+            .addField("~dks [budget]", "eg: ~dks 15m")
+            .addField("~kree [budget]", "eg: ~kree 150.1m")
+            .addField("~bandos [tank/attacker] [budget]", "eg: ~bandos attacker 150.1m");
         // Send the message
         message.channel.send(helpList);
     }

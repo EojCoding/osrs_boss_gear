@@ -20,13 +20,17 @@ function getTotal(setupJson) {
                 try {
                     total += equipment[item].price;
                 } catch (e) {
-                    logger.logErrors("[TYPO?] " + e);
+                    logger.logErrors("[TYPO?] TotalPrices.js/getTotal() in inventory: " + item + " -> " + e);
                 }
 
             });
         }
         else if (equipment.hasOwnProperty(value)) {
-            total += equipment[value].price;
+            try {
+                total += equipment[value].price;
+            } catch (e) {
+                logger.logErrors("[TYPO?] TotalPrices.js/getTotal() in worn: " + value + " -> " + e);
+            }
         }
     }
     return total;

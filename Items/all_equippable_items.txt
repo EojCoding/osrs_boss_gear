@@ -49,7 +49,7 @@ Infernal cape
 Fire cape
 Zamorakian hasta
 Necklace of anguish
-Archer's ring
+Archers ring
 Berserker ring
 Seer's ring
 Ancestral hat
@@ -128,3 +128,12 @@ Red chinchompa
 Crystal shield
 Saradomin bracers
 Saradomin d'hide boots
+Guthan's helm
+Guthan's platebody
+Guthan's warspear
+Guthan's chainskirt
+Armadyl bracers
+Torag's platebody
+Verac's plateskirt
+Unholy blessing
+Bandos boots

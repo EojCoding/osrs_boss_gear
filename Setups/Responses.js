@@ -20,6 +20,13 @@ let messageIDs = new Map();
 function response(client, message, budget, boss) {
     // See ../Setups/GearBudget.js for implementation
     let allSetups = {};
+    const args = message.content.slice(1).split(/ +/).slice(1);
+    if (args.length === 0) {
+        message.channel.send("The proper usage is: `~boss_name budget`\n" +
+            "For example: `~tob 500000000` OR `~tob 500m` OR `~tob 180.7m`\n" +
+            "Or for requesting a new feature use: `~report [type here]`");
+        return;
+    }
     let result = gearBudget.checkBudgetInput(budget);
     let setups = getSetups(boss, allSetups);
     // If the result does not match any accepted criteria, send a helpful message
@@ -56,8 +63,20 @@ async function successResponse(client, budget, message, setupJson) {
 
     const withoutPrefix = message.content.slice(1);
     const split = withoutPrefix.split(/ +/);
-    const boss = split[0].toLowerCase();
+    let boss = split[0].toLowerCase();
+    console.log(boss)
     const links = require("./bossinfo.json");
+
+    // Look for commas in first element, this indicates a role boss
+    if (boss.includes(",")) {
+        boss = boss.split(',');
+        boss = boss[0] + " " + boss[1];
+        console.log(boss);
+    }
+    else {
+        // This will add the role to the boss name
+        boss += " " + split[1].toLowerCase();
+    }
 
     let itemEmoji = "";
 
@@ -92,10 +111,14 @@ async function successResponse(client, budget, message, setupJson) {
         if (key !== "name" && key !== "inventory") {
             // Get the emoji that matches this item
             if (itemName !== "none") {
-                itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
-                price = equipment[itemName].price;
-                wornTotal += price;
-                embedWorn.addField(itemName, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+                try {
+                    itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
+                    price = equipment[itemName].price;
+                    wornTotal += price;
+                    embedWorn.addField(itemName, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+                } catch (e) {
+                    logger.logErrors(e + " -> " + itemName + " has no ID");
+                }
             }
         }
         if (key === "inventory") {
@@ -104,10 +127,14 @@ async function successResponse(client, budget, message, setupJson) {
                 // If equipment.json has this property
                 if (equipment.hasOwnProperty(prop)) {
                     if (itemName !== null) {
-                        itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
-                        price = equipment[prop].price;
-                        invTotal += price;
-                        embedInventory.addField(prop, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+                        try {
+                            itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
+                            price = equipment[prop].price;
+                            invTotal += price;
+                            embedInventory.addField(prop, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
+                        } catch (e) {
+                            logger.logErrors(e + " -> " + itemName + " has no ID");
+                        }
                     }
                 }
             });
