@@ -52,7 +52,7 @@ function response(client, message, budget, boss) {
  * @param message
  * @param setupJson
  */
-function successResponse(client, budget, message, setupJson) {
+async function successResponse(client, budget, message, setupJson) {
 
     const withoutPrefix = message.content.slice(1);
     const split = withoutPrefix.split(/ +/);
@@ -112,22 +112,20 @@ function successResponse(client, budget, message, setupJson) {
     }
 
     let grandTotal = wornTotal + invTotal;
-    let recipient = "channel";
 
     embedInventory.addField("\u200b", "\u200b"); // This creates a new line
     embedInventory.addField("Grand total", `${coinsEmoji} ${grandTotal.toLocaleString()}gp`, true);
 
     try {
         if (split[2] === "DM") {
-            client.users.cache.get(split[3]).send(embedBoss);
-            client.users.cache.get(split[3]).send(embedWorn);
-            client.users.cache.get(split[3]).send(embedInventory);
-            console.log(recipient);
+            await client.users.cache.get(split[3]).send(embedBoss);
+            await client.users.cache.get(split[3]).send(embedWorn);
+            await client.users.cache.get(split[3]).send(embedInventory);
         }
         else {
-            message.channel.send(embedBoss);
-            message.channel.send(embedWorn);
-            message.channel.send(embedInventory);
+            await message.channel.send(embedBoss);
+            await message.channel.send(embedWorn);
+            await message.channel.send(embedInventory);
         }
     } catch (e) {
         logger.logErrors(e);
@@ -150,7 +148,6 @@ async function myBossesList(bossMap, message, budget) {
         let setups = getSetups(key, allSetups);
         // Then check the budget against the setup costs
         if (result < total(setups["1"])) {
-            console.log("Budget not high enough for " + key);
             bossMap.delete(key);
         }
         let setupToUse = gearBudget.getSetupToUse(result, setups);

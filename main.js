@@ -92,25 +92,22 @@ client.on("messageReactionAdd", (reaction) => {
 
     if (messageIDs.messageIDs.has(reaction.message.id)) {
         if (reaction.emoji.name === "👍") {
-            for (const [key,value] of messageIDs.messageIDs.entries()) {
-                // This works
-                // Need to work on sending a DM with the full setup
-                const budget = reaction.message.embeds[0].description
-                    .split(",").join("").replace("gp","");
+            let boss = messageIDs.messageIDs.get(reaction.message.id);
+            // This works
+            // Need to work on sending a DM with the full setup
+            const budget = reaction.message.embeds[0].description
+                .split(",").join("").replace("gp","");
 
-                // Manually set the message content so that it can be parsed properly in Response.js
-                // Added DM to the end to indicate that the set should be DMd to the user
-                let sender = {};
-                reaction.users.cache.forEach((user) => {
-                    sender = user;
-                    // if (!userReactionsMap.has(user.id)) {
-                    //
-                    // }
-                });
-                reaction.message.content = PREFIX + value + " " + budget + " DM " + sender;
+            // Manually set the message content so that it can be parsed properly in Response.js
+            // Added DM to the end to indicate that the set should be DMd to the user
+            let sender = {};
+            reaction.users.cache.forEach((user, Snowflake) => {
+                sender = user;
+                reaction.users.cache.delete(Snowflake);
+            });
+            reaction.message.content = PREFIX + boss + " " + budget + " DM " + sender;
 
-                client.commands.get(value).execute(client, reaction.message, budget, value);
-            }
+            client.commands.get(boss).execute(client, reaction.message, budget, boss);
         }
     }
 });
