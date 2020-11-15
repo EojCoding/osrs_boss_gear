@@ -24,5 +24,18 @@
       "constitution": 70,
       "prayer": 45
     }
+  },
+  "kree": {
+    "strategy": "https://oldschool.runescape.wiki/w/Kree%27arra/Strategies",
+    "thumbnail": "https://oldschool.runescape.wiki/images/f/fd/Kree%27arra.png?65c34",
+    "name": "Kree'arra",
+    "minstats": {
+      "attack": 1,
+      "strength": 1,
+      "defence": 70,
+      "magic": 92,
+      "constitution": 75,
+      "prayer": 44
+    }
   }
 }

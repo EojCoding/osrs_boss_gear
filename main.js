@@ -79,6 +79,9 @@ client.on("message", (message) => {
         case "dks":
             client.commands.get("dks").execute(client, message, budget, command);
             break;
+        case "kree":
+            client.commands.get("kree").execute(client, message, budget, command);
+            break;
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);
             break;
