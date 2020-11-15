@@ -5,3 +5,5 @@ config.json
 /Logs/*
 
 /Requests/*
+
+*.pem

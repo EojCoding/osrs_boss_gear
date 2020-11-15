@@ -1,0 +1,16 @@
+{
+  "name" : 1,
+  "head" : "Verac's helm",
+  "amulet" : "Amulet of glory",
+  "cloak" : "Fire cape",
+  "chest" : "Fighter torso",
+  "legs" : "Torag's platelegs",
+  "main-hand" : "Abyssal tentacle",
+  "off-hand" : "Dragon defender",
+  "ammo" : "Rada's blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Dragon boots",
+  "ring" : "Brimstone ring",
+  "inventory" : ["Ava's assembler", "Saradomin d'hide body", "Saradomin chaps",
+                  "Trident of the seas (full)", "Toxic blowpipe"]
+}

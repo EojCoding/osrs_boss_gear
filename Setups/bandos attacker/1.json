@@ -1,0 +1,16 @@
+{
+  "name" : 1,
+  "head" : "Verac's helm",
+  "amulet" : "Amulet of fury",
+  "cloak" : "Ava's assembler",
+  "chest" : "Zamorak d'hide body",
+  "legs" : "Saradomin chaps",
+  "main-hand" : "Toxic blowpipe",
+  "off-hand" : "none",
+  "ammo" : "Unholy blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Saradomin d'hide boots",
+  "ring" : "Archers ring",
+  "inventory" : ["Guthan's helm", "Guthan's platebody", "Guthan's chainskirt",
+    "Guthan's warspear", "Bandos godsword"]
+}

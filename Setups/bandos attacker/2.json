@@ -1,0 +1,16 @@
+{
+  "name" : 2,
+  "head" : "Armadyl helmet",
+  "amulet" : "Necklace of anguish",
+  "cloak" : "Ava's assembler",
+  "chest" : "Armadyl chestplate",
+  "legs" : "Armadyl chainskirt",
+  "main-hand" : "Toxic blowpipe",
+  "off-hand" : "none",
+  "ammo" : "Unholy blessing",
+  "gloves" : "Armadyl bracers",
+  "feet" : "Pegasian boots",
+  "ring" : "Archers ring",
+  "inventory" : ["Guthan's helm", "Guthan's platebody", "Guthan's chainskirt",
+    "Guthan's warspear", "Imbued heart", "Barrows gloves"]
+}

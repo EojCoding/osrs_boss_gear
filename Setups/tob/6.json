@@ -1,0 +1,20 @@
+{
+  "name" : 6,
+  "head" : "Serpentine helm",
+  "amulet" : "Amulet of torture",
+  "cloak" : "Infernal cape",
+  "chest" : "Bandos chestplate",
+  "legs" : "Bandos tassets",
+  "main-hand" : "Abyssal tentacle",
+  "off-hand" : "Avernic defender",
+  "ammo" : "Ruby dragon bolts (e)",
+  "gloves" : "Ferocious gloves",
+  "feet" : "Primordial boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Void ranger helm", "Toxic blowpipe", "Void mage helm",
+                  "Uncharged toxic trident", "Necklace of anguish", "Ava's assembler",
+                  "Occult necklace", "Dragon warhammer",
+                  "Dragon claws", "Dragon crossbow", "Salve amulet (e)", "Crystal halberd",
+                  "Book of darkness", "Elite void top", "Elite void robe", "Void knight gloves",
+                  "Ancestral robe top", "Tormented bracelet"]
+}

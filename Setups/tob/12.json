@@ -1,0 +1,20 @@
+{
+  "name" : 12,
+  "head" : "Serpentine helm",
+  "amulet" : "Amulet of torture",
+  "cloak" : "Infernal cape",
+  "chest" : "Bandos chestplate",
+  "legs" : "Bandos tassets",
+  "main-hand" : "Scythe of vitur",
+  "off-hand" : "none",
+  "ammo" : "Dragon arrow",
+  "gloves" : "Ferocious gloves",
+  "feet" : "Primordial boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Void ranger helm", "Twisted bow", "Void mage helm",
+                  "Sanguinesti staff", "Necklace of anguish", "Ava's assembler",
+                  "Occult necklace", "Imbued saradomin cape", "Dragon warhammer",
+                  "Dragon claws", "Dragon crossbow", "Salve amulet (e)", "Crystal halberd",
+                  "Arcane spirit shield", "Elite void top", "Elite void robe", "Void knight gloves",
+                  "Ancestral robe top", "Ancestral robe bottom", "Tormented bracelet"]
+}

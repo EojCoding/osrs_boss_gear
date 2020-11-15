@@ -1,0 +1,19 @@
+{
+  "name" : 3,
+  "head" : "Void melee helm",
+  "amulet" : "Amulet of torture",
+  "cloak" : "Fire cape",
+  "chest" : "Elite void top",
+  "legs" : "Elite void robe",
+  "main-hand" : "Abyssal tentacle",
+  "off-hand" : "Dragon defender",
+  "ammo" : "Ruby dragon bolts (e)",
+  "gloves" : "Void knight gloves",
+  "feet" : "Primordial boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Void ranger helm", "Toxic blowpipe", "Void mage helm",
+                  "Uncharged toxic trident", "Necklace of anguish", "Ava's assembler",
+                  "Occult necklace", "Dragon warhammer",
+                  "Dragon claws", "Dragon crossbow", "Salve amulet (e)", "Crystal halberd",
+                  "Book of darkness"]
+}
