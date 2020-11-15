@@ -1,4 +1,4 @@
-const {hiscores: player} = require("runescape-api/osrs");
+const {hiscores} = require("runescape-api/osrs");
 const fs = require("fs");
 const path = require("path");
 const RSNList = require("../Players/RSNList.json");
@@ -15,7 +15,10 @@ async function createPlayer(message, playerName) {
     }
     let stats;
     try {
-        stats = await player.getPlayer(String(playerName));
+        console.log("Getting player...");
+        message.channel.send(`Fetching information for ${playerName}...`);
+        stats = await hiscores.getPlayer(String(playerName));
+        console.log("Got player " + playerName);
     } catch (e) {
         logger.logErrors(e);
         message.channel.send(`${playerName} does not appear on the hiscores.`);

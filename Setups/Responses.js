@@ -62,12 +62,13 @@ function response(client, message, budget, boss) {
 async function successResponse(client, budget, message, setupJson) {
 
     const withoutPrefix = message.content.slice(1);
+    console.log(withoutPrefix)
     const split = withoutPrefix.split(/ +/);
     let boss = split[0].toLowerCase();
     console.log(boss)
     const links = require("./bossinfo.json");
 
-    // Look for commas in first element, this indicates a role boss
+    // Look for commas in first element, this indicates a role boss from a reaction
     if (boss.includes(",")) {
         boss = boss.split(',');
         if (boss.length === 3) {
@@ -76,6 +77,10 @@ async function successResponse(client, budget, message, setupJson) {
         else {
             boss = boss[0];
         }
+    }
+    // If using a normal command like ~bandos tank 5b where it has 3 args
+    else if (split.length === 3) {
+        boss = split[0] + " " + split[1]
     }
 
     let itemEmoji = "";
@@ -200,6 +205,9 @@ async function myBossesList(bossMap, message, budget) {
             const sent = await message.channel.send(bossListEmbed);
             messageIDs.set(sent.id, key);
         }
+    }
+    else {
+        message.channel.send("You don't meet the minimum budget for any boss");
     }
 }
 
