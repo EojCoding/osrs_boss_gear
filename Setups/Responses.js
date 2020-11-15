@@ -70,12 +70,12 @@ async function successResponse(client, budget, message, setupJson) {
     // Look for commas in first element, this indicates a role boss
     if (boss.includes(",")) {
         boss = boss.split(',');
-        boss = boss[0] + " " + boss[1];
-        console.log(boss);
-    }
-    else {
-        // This will add the role to the boss name
-        boss += " " + split[1].toLowerCase();
+        if (boss.length === 3) {
+            boss = boss[0] + " " + boss[1];
+        }
+        else {
+            boss = boss[0];
+        }
     }
 
     let itemEmoji = "";
@@ -84,7 +84,7 @@ async function successResponse(client, budget, message, setupJson) {
     const embedInventory = new Discord.MessageEmbed();
     const embedBoss = new Discord.MessageEmbed();
     const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
-
+    console.log(boss)
     embedBoss
         .setColor("0099ff")
         .setTitle(links[boss].name)

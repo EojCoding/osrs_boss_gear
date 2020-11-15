@@ -114,8 +114,9 @@ client.on("messageReactionAdd", (reaction) => {
 
             // If the boss does not have specific roles, give it just the boss name
             // Bosses with roles have a different execute function
-            if (boss.length === 1) {
-                client.commands.get(boss[0]).execute(client, reaction.message, budget, boss[0]);
+            console.log(boss);
+            if (boss.length === 2) {
+                client.commands.get(boss[0]).execute(client, reaction.message, boss[1], boss[0]);
             }
             else {
                 client.commands.get(boss[0]).execute(client, reaction.message, boss);
