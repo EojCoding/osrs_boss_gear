@@ -13,6 +13,10 @@ const { PREFIX, TOKEN } = require("./config.json");
 const fs = require("fs");
 const commandFiles = fs.readdirSync("./Commands/").filter(file => file.endsWith(".js"));
 const logger = require("./Logs/Logger");
+const messageIDs = require("./Setups/Responses");
+let userReactionsMap = new Map();
+
+let messageAuthor;
 
 // Store commands in this
 client.commands = new Discord.Collection();
@@ -81,6 +85,30 @@ client.on("message", (message) => {
         case "showstats":
             client.commands.get("showstats").execute(message, args, client);
             break;
+    }
+});
+
+client.on("messageReactionAdd", (reaction) => {
+
+    if (messageIDs.messageIDs.has(reaction.message.id)) {
+        if (reaction.emoji.name === "👍") {
+            let boss = messageIDs.messageIDs.get(reaction.message.id);
+            // This works
+            // Need to work on sending a DM with the full setup
+            const budget = reaction.message.embeds[0].description
+                .split(",").join("").replace("gp","");
+
+            // Manually set the message content so that it can be parsed properly in Response.js
+            // Added DM to the end to indicate that the set should be DMd to the user
+            let sender = {};
+            reaction.users.cache.forEach((user, Snowflake) => {
+                sender = user;
+                reaction.users.cache.delete(Snowflake);
+            });
+            reaction.message.content = PREFIX + boss + " " + budget + " DM " + sender;
+
+            client.commands.get(boss).execute(client, reaction.message, budget, boss);
+        }
     }
 });
 

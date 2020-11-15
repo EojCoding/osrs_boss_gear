@@ -7,13 +7,18 @@ const logger = require("../Logs/Logger");
 
 // Async function because it is necessary to get the proper information
 async function createPlayer(message, playerName) {
-    console.log(playerName);
+    if (RSNList.hasOwnProperty(message.author.id)) {
+        if (RSNList[message.author.id].authorRSN === playerName) {
+            message.reply(`Your RSN is already set to ${playerName}`);
+            return;
+        }
+    }
     let stats;
     try {
         stats = await player.getPlayer(String(playerName));
     } catch (e) {
         logger.logErrors(e);
-        message.channel.send("That player does not exist");
+        message.channel.send(`${playerName} does not appear on the hiscores.`);
         return;
     }
     const authorID = message.author.id;
@@ -51,7 +56,6 @@ function displayStats(message, client) {
             }
         }
     }
-    console.log("Sending reply");
     message.channel.send(embedReply);
 }
 

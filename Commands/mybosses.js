@@ -16,25 +16,32 @@ module.exports = {
         }
         const withoutPrefix = message.content.slice(1);
         const split = withoutPrefix.split(/ +/);
-        const args = split.slice(1);
-        const command = split[0].toLowerCase();
+        if (split.length < 2) {
+            message.channel.send("You must provide a budget/");
+            return;
+        }
         const budget = split[1];
 
         // This should always return true since the check is made above to verify it exists.
         const playerCharacter = player.getPlayer(message.author.id).skills;
         // Then get a list of all bosses which are compatible with the player stats
+        // And compare the stats with the player stats
+        let acceptedKeys = new Map();
         Object.keys(bossinfo).forEach((key) => {
+            // Add the boss key to a map of tentatively accepted keys
+            acceptedKeys.set(key, bossinfo[key]);
             const bossMinStats = bossinfo[key].minstats;
             Object.keys(playerCharacter).forEach((skill) => {
                 if (bossMinStats.hasOwnProperty(skill)) {
-                    if (bossMinStats[skill] > playerCharacter[skill].level) {
-                        console.log("Your " + skill + " level is not high enough for " + key);
+                    // If the min boss stat req is higher than the players AND the map has the key still
+                    // then remove it
+                    if (bossMinStats[skill] > playerCharacter[skill].level && acceptedKeys.has(key)) {
+                        acceptedKeys.delete(key);
+                        message.channel.send("Your " + skill + " level is not high enough for " + key);
                     }
-                    console.log(skill+" "+playerCharacter[skill].level);
                 }
             });
         });
-
-        //responses.response(client, message, budget, boss);
+        responses.myBossesList(acceptedKeys, message, budget);
     }
 }

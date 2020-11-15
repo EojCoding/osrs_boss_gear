@@ -7,6 +7,8 @@ const path = require("path");
 const logger = require("../Logs/Logger");
 const player = require("../Players/Player");
 
+let messageIDs = new Map();
+
 /**
  * This function serves as the entry point for Responses which grabs all the setups for the boss
  * provided and then sends them to GearBudget.js to be sorted in order of price
@@ -28,10 +30,10 @@ function response(client, message, budget, boss) {
         return;
     }
     //todo: add minstats property to bossinfo.json (rename it?) with combat levels
-    if (player.checkStatRequirements(String(message.author.id), boss) === -1) {
-        message.reply("You do not meet the minimum requirements for ");
-        return;
-    }
+    // if (player.checkStatRequirements(String(message.author.id), boss) === -1) {
+    //     message.reply("You do not meet the minimum requirements for ");
+    //     return;
+    // }
     // If the budget matches and is greater than the minimum
     if (result >= total(setups["1"])) {
         let setupToUse = gearBudget.getSetupToUse(result, setups);
@@ -50,7 +52,7 @@ function response(client, message, budget, boss) {
  * @param message
  * @param setupJson
  */
-function successResponse(client, budget, message, setupJson) {
+async function successResponse(client, budget, message, setupJson) {
 
     const withoutPrefix = message.content.slice(1);
     const split = withoutPrefix.split(/ +/);
@@ -86,7 +88,6 @@ function successResponse(client, budget, message, setupJson) {
         if (key !== "name" && key !== "inventory") {
             // Get the emoji that matches this item
             if (itemName !== "none") {
-                console.log(itemName);
                 itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
                 price = equipment[itemName].price;
                 wornTotal += price;
@@ -112,11 +113,61 @@ function successResponse(client, budget, message, setupJson) {
 
     let grandTotal = wornTotal + invTotal;
 
-    message.channel.send(embedBoss);
-    message.channel.send(embedWorn);
     embedInventory.addField("\u200b", "\u200b"); // This creates a new line
     embedInventory.addField("Grand total", `${coinsEmoji} ${grandTotal.toLocaleString()}gp`, true);
-    message.channel.send(embedInventory);
+
+    try {
+        if (split[2] === "DM") {
+            await client.users.cache.get(split[3]).send(embedBoss);
+            await client.users.cache.get(split[3]).send(embedWorn);
+            await client.users.cache.get(split[3]).send(embedInventory);
+        }
+        else {
+            await message.channel.send(embedBoss);
+            await message.channel.send(embedWorn);
+            await message.channel.send(embedInventory);
+        }
+    } catch (e) {
+        logger.logErrors(e);
+    }
+}
+
+/**
+ * This function gets a list of all bosses available to the user when provided
+ * with their budget
+ * @param bossMap
+ * @param message
+ * @param budget
+ */
+async function myBossesList(bossMap, message, budget) {
+    let allSetups = {};
+    let result = gearBudget.checkBudgetInput(budget);
+    // Look at each key value pair in the boss map
+    for (const [key, value] of bossMap.entries()) {
+        // Get the list of setups for the boss (key)
+        let setups = getSetups(key, allSetups);
+        // Then check the budget against the setup costs
+        if (result < total(setups["1"])) {
+            bossMap.delete(key);
+        }
+        let setupToUse = gearBudget.getSetupToUse(result, setups);
+    }
+
+    // Get all the remaining bosses from the boss map and display them
+    if (bossMap.size > 0) {
+        for (const [key, value] of bossMap.entries()) {
+            const bossListEmbed = new Discord.MessageEmbed();
+            bossListEmbed
+                .setColor("0099ff")
+                .setTitle(value.name)
+                .setURL(value.strategy)
+                .setThumbnail(value.thumbnail)
+                .setDescription(`${result.toLocaleString()}gp`)
+                .setFooter("React with a 👍 to have me DM you the gear set.");
+            const sent = await message.channel.send(bossListEmbed);
+            messageIDs.set(sent.id, key);
+        }
+    }
 }
 
 /**
@@ -139,5 +190,7 @@ function getSetups(bossName, setups) {
 }
 
 module.exports = {
-    response
+    response,
+    myBossesList,
+    messageIDs
 };
