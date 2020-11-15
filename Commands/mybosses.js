@@ -37,7 +37,7 @@ module.exports = {
                     // then remove it
                     if (bossMinStats[skill] > playerCharacter[skill].level && acceptedKeys.has(key)) {
                         acceptedKeys.delete(key);
-                        message.channel.send("Your " + skill + " level is not high enough for " + key);
+                        //message.channel.send("Your " + skill + " level is not high enough for " + key);
                     }
                 }
             });

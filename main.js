@@ -26,6 +26,12 @@ for (const file of commandFiles) {
 // Begin the bot client
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}`);
+    client.user.setPresence({
+        status: "online",
+        activity: {
+            name: "~help",
+        }
+    });
 });
 
 client.on("message", (message) => {
