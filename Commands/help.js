@@ -21,6 +21,7 @@ module.exports = {
         helpList.addField("~showstats", "eg: ~showstats");
         helpList.addField("~tob [budget]", "eg: ~tob 510.27m");
         helpList.addField("~dks [budget]", "eg: ~dks 15m");
+        helpList.addField("~kree [budget]", "eg: ~kree 150.1m");
         // Send the message
         message.channel.send(helpList);
     }
