@@ -169,7 +169,7 @@ async function myBossesList(bossMap, message, budget) {
                 .setURL(value.strategy)
                 .setThumbnail(value.thumbnail)
                 .setDescription(`${result.toLocaleString()}gp`)
-                .setFooter("React with a 👍 to have me DM you the gear set.");
+                .setFooter(`React with 👍 to have me DM you (${message.author.username}) with the gear set.`);
             const sent = await message.channel.send(bossListEmbed);
             messageIDs.set(sent.id, key);
         }
