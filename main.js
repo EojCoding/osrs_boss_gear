@@ -29,7 +29,8 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "~about",
+            name: " for ~help",
+            type: "WATCHING"
         }
     });
 });

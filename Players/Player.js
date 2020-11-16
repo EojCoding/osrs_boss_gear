@@ -22,10 +22,14 @@ async function createPlayer(message, playerName) {
     }
     let stats;
     try {
-        console.log("Getting player...");
         message.channel.send(`Fetching information for ${playerName}...`);
         stats = await hiscores.getPlayer(String(playerName));
-        console.log("Got player " + playerName);
+        // If the OSRS Hiscores is down
+        if (isNaN(stats.skills.overall.rank)) {
+            message.channel.send("Currently unavailable: https://secure.runescape.com/m=hiscore_oldschool/overall");
+            logger.logErrors("### OSRS Hiscores is down ###");
+            return;
+        }
     } catch (e) {
         logger.logErrors(e);
         message.channel.send(`${playerName} does not appear on the hiscores.`);

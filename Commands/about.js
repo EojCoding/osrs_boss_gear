@@ -15,8 +15,9 @@ module.exports = {
                 "budget that you provide through the commands.")
             .addField("~help", "Use this command to get started and see the list of currently available commands")
             .addField("~report", "If you have feedback, a suggestion or notice a bug, please use this!")
+            //.addField("title", `[The link](https://www.youtube.com) ${message.author.username}`)
             .setThumbnail("https://oldschool.runescape.wiki/images/4/45/Cake_of_guidance_detail.png?0c602")
-            .setFooter("Credits: \"Only Blazers\" for the idea");
+            .setFooter("Credits: \"Only Blazers\" for the idea", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Golden_star.svg/1200px-Golden_star.svg.png");
 
         message.channel.send(embedAbout);
     }
