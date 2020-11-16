@@ -1,0 +1,18 @@
+{
+  "name" : 5,
+  "head" : "Slayer helmet",
+  "amulet" : "Amulet of torture",
+  "cloak" : "Infernal cape",
+  "chest" : "Bandos chestplate",
+  "legs" : "Bandos tassets",
+  "main-hand" : "Sanguinesti staff",
+  "off-hand" : "Spectral spirit shield",
+  "ammo" : "Rada's blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Pegasian boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Ava's assembler", "Armadyl chestplate", "Armadyl chainskirt",
+    "Scythe of vitur", "Toxic blowpipe", "Necklace of anguish",
+    "Occult necklace", "Tormented bracelet","Saradomin godsword",
+    "Imbued heart"]
+}

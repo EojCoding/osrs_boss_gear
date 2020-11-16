@@ -29,7 +29,7 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "~help",
+            name: "~about",
         }
     });
 });
@@ -91,9 +91,11 @@ client.on("message", (message) => {
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);
             break;
-
         case "showstats":
             client.commands.get("showstats").execute(message, args, client);
+            break;
+        case "about":
+            client.commands.get("about").execute(client, message);
             break;
     }
 });

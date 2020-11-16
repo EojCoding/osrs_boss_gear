@@ -137,3 +137,5 @@ Torag's platebody
 Verac's plateskirt
 Unholy blessing
 Bandos boots
+Dragonfire ward
+Obsidian platelegs

@@ -1,0 +1,15 @@
+{
+  "name": 8,
+  "head": "Justiciar faceguard",
+  "amulet": "Amulet of fury",
+  "cloak": "Ava's assembler",
+  "chest": "Armadyl chestplate",
+  "legs": "Armadyl chainskirt",
+  "main-hand": "Black chinchompa",
+  "off-hand": "Twisted buckler",
+  "ammo": "Diamond dragon bolts (e)",
+  "gloves": "Barrows gloves",
+  "feet": "Pegasian boots",
+  "ring": "Ring of suffering",
+  "inventory": ["Armadyl crossbow", "Toxic blowpipe"]
+}

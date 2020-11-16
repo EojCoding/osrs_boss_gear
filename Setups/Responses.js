@@ -62,10 +62,8 @@ function response(client, message, budget, boss) {
 async function successResponse(client, budget, message, setupJson) {
 
     const withoutPrefix = message.content.slice(1);
-    console.log(withoutPrefix)
     const split = withoutPrefix.split(/ +/);
     let boss = split[0].toLowerCase();
-    console.log(boss)
     const links = require("./bossinfo.json");
 
     // Look for commas in first element, this indicates a role boss from a reaction
@@ -89,7 +87,6 @@ async function successResponse(client, budget, message, setupJson) {
     const embedInventory = new Discord.MessageEmbed();
     const embedBoss = new Discord.MessageEmbed();
     const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
-    console.log(boss)
     embedBoss
         .setColor("0099ff")
         .setTitle(links[boss].name)

@@ -5,7 +5,14 @@ const RSNList = require("../Players/RSNList.json");
 const Discord = require("discord.js");
 const logger = require("../Logs/Logger");
 
-// Async function because it is necessary to get the proper information
+/**
+ * Creates a new player JSON object in RSNList.json with the given player name
+ * and message content. Uses the runescape-api/osrs which provides a
+ * nicely structured JSON response when sent a request.
+ * @param message
+ * @param playerName
+ * @returns {Promise<void>}
+ */
 async function createPlayer(message, playerName) {
     if (RSNList.hasOwnProperty(message.author.id)) {
         if (RSNList[message.author.id].authorRSN === playerName) {
@@ -39,6 +46,12 @@ async function createPlayer(message, playerName) {
     message.reply(`Successfully set your RSN to ${playerName}`);
 }
 
+/**
+ * Displays an embedded message with the users osrs character stats if
+ * they have already set their rsn.
+ * @param message
+ * @param client
+ */
 function displayStats(message, client) {
     const id = message.author.id;
     const embedReply = new Discord.MessageEmbed();
