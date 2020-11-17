@@ -28,7 +28,12 @@ function response(client, message, budget, boss) {
             "Or for requesting a new feature use: `~report [type here]`");
         return;
     }
-    let result = gearBudget.checkBudgetInput(budget);
+    console.log("From inside response budget: " + budget);
+    let result = budget;
+    // If the given budget is not an integer
+    if (!Number.isInteger(budget)) {
+        result = gearBudget.checkBudgetInput(budget);
+    }
     let setups = getSetups(boss, allSetups);
     // If the result does not match any accepted criteria, send a helpful message
     if (result === -1) {
@@ -236,10 +241,10 @@ async function myBossList(bossMap, message, budget, client) {
         const bossListEmbed = new Discord.MessageEmbed();
         // This will store the keys of the bosses added to the list so that this array
         // can be set as the messageIDs value for the message id.
-        const bossNames = []
+        const bossNames = new Map();
         bossListEmbed
             .setColor("#FF0000")
-            .setTitle("Your Boss List")
+            .setTitle(budget + "gp : Your Boss List")
             .setDescription("*React to this message with the boss that you would like to see the gear for.*")
             .setThumbnail("https://oldschool.runescape.wiki/images/3/3a/Vannaka.png?b5716");
         let i = 1;
@@ -247,17 +252,23 @@ async function myBossList(bossMap, message, budget, client) {
             let bossEmoji = client.emojis.cache.find(emoji => emoji.name === key.replace(" ", ""));
             bossListEmbed
                 .addField(`${bossEmoji}`, `**[${value.name}](${value.strategy})**`, true);
-            bossNames.push(key);
+            // Storing the boss name and the emoji associated with it
+            bossNames.set(key, bossEmoji);
             i++;
         }
-        const sent = message.channel.send(bossListEmbed).then((sentEmbed) => {
-            for (let j = 0; j < bossNames.length; j++) {
-                bossNames[j] = bossNames[j].replace(" ", "");
-                const react = client.emojis.cache.find((emoji) => emoji.name === bossNames[j])
-                sentEmbed.react(react);
-            }
-        });
-        messageIDs.set(sent.id, bossNames);
+        const sent = message.channel.send(bossListEmbed)
+            .then((sentEmbed) => {
+                for (const [key, value] of bossNames.entries()) {
+                    let bossName = key;
+                    bossName = bossName.replace(" ", ""); // Replace spaces (eg Bandos attacker isnt an emoji)
+                    const react = client.emojis.cache.find((emoji) => emoji.name === bossName)
+                    sentEmbed.react(react);
+                }
+                console.log(sentEmbed.id);
+                messageIDs.set(sentEmbed.id, bossNames);
+            });
+        // Set the  message ID as the key and the bossNames map as value
+        //await messageIDs.set(sent.id, bossNames);
     }
     else {
         message.channel.send("You don't meet the minimum budget for any boss");

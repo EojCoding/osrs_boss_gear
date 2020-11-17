@@ -14,6 +14,7 @@ const fs = require("fs");
 const commandFiles = fs.readdirSync("./Commands/").filter(file => file.endsWith(".js"));
 const logger = require("./Logs/Logger");
 const messageIDs = require("./Setups/Responses");
+const gearBudget = require("./Setups/GearBudget");
 
 // Store commands in this
 client.commands = new Discord.Collection();
@@ -109,34 +110,89 @@ client.on("message", (message) => {
 
 client.on("messageReactionAdd", (reaction) => {
 
-    if (messageIDs.messageIDs.has(reaction.message.id)) {
-        if (reaction.emoji.name === "👍") {
-            let boss = messageIDs.messageIDs.get(reaction.message.id);
-            boss = boss.split(/ +/);
-            // Need to work on sending a DM with the full setup
-            const budget = reaction.message.embeds[0].description
-                .split(",").join("").replace("gp","");
-            boss.push(budget);
+    reaction.users.cache.forEach((user, Snowflake) => {
+        if (user === client.user) { // Good
+            reaction.users.cache.delete(Snowflake);
+        }
+    });
 
-            // Manually set the message content so that it can be parsed properly in Response.js
-            // Added DM to the end to indicate that the set should be DMd to the user
-            let sender = {};
-            reaction.users.cache.forEach((user, Snowflake) => {
-                sender = user;
-                reaction.users.cache.delete(Snowflake);
-            });
-            reaction.message.content = PREFIX + boss + " " + budget + " DM " + sender;
+    if (reaction.users.cache.size === 0) {
+        return;
+    }
 
-            // If the boss does not have specific roles, give it just the boss name
-            // Bosses with roles have a different execute function
-            console.log(boss);
-            if (boss.length === 2) {
-                client.commands.get(boss[0]).execute(client, reaction.message, boss[1], boss[0]);
-            }
-            else {
-                client.commands.get(boss[0]).execute(client, reaction.message, boss);
+    // Need to check if the reacted emoji matches one in the messageIDs map
+
+    // messageIDs contains the message ID as key, and a map containing the boss name
+    // and emoji associated with it as the value
+    if (messageIDs.messageIDs.has(reaction.message.id)) { // TRUE if reacted to an embedded message
+        // Look at each key value in messageIDs values eg: "dks": <emoji>
+        for (const [key, value] of messageIDs.messageIDs.get(reaction.message.id).entries()) {
+            if (value === reaction.emoji) {
+                let boss = key; // This used to be ID key and boss value
+                boss = boss.split(/ +/);
+
+                const titleArray = reaction.message.embeds[0].title.split(" ");
+                const budget = titleArray[0].replace("gp", "");
+                let parsedBudget = gearBudget.checkBudgetInput(budget);
+                boss.push(parsedBudget);
+
+                // Manually set the message content so that it can be parsed properly in Response.js
+                // Added DM to the end to indicate that the set should be DMd to the user
+                let sender = {};
+                reaction.users.cache.forEach((user, Snowflake) => {
+                    if (reaction.message.author !== user) {
+                        sender = user;
+                    }
+                    reaction.users.cache.delete(Snowflake);
+                });
+                if (Object.keys(sender).length === 0) {
+                    return;
+                }
+                reaction.message.content = PREFIX + boss + " " + parsedBudget + " DM " + sender;
+                console.log("Reaction message content: " + reaction.message.content);
+                console.log("Boss array: " + boss);
+
+                // If the boss does not have specific roles, give it just the boss name
+                // Bosses with roles have a different execute function
+                console.log("BOSS LENGTH: " + boss.length + "\nAND BOSS: " + boss);
+                if (boss.length === 2) {
+                    client.commands.get(boss[0]).execute(client, reaction.message, boss[1], boss[0]);
+                }
+                else {
+                    client.commands.get(boss[0]).execute(client, reaction.message, boss);
+                }
             }
         }
+        /**
+         * This commented out code is for the old version of mybosses command
+         */
+        //if (reaction.emoji.name === "👍") {
+            // let boss = messageIDs.messageIDs.get(reaction.message.id); // This used to be ID key and boss value
+            // boss = boss.split(/ +/);
+            // // Need to work on sending a DM with the full setup
+            // const budget = reaction.message.embeds[0].description
+            //     .split(",").join("").replace("gp","");
+            // boss.push(budget);
+            //
+            // // Manually set the message content so that it can be parsed properly in Response.js
+            // // Added DM to the end to indicate that the set should be DMd to the user
+            // let sender = {};
+            // reaction.users.cache.forEach((user, Snowflake) => {
+            //     sender = user;
+            //     reaction.users.cache.delete(Snowflake);
+            // });
+            // reaction.message.content = PREFIX + boss + " " + budget + " DM " + sender;
+            //
+            // // If the boss does not have specific roles, give it just the boss name
+            // // Bosses with roles have a different execute function
+            // console.log(boss);
+            // if (boss.length === 2) {
+            //     client.commands.get(boss[0]).execute(client, reaction.message, boss[1], boss[0]);
+            // }
+            // else {
+            //     client.commands.get(boss[0]).execute(client, reaction.message, boss);
+            // }
+        //}
     }
 });
 
