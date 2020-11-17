@@ -1,4 +1,5 @@
 const total = require("../Items/TotalPrices");
+const logger = require("../Logs/Logger");
 
 /**
  * Parses the user budget input to allow them to use syntax such as "500m", "50.2b" etc
@@ -10,23 +11,28 @@ function checkBudgetInput(userBudget) {
     let mPattern = /([0-9]+m)|([0-9]+\.[0-9]+m)/;
     let bPattern = /([0-9]+b)|([0-9]+\.[0-9]+b)/;
     let numPattern = /[0-9]+/;
-    if (userBudget.match(kPattern)) {
-        userBudget.replace("k", "");
-        return parseFloat(userBudget) * 1000;
-    }
-    else if (userBudget.match(mPattern)) {
-        userBudget.replace("m", "");
-        return parseFloat(userBudget) * 1000000;
-    }
-    else if (userBudget.match(bPattern)) {
-        userBudget.replace("b", "");
-        return parseFloat(userBudget) * 1000000000;
-    }
-    else if (userBudget.match(numPattern)) {
-        return userBudget;
-    }
-    else {
-        return -1;
+    console.log("USER BUDGET "+userBudget)
+    try {
+        if (userBudget.match(kPattern)) {
+            userBudget.replace("k", "");
+            return parseFloat(userBudget) * 1000;
+        }
+        else if (userBudget.match(mPattern)) {
+            userBudget.replace("m", "");
+            return parseFloat(userBudget) * 1000000;
+        }
+        else if (userBudget.match(bPattern)) {
+            userBudget.replace("b", "");
+            return parseFloat(userBudget) * 1000000000;
+        }
+        else if (userBudget.match(numPattern)) {
+            return userBudget;
+        }
+        else {
+            return -1;
+        }
+    } catch (e) {
+        logger.logErrors("Passed in userBudget does not match: " + e);
     }
 }
 

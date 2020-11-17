@@ -1,0 +1,15 @@
+{
+  "name": 13,
+  "head": "Verac's helm",
+  "amulet": "Amulet of fury",
+  "cloak": "Ava's assembler",
+  "chest": "Zamorak d'hide body",
+  "legs": "Zamorak chaps",
+  "main-hand": "Black chinchompa",
+  "off-hand": "Twisted buckler",
+  "ammo": "Diamond dragon bolts (e)",
+  "gloves": "Barrows gloves",
+  "feet": "Saradomin d'hide boots",
+  "ring": "Archers ring",
+  "inventory": ["Dragon crossbow", "Toxic blowpipe"]
+}

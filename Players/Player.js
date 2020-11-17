@@ -1,11 +1,18 @@
-const {hiscores: player} = require("runescape-api/osrs");
+const {hiscores} = require("runescape-api/osrs");
 const fs = require("fs");
 const path = require("path");
 const RSNList = require("../Players/RSNList.json");
 const Discord = require("discord.js");
 const logger = require("../Logs/Logger");
 
-// Async function because it is necessary to get the proper information
+/**
+ * Creates a new player JSON object in RSNList.json with the given player name
+ * and message content. Uses the runescape-api/osrs which provides a
+ * nicely structured JSON response when sent a request.
+ * @param message
+ * @param playerName
+ * @returns {Promise<void>}
+ */
 async function createPlayer(message, playerName) {
     if (RSNList.hasOwnProperty(message.author.id)) {
         if (RSNList[message.author.id].authorRSN === playerName) {
@@ -15,7 +22,14 @@ async function createPlayer(message, playerName) {
     }
     let stats;
     try {
-        stats = await player.getPlayer(String(playerName));
+        message.channel.send(`Fetching information for ${playerName}...`);
+        stats = await hiscores.getPlayer(String(playerName));
+        // If the OSRS Hiscores is down
+        if (isNaN(stats.skills.overall.rank)) {
+            message.channel.send("Currently unavailable: https://secure.runescape.com/m=hiscore_oldschool/overall");
+            logger.logErrors("### OSRS Hiscores is down ###");
+            return;
+        }
     } catch (e) {
         logger.logErrors(e);
         message.channel.send(`${playerName} does not appear on the hiscores.`);
@@ -36,6 +50,12 @@ async function createPlayer(message, playerName) {
     message.reply(`Successfully set your RSN to ${playerName}`);
 }
 
+/**
+ * Displays an embedded message with the users osrs character stats if
+ * they have already set their rsn.
+ * @param message
+ * @param client
+ */
 function displayStats(message, client) {
     const id = message.author.id;
     const embedReply = new Discord.MessageEmbed();

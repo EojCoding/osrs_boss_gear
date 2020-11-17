@@ -5,7 +5,7 @@ const bossinfo = require("../Setups/bossinfo.json");
 
 // Export JSON
 module.exports = {
-    name: "mybosses",
+    name: "mybosslist",
     description: "Shows a list of bosses the player can do for the given budget and stats",
     execute(client, message) {
         // First check that they have set their rsn
@@ -42,6 +42,10 @@ module.exports = {
                 }
             });
         });
-        responses.myBossesList(acceptedKeys, message, budget);
+        if (acceptedKeys.size < 1) {
+            message.channel.send("You do not meet the minimum required stats for any boss");
+            return;
+        }
+        responses.myBossList(acceptedKeys, message, budget, client);
     }
 }

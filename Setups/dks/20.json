@@ -1,16 +1,16 @@
 {
-  "name" : 1,
+  "name" : 20,
   "head" : "Slayer helmet",
   "amulet" : "Amulet of glory",
   "cloak" : "Fire cape",
   "chest" : "Fighter torso",
-  "legs" : "Torag's platelegs",
-  "main-hand" : "Abyssal tentacle",
+  "legs" : "Obsidian platelegs",
+  "main-hand" : "Trident of the seas (full)",
   "off-hand" : "Dragon defender",
   "ammo" : "Rada's blessing",
   "gloves" : "Barrows gloves",
   "feet" : "Dragon boots",
   "ring" : "Brimstone ring",
   "inventory" : ["Ava's assembler", "Saradomin d'hide body", "Saradomin chaps",
-                  "Trident of the seas (full)", "Toxic blowpipe"]
+    "Abyssal tentacle", "Toxic blowpipe"]
 }

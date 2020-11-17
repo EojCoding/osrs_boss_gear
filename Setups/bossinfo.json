@@ -39,9 +39,9 @@
     }
   },
   "bandos attacker": {
-    "strategy": "https://oldschool.runescape.wiki/w/General_Graardor/Strategies",
+    "strategy": "https://oldschool.runescape.wiki/w/General_Graardor/Strategies#Attacker",
     "thumbnail": "https://oldschool.runescape.wiki/images/thumb/b/b8/General_Graardor.png/280px-General_Graardor.png?4dd90",
-    "name": "General Graardor - Attacker",
+    "name": "Bandos - Attacker",
     "minstats": {
       "attack": 80,
       "strength": 80,
@@ -52,9 +52,9 @@
     }
   },
   "bandos tank": {
-    "strategy": "https://oldschool.runescape.wiki/w/General_Graardor/Strategies",
+    "strategy": "https://oldschool.runescape.wiki/w/General_Graardor/Strategies#Tank",
     "thumbnail": "https://oldschool.runescape.wiki/images/thumb/b/b8/General_Graardor.png/280px-General_Graardor.png?4dd90",
-    "name": "General Graardor - Tank",
+    "name": "Bandos - Tank",
     "minstats": {
       "attack": 80,
       "strength": 80,
