@@ -74,8 +74,14 @@ client.on("message", (message) => {
 
     // Switch block for commands
     switch (command) {
-        case "mybosses":
-            client.commands.get("mybosses").execute(client, message);
+        /**
+         * @deprecated
+         */
+        // case "mybosses":
+        //     client.commands.get("mybosses").execute(client, message);
+        //     break;
+        case "mybosslist":
+            client.commands.get("mybosslist").execute(client, message);
             break;
         case "tob":
             client.commands.get("tob").execute(client, message, budget, command);

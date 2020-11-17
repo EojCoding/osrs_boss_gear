@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const logger = require("../Logs/Logger");
 const player = require("../Players/Player");
+const numEmojis = require("./numberemojis.json");
 
 let messageIDs = new Map();
 
@@ -169,7 +170,7 @@ async function successResponse(client, budget, message, setupJson) {
 
 /**
  * This function gets a list of all bosses available to the user when provided
- * with their budget
+ * with their budget. Each boss in their own embedded message.
  * @param bossMap
  * @param message
  * @param budget
@@ -191,6 +192,7 @@ async function myBossesList(bossMap, message, budget) {
     // Get all the remaining bosses from the boss map and display them
     if (bossMap.size > 0) {
         for (const [key, value] of bossMap.entries()) {
+            // Create a new embedded message for each boss that the player can do
             const bossListEmbed = new Discord.MessageEmbed();
             bossListEmbed
                 .setColor("0099ff")
@@ -202,6 +204,60 @@ async function myBossesList(bossMap, message, budget) {
             const sent = await message.channel.send(bossListEmbed);
             messageIDs.set(sent.id, key);
         }
+    }
+    else {
+        message.channel.send("You don't meet the minimum budget for any boss");
+    }
+}
+
+/**
+ * This function gets a list of all bosses available to the user when provided
+ * with their budget. All bosses in a single embedded message.
+ * @param bossMap This is a map of bosses which
+ * @param message
+ * @param budget
+ */
+async function myBossList(bossMap, message, budget, client) {
+    let allSetups = {};
+    let result = gearBudget.checkBudgetInput(budget);
+    // Look at each key value pair in the boss map
+    for (const [key, value] of bossMap.entries()) {
+        // Get the list of setups for the boss (key)
+        let setups = getSetups(key, allSetups);
+        // Then check the budget against the setup costs
+        if (result < total(setups["1"])) {
+            bossMap.delete(key);
+        }
+        let setupToUse = gearBudget.getSetupToUse(result, setups);
+    }
+
+    // Get all the remaining bosses from the boss map and display them
+    if (bossMap.size > 0) {
+        const bossListEmbed = new Discord.MessageEmbed();
+        // This will store the keys of the bosses added to the list so that this array
+        // can be set as the messageIDs value for the message id.
+        const bossNames = []
+        bossListEmbed
+            .setColor("#FF0000")
+            .setTitle("Your Boss List")
+            .setDescription("*React to this message with the boss that you would like to see the gear for.*")
+            .setThumbnail("https://oldschool.runescape.wiki/images/3/3a/Vannaka.png?b5716");
+        let i = 1;
+        for (const [key, value] of bossMap.entries()) {
+            let bossEmoji = client.emojis.cache.find(emoji => emoji.name === key.replace(" ", ""));
+            bossListEmbed
+                .addField(`${bossEmoji}`, `**[${value.name}](${value.strategy})**`, true);
+            bossNames.push(key);
+            i++;
+        }
+        const sent = message.channel.send(bossListEmbed).then((sentEmbed) => {
+            for (let j = 0; j < bossNames.length; j++) {
+                bossNames[j] = bossNames[j].replace(" ", "");
+                const react = client.emojis.cache.find((emoji) => emoji.name === bossNames[j])
+                sentEmbed.react(react);
+            }
+        });
+        messageIDs.set(sent.id, bossNames);
     }
     else {
         message.channel.send("You don't meet the minimum budget for any boss");
@@ -230,5 +286,6 @@ function getSetups(bossName, setups) {
 module.exports = {
     response,
     myBossesList,
+    myBossList,
     messageIDs
 };
