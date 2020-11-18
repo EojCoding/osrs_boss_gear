@@ -8,4 +8,6 @@ config.json
 
 *.pem
 
+.env
+
 /Players/RSNList.json
