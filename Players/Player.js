@@ -4,6 +4,7 @@ const path = require("path");
 const RSNList = require("../Players/RSNList.json");
 const Discord = require("discord.js");
 const logger = require("../Logs/Logger");
+const db = require("../Data/DatabaseFunctions");
 
 /**
  * Creates a new player JSON object in RSNList.json with the given player name
@@ -46,6 +47,8 @@ async function createPlayer(message, playerName) {
     RSNList[authorID] = playerToAdd;
 
     fs.writeFileSync(path.resolve(__dirname, "../Players/RSNList.json"), JSON.stringify(RSNList, null, "\t"));
+    // Add RSN to datase
+    await db.addToRSNList(message.author.id, playerName, stats.skills);
 
     message.reply(`Successfully set your RSN to ${playerName}`);
 }
