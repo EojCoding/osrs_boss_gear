@@ -91,7 +91,7 @@ function updateAll() {
     logger.logUpdates();
 }
 
-updateAll();
+updateAll().setInterval(1440000000);
 
 // Export JSON (not in use currently)
 module.exports = {
