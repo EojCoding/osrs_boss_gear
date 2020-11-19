@@ -1,0 +1,43 @@
+[2020-11-13] 16:52:12: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 16:53:7: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 16:53:7: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 16:53:7: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 16:53:7: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 16:53:7: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 17:13:52: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 17:13:52: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-13] 19:54:35: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-14] 0:45:15: Error: TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 0:45:15: Error: TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:15:4: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:15:4: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:15:4: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:15:4: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:20:6: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:20:6: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:20:6: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:20:6: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:23:3: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:23:3: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:23:54: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:23:54: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:31:47: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:38:2: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:39:27: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:42:14: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:45:3: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:45:35: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:47:8: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:47:32: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:48:7: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 21:48:7: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 23:32:53: Error: TypeError: Cannot read property 'id' of undefined -> Archer's ring has no ID
+[2020-11-14] 23:34:25: Error: TypeError: Cannot read property 'id' of undefined -> Archer's ring has no ID
+[2020-11-14] 23:36:49: Error: TypeError: Cannot read property 'id' of undefined -> Archer's ring has no ID
+[2020-11-14] 23:38:49: Error: [TYPO?] TypeError: Cannot read property 'price' of undefined
+[2020-11-14] 23:43:32: Error: [TYPO?] TotalPrices.js/getTotal() in inventory: Kodai want -> TypeError: Cannot read property 'price' of undefined
+[2020-11-15] 23:21:39: Error: ### OSRS Hiscores is down ###
+[2020-11-15] 23:21:39: Error: ### OSRS Hiscores is down ###
+[2020-11-15] 23:21:39: Error: ### OSRS Hiscores is down ###
+[2020-11-15] 23:49:10: Error: ### OSRS Hiscores is down ###
+[2020-11-18] 21:47:1: Error: Error: HTTPError: Response code 404 (Not found)
