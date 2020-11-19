@@ -5,18 +5,16 @@ const total = require("../Items/TotalPrices");
 const fs = require("fs");
 const path = require("path");
 const logger = require("../Logs/Logger");
-const player = require("../Players/Player");
-const numEmojis = require("./numberemojis.json");
 
 let messageIDs = new Map();
 
 /**
  * This function serves as the entry point for Responses which grabs all the setups for the boss
  * provided and then sends them to GearBudget.js to be sorted in order of price
- * @param client
- * @param message
- * @param budget
- * @param boss
+ * @param client The bot client
+ * @param message The discord message object
+ * @param budget The user's budget
+ * @param boss The name of the boss
  */
 function response(client, message, budget, boss) {
     // See ../Setups/GearBudget.js for implementation
@@ -60,10 +58,10 @@ function response(client, message, budget, boss) {
 /**
  * If all information is validated in response() an embedded message is built and sent
  * back to the user who used the command.
- * @param client
- * @param budget
- * @param message
- * @param setupJson
+ * @param client The bot client
+ * @param budget The user's budget
+ * @param message The discord message object
+ * @param setupJson The gear stup JSON object
  */
 async function successResponse(client, budget, message, setupJson) {
 
@@ -174,6 +172,7 @@ async function successResponse(client, budget, message, setupJson) {
 }
 
 /**
+ * @deprecated
  * This function gets a list of all bosses available to the user when provided
  * with their budget. Each boss in their own embedded message.
  * @param bossMap
@@ -218,9 +217,10 @@ async function myBossesList(bossMap, message, budget) {
 /**
  * This function gets a list of all bosses available to the user when provided
  * with their budget. All bosses in a single embedded message.
- * @param bossMap This is a map of bosses which
- * @param message
- * @param budget
+ * @param bossMap This is a map of bosses which the player has the stats to do
+ * @param message The discord message object
+ * @param budget The user's budget
+ * @param client The bot client
  */
 async function myBossList(bossMap, message, budget, client) {
     let allSetups = {};
@@ -277,9 +277,9 @@ async function myBossList(bossMap, message, budget, client) {
 
 /**
  * This is a helper function to get all the setups in a JSON object for use in response().
- * @param bossName
- * @param setups
- * @returns {*}
+ * @param bossName The name of the boss
+ * @param setups Empty JSON object to be filled up with setups for the boss.
+ * @returns {setups} JSON object with all the gear setups for the boss.
  */
 function getSetups(bossName, setups) {
     setups.size = 0;

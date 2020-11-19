@@ -10,8 +10,8 @@ const db = require("../Data/DatabaseFunctions");
  * Creates a new player JSON object in RSNList.json with the given player name
  * and message content. Uses the runescape-api/osrs which provides a
  * nicely structured JSON response when sent a request.
- * @param message
- * @param playerName
+ * @param message The discord message object
+ * @param playerName The in-game osrs name of the user.
  * @returns {Promise<void>}
  */
 async function createPlayer(message, playerName) {
@@ -56,8 +56,8 @@ async function createPlayer(message, playerName) {
 /**
  * Displays an embedded message with the users osrs character stats if
  * they have already set their rsn.
- * @param message
- * @param client
+ * @param message The discord message object
+ * @param client The bot client
  */
 function displayStats(message, client) {
     const id = message.author.id;
