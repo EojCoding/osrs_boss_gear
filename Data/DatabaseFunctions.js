@@ -52,23 +52,22 @@ async function addToRSNList(discordId, userRSN, skillsJSON) {
     const database = await connectToDB();
     const collection = database.collection(dbCollections.RSN_LIST);
     // Search for boss name (_id) and the setups[i].name that matches setupJSON.name
-    const query = { "_id": discordId, "authorRSN": userRSN };
+    const query = { "_id": discordId };
     // Update the existing entry with the new one
-    const update = { "$set": { "skills": skillsJSON } };
-    const options = { "upsert": true }; // Creates a new JSON object if it does not exist
+    const update = { "$set": { "authorRSN": userRSN ,"skills": skillsJSON } };
     try {
         // Check if the _id exists in the collection, if not then create it
         const checkIdExists = await collection.findOne( { "_id": discordId } )
         if (checkIdExists === null) { // If it does not exist
             await collection.insertOne(
-                { "_id": discordId, "skills": skillsJSON }
+                { "_id": discordId, "authorRSN": userRSN, "skills": skillsJSON }
             );
             return logger.logDB(`Created new RSN ${userRSN} for ${discordId}`);
         }
         else {
             // If the _id exists, attempt to update it
             const updateResult = await collection.updateOne(query, update);
-            if (updateResult.modifiedCount === 0) { // If no update was made
+            if (updateResult.modifiedCount === 1) { // If no update was made
                 return logger.logDB(`Updated RSN ${userRSN} for ${discordId}`);
             }
         }
