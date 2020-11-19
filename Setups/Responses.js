@@ -244,7 +244,7 @@ async function myBossList(bossMap, message, budget, client) {
         const bossNames = new Map();
         bossListEmbed
             .setColor("#FF0000")
-            .setTitle(budget + "gp : Your Boss List")
+            .setTitle(budget + " gp : Your Boss List")
             .setDescription("*React to this message with the boss that you would like to see the gear for.*")
             .setThumbnail("https://oldschool.runescape.wiki/images/3/3a/Vannaka.png?b5716");
         let i = 1;
