@@ -26,7 +26,6 @@ function response(client, message, budget, boss) {
             "Or for requesting a new feature use: `~report [type here]`");
         return;
     }
-    console.log("From inside response budget: " + budget);
     let result = budget;
     // If the given budget is not an integer
     if (!Number.isInteger(budget)) {
@@ -113,7 +112,7 @@ async function successResponse(client, budget, message, setupJson) {
     for (const key in setupJson) {
         let itemName = setupJson[key];
         let price = 0;
-        // Don't display the "name" key
+        // Don't display the "name" key, build the worn embed
         if (key !== "name" && key !== "inventory") {
             // Get the emoji that matches this item
             if (itemName !== "none") {
@@ -264,7 +263,6 @@ async function myBossList(bossMap, message, budget, client) {
                     const react = client.emojis.cache.find((emoji) => emoji.name === bossName)
                     sentEmbed.react(react);
                 }
-                console.log(sentEmbed.id);
                 messageIDs.set(sentEmbed.id, bossNames);
             });
         // Set the  message ID as the key and the bossNames map as value

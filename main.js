@@ -105,6 +105,9 @@ client.on("message", (message) => {
         case "about":
             client.commands.get("about").execute(client, message);
             break;
+        case "joke":
+            client.commands.get("joke").execute(message);
+            break;
     }
 });
 
@@ -148,13 +151,9 @@ client.on("messageReactionAdd", (reaction) => {
                 if (Object.keys(sender).length === 0) {
                     return;
                 }
-                reaction.message.content = PREFIX + boss + " " + parsedBudget + " DM " + sender;
-                console.log("Reaction message content: " + reaction.message.content);
-                console.log("Boss array: " + boss);
 
                 // If the boss does not have specific roles, give it just the boss name
                 // Bosses with roles have a different execute function
-                console.log("BOSS LENGTH: " + boss.length + "\nAND BOSS: " + boss);
                 if (boss.length === 2) {
                     client.commands.get(boss[0]).execute(client, reaction.message, boss[1], boss[0]);
                 }

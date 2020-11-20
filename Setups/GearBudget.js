@@ -11,7 +11,6 @@ function checkBudgetInput(userBudget) {
     let mPattern = /([0-9]+m)|([0-9]+\.[0-9]+m)/;
     let bPattern = /([0-9]+b)|([0-9]+\.[0-9]+b)/;
     let numPattern = /[0-9]+/;
-    console.log("USER BUDGET "+userBudget)
     try {
         if (userBudget.match(kPattern)) {
             userBudget.replace("k", "");

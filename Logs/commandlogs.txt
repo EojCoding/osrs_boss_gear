@@ -466,3 +466,36 @@
 [2020-11-19] 17:30:3: Command: setrsn -> Args: cock
 [2020-11-19] 17:30:3: Command: setrsn -> Args: god
 [2020-11-19] 17:40:30: Command: setrsn -> Args: karepow
+[2020-11-19] 19:56:35: Command: joke -> Args: 
+[2020-11-19] 19:57:34: Command: joke -> Args: 
+[2020-11-19] 19:58:25: Command: joke -> Args: 
+[2020-11-19] 19:58:25: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: funnyjoke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: diceroll -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: joke -> Args: 
+[2020-11-19] 19:59:18: Command: mybosslist -> Args: 500m
