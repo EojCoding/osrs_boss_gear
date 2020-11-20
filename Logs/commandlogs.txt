@@ -501,3 +501,14 @@
 [2020-11-19] 19:59:18: Command: mybosslist -> Args: 500m
 [2020-11-20] 16:22:31: Command: tob -> Args: 500m
 [2020-11-20] 16:23:53: Command: tob -> Args: 600m
+[2020-11-20] 16:23:53: Command: setrsn -> Args: karepow
+[2020-11-20] 16:23:53: Command: mybosslist -> Args: 500m
+[2020-11-20] 16:28:47: Command: mybosslist -> Args: 500m
+[2020-11-20] 16:29:39: Command: mybosslist -> Args: 500m
+[2020-11-20] 16:29:39: Command: tob -> Args: 500m
+[2020-11-20] 16:31:13: Command: mybosslist -> Args: 500m
+[2020-11-20] 16:32:38: Command: mybosslist -> Args: 500m
+[2020-11-20] 16:34:44: Command: tob -> Args: 500m
+[2020-11-20] 16:34:44: Command: bandos -> Args: tank 500m
+[2020-11-20] 16:34:44: Command: bandos -> Args: attacker 600m
+[2020-11-20] 16:34:44: Command: mybosslist -> Args: 500m

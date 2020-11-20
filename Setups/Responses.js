@@ -19,8 +19,10 @@ let messageIDs = new Map();
 function response(client, message, budget, boss) {
     // See ../Setups/GearBudget.js for implementation
     let allSetups = {};
+    console.log(message.content)
     const args = message.content.slice(1).split(/ +/).slice(1);
     if (args.length === 0) {
+        console.log(args);
         message.channel.send("The proper usage is: `~boss_name budget`\n" +
             "For example: `~tob 500000000` OR `~tob 500m` OR `~tob 180.7m`\n" +
             "Or for requesting a new feature use: `~report [type here]`");
@@ -34,6 +36,7 @@ function response(client, message, budget, boss) {
     let setups = getSetups(boss, allSetups);
     // If the result does not match any accepted criteria, send a helpful message
     if (result === -1) {
+        console.log(args);
         message.channel.send("The proper usage is: ~boss_name budget\n" +
             "For example: ~tob 500000000 OR ~tob 500m OR ~tob 180.7m\n" +
             "Or for requesting a new feature use: ~report [type here]");
