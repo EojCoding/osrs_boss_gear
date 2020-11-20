@@ -41,3 +41,6 @@
 [2020-11-15] 23:21:39: Error: ### OSRS Hiscores is down ###
 [2020-11-15] 23:49:10: Error: ### OSRS Hiscores is down ###
 [2020-11-18] 21:47:1: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-19] 17:30:3: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-19] 17:30:3: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-19] 17:30:3: Error: Error: HTTPError: Response code 404 (Not found)

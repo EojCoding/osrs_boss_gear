@@ -452,3 +452,17 @@
 [2020-11-18] 21:47:1: Command: setrsn -> Args: phate
 [2020-11-18] 22:6:41: Command: setrsn -> Args: woox
 [2020-11-18] 22:9:5: Command: setrsn -> Args: karepow
+[2020-11-19] 16:54:0: Command: setrsn -> Args: woox
+[2020-11-19] 16:54:0: Command: setrsn -> Args: karepow
+[2020-11-19] 17:23:15: Command: setrsn -> Args: woox
+[2020-11-19] 17:24:29: Command: setrsn -> Args: karepow
+[2020-11-19] 17:24:56: Command: setrsn -> Args: woox
+[2020-11-19] 17:25:16: Command: setrsn -> Args: karepow
+[2020-11-19] 17:25:16: Command: setrsn -> Args: woox
+[2020-11-19] 17:30:3: Command: setrsn -> Args: woox
+[2020-11-19] 17:30:3: Command: setrsn -> Args: karepow
+[2020-11-19] 17:30:3: Command: setrsn -> Args: woox
+[2020-11-19] 17:30:3: Command: setrsn -> Args: rsn
+[2020-11-19] 17:30:3: Command: setrsn -> Args: cock
+[2020-11-19] 17:30:3: Command: setrsn -> Args: god
+[2020-11-19] 17:40:30: Command: setrsn -> Args: karepow
