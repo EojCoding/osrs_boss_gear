@@ -44,3 +44,4 @@
 [2020-11-19] 17:30:3: Error: Error: HTTPError: Response code 404 (Not found)
 [2020-11-19] 17:30:3: Error: Error: HTTPError: Response code 404 (Not found)
 [2020-11-19] 17:30:3: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-20] 16:38:29: Error: TypeError: Cannot read property 'id' of undefined -> Pegasian boots boots has no ID

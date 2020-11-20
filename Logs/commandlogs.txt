@@ -512,3 +512,8 @@
 [2020-11-20] 16:34:44: Command: bandos -> Args: tank 500m
 [2020-11-20] 16:34:44: Command: bandos -> Args: attacker 600m
 [2020-11-20] 16:34:44: Command: mybosslist -> Args: 500m
+[2020-11-20] 16:37:36: Command: tob -> Args: 500m
+[2020-11-20] 16:38:29: Command: dks -> Args: 500m
+[2020-11-20] 16:38:29: Command: showstats -> Args: 
+[2020-11-20] 16:38:29: Command: help -> Args: 
+[2020-11-20] 16:45:3: Command: help -> Args: 

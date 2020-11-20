@@ -138,7 +138,6 @@ client.on("messageReactionAdd", (reaction) => {
                 const budget = titleArray[0].replace("gp", "");
                 let parsedBudget = gearBudget.checkBudgetInput(budget);
                 boss.push(parsedBudget);
-                console.log(boss);
 
                 // Manually set the message content so that it can be parsed properly in Response.js
                 // Added DM to the end to indicate that the set should be DMd to the user
@@ -157,7 +156,6 @@ client.on("messageReactionAdd", (reaction) => {
                 // If the boss does not have specific roles, give it just the boss name
                 // Bosses with roles have a different execute function
                 if (boss.length === 2) {
-                    console.log("in here")
                     client.commands.get(boss[0]).execute(client, reaction.message, boss[1], boss[0]);
                 }
                 else {
