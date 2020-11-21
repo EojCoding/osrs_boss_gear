@@ -1,7 +1,4 @@
 const {hiscores} = require("runescape-api/osrs");
-const fs = require("fs");
-const path = require("path");
-const RSNList = require("../Players/RSNList.json");
 const Discord = require("discord.js");
 const logger = require("../Logs/Logger");
 const db = require("../Data/DatabaseFunctions");
@@ -15,42 +12,27 @@ const db = require("../Data/DatabaseFunctions");
  * @returns {Promise<void>}
  */
 async function createPlayer(message, playerName) {
-    if (RSNList.hasOwnProperty(message.author.id)) {
-        if (RSNList[message.author.id].authorRSN === playerName) {
-            message.reply(`Your RSN is already set to ${playerName}`);
-            return;
-        }
-    }
     let stats;
     try {
         message.channel.send(`Fetching information for ${playerName}...`);
         stats = await hiscores.getPlayer(String(playerName));
         // If the OSRS Hiscores is down
         if (isNaN(stats.skills.overall.rank)) {
-            message.channel.send("Currently unavailable: https://secure.runescape.com/m=hiscore_oldschool/overall");
             logger.logErrors("### OSRS Hiscores is down ###");
-            return;
+            return message.channel.send("Currently unavailable: https://secure.runescape.com/m=hiscore_oldschool/overall");
+        }
+        // Returns true if it was added to mongo
+        else if (await db.addToRSNList(message.author.id, playerName, stats.skills)) {
+            message.reply(`updated your RSN: ${playerName}`);
+        }
+        else {
+            message.reply("couldn't update your RSN.");
         }
     } catch (e) {
+        // This gets logged if a 404 is returned from the above API Call to hiscores
         logger.logErrors(e);
-        message.channel.send(`${playerName} does not appear on the hiscores.`);
-        return;
+        return message.channel.send(`${playerName} does not appear on the hiscores.`);
     }
-    const authorID = message.author.id;
-    let playerToAdd = {};
-
-    // Set the discord ID as the key and the player name as the value
-    // Then pick out the parts of the returned JSON that we want
-    playerToAdd.authorRSN = playerName;
-    playerToAdd.skills = stats.skills;
-
-    RSNList[authorID] = playerToAdd;
-
-    fs.writeFileSync(path.resolve(__dirname, "../Players/RSNList.json"), JSON.stringify(RSNList, null, "\t"));
-
-    message.reply(`Successfully set your RSN to ${playerName}`);
-    // Add RSN to database
-    //await db.addToRSNList(message.author.id, playerName, stats.skills);
 }
 
 /**
@@ -59,41 +41,30 @@ async function createPlayer(message, playerName) {
  * @param message The discord message object
  * @param client The bot client
  */
-function displayStats(message, client) {
-    const id = message.author.id;
+async function displayStats(message, client) {
     const embedReply = new Discord.MessageEmbed();
+    const playerJSON = await db.displayStats(message.author.id); // Get the player from mongo
 
-    // If the message author hasn't set a RSN yet
-    if (!RSNList.hasOwnProperty(id)) {
-        return;
+    if (playerJSON === -1) { // If it doesn't exist it returns -1.
+        return message.reply("you should set your RSN first.");
     }
     else {
+        delete playerJSON._id; // Don't need the _id property
         embedReply
-            .setTitle("Total: " + RSNList[id].skills.overall.level)
+            .setTitle("Total: " + playerJSON.skills.overall.level)
             .setColor("0099ff")
             .setThumbnail("https://oldschool.runescape.wiki/images/b/bd/Stats_icon.png?1b467");
-        for (const [key, value] of Object.entries(RSNList[id].skills)) {
-            if (key !== "overall") {
-                const skillEmoji = client.emojis.cache.find(emoji => emoji.name === "skill_"+key.toString());
-                embedReply.addField(skillEmoji, value.level, true);
-            }
+        delete playerJSON.skills.overall; // Don't need this property anymore
+        // Look at each skill and get the level from it, also assign the appropriate emoji to it
+        for (const key in playerJSON.skills) {
+            const skillEmoji = client.emojis.cache.find(emoji => emoji.name === "skill_" + key.toString());
+            embedReply.addField(skillEmoji, playerJSON.skills[key].level, true);
         }
     }
-    message.channel.send(embedReply);
-}
-
-function checkStatRequirements(authorid, boss) {
-
-    return -1;
-}
-
-function getPlayer(id) {
-    return RSNList[id];
+    await message.channel.send(embedReply);
 }
 
 module.exports = {
     createPlayer,
     displayStats,
-    checkStatRequirements,
-    getPlayer
 }

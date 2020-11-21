@@ -517,3 +517,16 @@
 [2020-11-20] 16:38:29: Command: showstats -> Args: 
 [2020-11-20] 16:38:29: Command: help -> Args: 
 [2020-11-20] 16:45:3: Command: help -> Args: 
+[2020-11-20] 22:32:41: Command: setrsn -> Args: karepow
+[2020-11-20] 22:42:26: Command: setrsn -> Args: nsjcnsac
+[2020-11-20] 22:46:1: Command: setrsn -> Args: karepow
+[2020-11-20] 22:46:1: Command: setrsn -> Args: woox
+[2020-11-20] 22:46:1: Command: setrsn -> Args: karepow
+[2020-11-20] 22:46:1: Command: setrsn -> Args: asklcnkal;ncv
+[2020-11-20] 22:56:20: Command: setrsn -> Args: karepow
+[2020-11-20] 22:59:58: Command: setrsn -> Args: karepow
+[2020-11-20] 22:59:58: Command: showstats -> Args: 
+[2020-11-20] 23:1:7: Command: showstats -> Args: 
+[2020-11-20] 23:7:10: Command: showstats -> Args: 
+[2020-11-20] 23:7:34: Command: showstats -> Args: 
+[2020-11-20] 23:8:41: Command: showstats -> Args: 

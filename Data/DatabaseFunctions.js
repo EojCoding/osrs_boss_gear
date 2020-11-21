@@ -46,33 +46,61 @@ async function UpdateAllSetups() {
  * @param discordId Unique discord ID
  * @param userRSN The user's in-game osrs name
  * @param skillsJSON The user's skills as a JSON object
- * @returns {Promise<void>}
+ * @returns {Promise<boolean>}
  */
 async function addToRSNList(discordId, userRSN, skillsJSON) {
     const database = await connectToDB();
-    const collection = database.collection(dbCollections.RSN_LIST);
+    const collection = await database.collection(dbCollections.RSN_LIST);
     // Search for boss name (_id) and the setups[i].name that matches setupJSON.name
     const query = { "_id": discordId };
     // Update the existing entry with the new one
     const update = { "$set": { "authorRSN": userRSN ,"skills": skillsJSON } };
     try {
         // Check if the _id exists in the collection, if not then create it
-        const checkIdExists = await collection.findOne( { "_id": discordId } )
+        const checkIdExists = await collection.findOne(query);
         if (checkIdExists === null) { // If it does not exist
             await collection.insertOne(
                 { "_id": discordId, "authorRSN": userRSN, "skills": skillsJSON }
             );
-            return logger.logDB(`Created new RSN ${userRSN} for ${discordId}`);
+            logger.logDB(`Created new RSN ${userRSN} for ${discordId}`);
+            return true;
         }
         else {
             // If the _id exists, attempt to update it
             const updateResult = await collection.updateOne(query, update);
             if (updateResult.modifiedCount === 1) { // If no update was made
-                return logger.logDB(`Updated RSN ${userRSN} for ${discordId}`);
+                logger.logDB(`Updated RSN ${userRSN} for ${discordId}`);
+                return true;
             }
         }
     } catch (err) {
         logger.logDB(`**ERROR ADDING ${userRSN} TO RSNLIST COLLECTION:** ` + err);
+        return false;
+    }
+    return false;
+}
+
+/**
+ * Gets a RSN using the Discord ID of the user and returns it if it is found.
+ * Returns a -1 if it was not found.
+ * @param discordId The unique ID of the discord user
+ * @returns {Promise<void|number|*>}
+ */
+async function displayStats(discordId) {
+    const database = await connectToDB();
+    const collection = await database.collection(dbCollections.RSN_LIST);
+    const query = { "_id": discordId };
+
+    try {
+        const playerJSON = await collection.findOne(query);
+        if (playerJSON === null) {
+            return -1;
+        }
+        else {
+            return playerJSON;
+        }
+    } catch (err) {
+        return logger.logDB("**ERROR GETTING RSN:** " + err);
     }
 }
 
@@ -157,5 +185,6 @@ async function connectToDB() {
 module.exports = {
     dbCollections,
     addToGearSetups,
-    addToRSNList
+    addToRSNList,
+    displayStats
 }
