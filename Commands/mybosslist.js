@@ -7,7 +7,7 @@ const bossinfo = require("../Setups/bossinfo.json");
 module.exports = {
     name: "mybosslist",
     description: "Shows a list of bosses the player can do for the given budget and stats",
-    execute(client, message) {
+    async execute(client, message) {
         // First check that they have set their rsn
         // If they have not, then tell them to do so
         if (!RSNList.hasOwnProperty(message.author.id)) {
@@ -23,7 +23,8 @@ module.exports = {
         const budget = split[1];
 
         // This should always return true since the check is made above to verify it exists.
-        const playerCharacter = player.getPlayer(message.author.id).skills;
+        const playerCharacter = await player.getPlayer(message.author.id);
+        console.log(playerCharacter);
         // Then get a list of all bosses which are compatible with the player stats
         // And compare the stats with the player stats
         let acceptedKeys = new Map();

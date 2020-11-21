@@ -43,7 +43,7 @@ async function createPlayer(message, playerName) {
  */
 async function displayStats(message, client) {
     const embedReply = new Discord.MessageEmbed();
-    const playerJSON = await db.displayStats(message.author.id); // Get the player from mongo
+    const playerJSON = await db.getPlayer(message.author.id); // Get the player from mongo
 
     if (playerJSON === -1) { // If it doesn't exist it returns -1.
         return message.reply("you should set your RSN first.");
@@ -64,7 +64,12 @@ async function displayStats(message, client) {
     await message.channel.send(embedReply);
 }
 
+async function getPlayer(discordId) {
+    return await db.getPlayer(discordId);
+}
+
 module.exports = {
     createPlayer,
     displayStats,
+    getPlayer
 }

@@ -8,4 +8,6 @@ config.json
 
 .env
 
+/Logs/*
+
 /Players/RSNList.json

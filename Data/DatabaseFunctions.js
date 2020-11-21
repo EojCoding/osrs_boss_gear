@@ -86,7 +86,7 @@ async function addToRSNList(discordId, userRSN, skillsJSON) {
  * @param discordId The unique ID of the discord user
  * @returns {Promise<void|number|*>}
  */
-async function displayStats(discordId) {
+async function getPlayer(discordId) {
     const database = await connectToDB();
     const collection = await database.collection(dbCollections.RSN_LIST);
     const query = { "_id": discordId };
@@ -186,5 +186,5 @@ module.exports = {
     dbCollections,
     addToGearSetups,
     addToRSNList,
-    displayStats
+    getPlayer
 }

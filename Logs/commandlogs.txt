@@ -530,3 +530,5 @@
 [2020-11-20] 23:7:10: Command: showstats -> Args: 
 [2020-11-20] 23:7:34: Command: showstats -> Args: 
 [2020-11-20] 23:8:41: Command: showstats -> Args: 
+[2020-11-21] 12:8:52: Command: mybosslist -> Args: 500m
+[2020-11-21] 12:9:16: Command: mybosslist -> Args: 600m
