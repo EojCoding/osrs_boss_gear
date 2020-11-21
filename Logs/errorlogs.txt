@@ -47,3 +47,9 @@
 [2020-11-20] 16:38:29: Error: TypeError: Cannot read property 'id' of undefined -> Pegasian boots boots has no ID
 [2020-11-20] 22:42:26: Error: Error: HTTPError: Response code 404 (Not found)
 [2020-11-20] 22:46:1: Error: Error: HTTPError: Response code 404 (Not found)
+[2020-11-21] 14:37:39: Error: DiscordAPIError: Invalid Form Body
+embed.fields[0].value: This field is required
+embed.fields[11].value: This field is required
+[2020-11-21] 14:37:39: Error: DiscordAPIError: Invalid Form Body
+embed.fields[0].value: This field is required
+embed.fields[12].value: This field is required

@@ -85,28 +85,17 @@ async function successResponse(client, budget, message, setupJson) {
     }
 
     let itemEmoji = "";
+    let wornTotal = 0;
+    let invTotal = 0;
 
-    const embedWorn = new Discord.MessageEmbed();
-    const embedInventory = new Discord.MessageEmbed();
     const embedBoss = new Discord.MessageEmbed();
     const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
     embedBoss
         .setColor("0099ff")
         .setTitle(links[boss].name)
         .setURL(links[boss].strategy)
-        .setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**\n*Consumables not included*`)
-        .setThumbnail(links[boss].thumbnail);
-
-    embedWorn
-        .setColor("#0099ff")
-        .setThumbnail("https://oldschool.runescape.wiki/images/5/50/Worn_equipment.png?124cf");
-
-    embedInventory
-        .setColor("#0099ff")
-        .setThumbnail("https://oldschool.runescape.wiki/images/d/db/Inventory.png?1e52e");
-
-    let wornTotal = 0;
-    let invTotal = 0;
+        .setThumbnail(links[boss].thumbnail)
+        .addField("__**Worn**__", "------------------------------");
 
     for (const key in setupJson) {
         let itemName = setupJson[key];
@@ -119,13 +108,14 @@ async function successResponse(client, budget, message, setupJson) {
                     itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
                     price = equipment[itemName].price;
                     wornTotal += price;
-                    embedWorn.addField(itemName, `${itemEmoji} | ${price.toLocaleString()}gp`, true);
-                } catch (e) {
-                    logger.logErrors(e + " -> " + itemName + " has no ID");
+                    embedBoss.addField(itemName, `${itemEmoji} ${price.toLocaleString()}gp`, true);
+                } catch (err) {
+                    logger.logErrors(err + " -> " + itemName + " has no ID");
                 }
             }
         }
         if (key === "inventory") {
+            embedBoss.addField("__**Inventory**__", "------------------------------");
             // Look up each item in equipment.json and output them to a "inventory" section
             itemName.forEach((prop) => {
                 // If equipment.json has this property
@@ -135,9 +125,9 @@ async function successResponse(client, budget, message, setupJson) {
                             itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
                             price = equipment[prop].price;
                             invTotal += price;
-                            embedInventory.addField(prop, `${itemEmoji} | ${price.toLocaleString()}gp`, true);
-                        } catch (e) {
-                            logger.logErrors(e + " -> " + itemName + " has no ID");
+                            embedBoss.addField(prop, `${itemEmoji} ${price.toLocaleString()}gp`, true);
+                        } catch (err) {
+                            logger.logErrors(err + " -> " + itemName + " has no ID");
                         }
                     }
                 }
@@ -149,20 +139,15 @@ async function successResponse(client, budget, message, setupJson) {
     let grandTotal = wornTotal + invTotal;
 
     // This creates a new line
-    embedInventory
-        .addField("\u200b", "\u200b")
-        .addField("Grand total", `${coinsEmoji} ${grandTotal.toLocaleString()}gp`, true);
+    embedBoss
+        .setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**\n__Gear cost:__ ${coinsEmoji}${grandTotal.toLocaleString()}gp\n*Consumables not included*`)
 
     try {
         if (split[2] === "DM") {
             await client.users.cache.get(split[3]).send(embedBoss);
-            await client.users.cache.get(split[3]).send(embedWorn);
-            await client.users.cache.get(split[3]).send(embedInventory);
         }
         else {
             await message.channel.send(embedBoss);
-            await message.channel.send(embedWorn);
-            await message.channel.send(embedInventory);
         }
     } catch (e) {
         logger.logErrors(e);

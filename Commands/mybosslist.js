@@ -24,7 +24,6 @@ module.exports = {
 
         // This should always return true since the check is made above to verify it exists.
         const playerCharacter = await player.getPlayer(message.author.id);
-        console.log(playerCharacter);
         // Then get a list of all bosses which are compatible with the player stats
         // And compare the stats with the player stats
         let acceptedKeys = new Map();
@@ -47,6 +46,6 @@ module.exports = {
             message.channel.send("You do not meet the minimum required stats for any boss");
             return;
         }
-        responses.myBossList(acceptedKeys, message, budget, client);
+        await responses.myBossList(acceptedKeys, message, budget, client);
     }
 }

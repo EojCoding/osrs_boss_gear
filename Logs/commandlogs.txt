@@ -532,3 +532,30 @@
 [2020-11-20] 23:8:41: Command: showstats -> Args: 
 [2020-11-21] 12:8:52: Command: mybosslist -> Args: 500m
 [2020-11-21] 12:9:16: Command: mybosslist -> Args: 600m
+[2020-11-21] 12:10:49: Command: joke -> Args: 
+[2020-11-21] 12:15:13: Command: joke -> Args: 
+[2020-11-21] 12:42:22: Command: setrsn -> Args: karepow
+[2020-11-21] 12:42:22: Command: showstats -> Args: 
+[2020-11-21] 12:42:22: Command: joke -> Args: 
+[2020-11-21] 12:42:22: Command: mybosslist -> Args: 1b
+[2020-11-21] 12:42:22: Command: mybosslist -> Args: 500m
+[2020-11-21] 12:42:22: Command: mybosslist -> Args: 500m
+[2020-11-21] 12:42:22: Command: mybosslist -> Args: 500m
+[2020-11-21] 12:42:22: Command: mybosslist -> Args: 500m
+[2020-11-21] 14:37:39: Command: mybosslist -> Args: 50m
+[2020-11-21] 14:38:48: Command: mybosslist -> Args: 60m
+[2020-11-21] 14:42:52: Command: tob -> Args: 600m
+[2020-11-21] 14:42:52: Command: dks -> Args: 20m
+[2020-11-21] 14:42:52: Command: tob -> Args: 500m
+[2020-11-21] 14:45:58: Command: tob -> Args: 500m
+[2020-11-21] 14:47:57: Command: tob -> Args: 500m
+[2020-11-21] 14:48:43: Command: tob -> Args: 500m
+[2020-11-21] 14:49:15: Command: tob -> Args: 500m
+[2020-11-21] 14:49:57: Command: tob -> Args: 500m
+[2020-11-21] 14:50:20: Command: tob -> Args: 500m
+[2020-11-21] 14:50:41: Command: tob -> Args: 500m
+[2020-11-21] 14:50:50: Command: tob -> Args: 500m
+[2020-11-21] 14:51:45: Command: tob -> Args: 500m
+[2020-11-21] 14:51:45: Command: dks -> Args: 20m
+[2020-11-21] 14:52:36: Command: joke -> Args: 
+[2020-11-21] 14:52:36: Command: tob -> Args: 3b
