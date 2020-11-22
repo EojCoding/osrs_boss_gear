@@ -46,7 +46,6 @@ async function response(client, message, budget, boss) {
     // }
     // If the budget matches and is greater than the minimum
     if (result >= total(setups["1"])) {
-        console.log(setups);
         let setupToUse = await gearBudget.getSetupToUse(result, setups);
         successResponse(client, result, message, setupToUse);
     } else {

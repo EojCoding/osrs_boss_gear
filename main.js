@@ -84,6 +84,9 @@ client.on("message", (message) => {
         case "mybosslist":
             client.commands.get("mybosslist").execute(client, message);
             break;
+        case "bosses":
+            client.commands.get("bosses").execute(message);
+            break;
         case "tob":
             client.commands.get("tob").execute(client, message, budget, command);
             break;
