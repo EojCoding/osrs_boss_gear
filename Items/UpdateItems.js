@@ -92,8 +92,10 @@ function updateAll() {
 }
 
 setInterval(() => {
+    let time = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+    console.log("Updated: " + time);
     updateAll();
-}, 1440000000);
+}, 7200000);
 
 // Export JSON (not in use currently)
 module.exports = {
