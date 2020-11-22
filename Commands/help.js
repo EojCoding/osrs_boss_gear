@@ -27,6 +27,8 @@ module.exports = {
             .addField("~kree [budget]", "eg: ~kree 150.1m", true)
             .addField("~bandos attacker [budget]", "eg: ~bandos attacker 150.1m", true)
             .addField("~bandos tank [budget]", "eg: ~bandos tank 150.1m", true)
+            .addField("~vorkath range [budget]", "eg: ~vorkath range 250m", true)
+            .addField("~vorkath melee [budget]", "eg: ~vorkath melee 250m", true)
             .addField("~joke", "eg: ~joke", true);
         // Send the message
         message.channel.send(helpList);

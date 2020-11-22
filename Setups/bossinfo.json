@@ -47,6 +47,7 @@
       "strength": 80,
       "defence": 70,
       "magic": 75,
+      "ranged": 80,
       "constitution": 80,
       "prayer": 70
     }
@@ -62,6 +63,33 @@
       "magic": 75,
       "constitution": 90,
       "prayer": 70
+    }
+  },
+  "vorkath melee": {
+    "strategy": "https://oldschool.runescape.wiki/w/Vorkath/Strategies#Melee",
+    "thumbnail": "https://oldschool.runescape.wiki/images/9/9a/Vorkath.png?1ce3f",
+    "name": "Vorkath - Melee",
+    "minstats": {
+      "attack": 90,
+      "strength": 85,
+      "defence": 85,
+      "magic": 39,
+      "constitution": 90,
+      "prayer": 70
+    }
+  },
+  "vorkath range": {
+    "strategy": "https://oldschool.runescape.wiki/w/Vorkath/Strategies#Ranged",
+    "thumbnail": "https://oldschool.runescape.wiki/images/9/9a/Vorkath.png?1ce3f",
+    "name": "Vorkath - Range",
+    "minstats": {
+      "attack": 80,
+      "strength": 80,
+      "defence": 75,
+      "magic": 39,
+      "ranged": 85,
+      "constitution": 85,
+      "prayer": 74
     }
   }
 }

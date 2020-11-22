@@ -96,6 +96,9 @@ client.on("message", (message) => {
         case "bandos":
             client.commands.get("bandos").execute(client, message);
             break;
+        case "vorkath":
+            client.commands.get("vorkath").execute(client, message);
+            break;
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);
             break;

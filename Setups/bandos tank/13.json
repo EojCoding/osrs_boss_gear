@@ -1,0 +1,16 @@
+{
+  "name" : 13,
+  "head" : "Neitiznot faceguard",
+  "amulet" : "Amulet of fury",
+  "cloak" : "Fire cape",
+  "chest" : "Bandos chestplate",
+  "legs" : "Bandos tassets",
+  "main-hand" : "Abyssal tentacle",
+  "off-hand" : "Dragonfire shield",
+  "ammo" : "Unholy blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Guardian boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Guthan's helm", "Guthan's chainskirt", "Guthan's platebody",
+    "Guthan's warspear", "Bandos godsword"]
+}
