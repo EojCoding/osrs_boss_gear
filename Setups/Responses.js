@@ -16,7 +16,7 @@ let messageIDs = new Map();
  * @param budget The user's budget
  * @param boss The name of the boss
  */
-function response(client, message, budget, boss) {
+async function response(client, message, budget, boss) {
     // See ../Setups/GearBudget.js for implementation
     let allSetups = {};
     const args = message.content.slice(1).split(/ +/).slice(1);
@@ -46,10 +46,10 @@ function response(client, message, budget, boss) {
     // }
     // If the budget matches and is greater than the minimum
     if (result >= total(setups["1"])) {
-        let setupToUse = gearBudget.getSetupToUse(result, setups);
+        console.log(setups);
+        let setupToUse = await gearBudget.getSetupToUse(result, setups);
         successResponse(client, result, message, setupToUse);
-    }
-    else {
+    } else {
         message.channel.send("Minimum budget is " + total(setups["1"]).toLocaleString() + "gp");
     }
 }
