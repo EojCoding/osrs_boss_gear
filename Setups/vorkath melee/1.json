@@ -1,0 +1,15 @@
+{
+  "name" : 1,
+  "head" : "Serpentine helm",
+  "amulet" : "Salve amulet(ei)",
+  "cloak" : "Fire cape",
+  "chest" : "Bandos chestplate",
+  "legs" : "Bandos tassets",
+  "main-hand" : "Zamorakian hasta",
+  "off-hand" : "Dragonfire defender",
+  "ammo" : "Rada's blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Dragon boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Bandos godsword"]
+}

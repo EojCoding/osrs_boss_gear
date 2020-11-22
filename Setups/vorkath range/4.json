@@ -1,0 +1,16 @@
+{
+  "name" : 4,
+  "head" : "Void ranger helm",
+  "amulet" : "Salve amulet(ei)",
+  "cloak" : "Ava's assembler",
+  "chest" : "Elite void top",
+  "legs" : "Elite void robe",
+  "main-hand" : "Armadyl crossbow",
+  "off-hand" : "Anti-dragon shield",
+  "ammo" : "Ruby dragon bolts (e)",
+  "gloves" : "Void knight gloves",
+  "feet" : "Pegasian boots",
+  "ring" : "Archer's ring",
+  "inventory" : ["Bandos godsword", "Diamond dragon bolts (e)", "Void melee helm",
+    "Dragon boots", "Berserker ring", "Fire cape"]
+}

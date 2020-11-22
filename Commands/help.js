@@ -12,20 +12,17 @@ module.exports = {
 
         // Build the embedded message
         helpList
-            .setTitle("Help")
-            .setDescription("List of commands")
+            .setTitle("__Help__")
             .setColor("0099ff")
             .setThumbnail("https://oldschool.runescape.wiki/images/thumb/e/e4/Lumbridge_Guide.png/320px-Lumbridge_Guide.png?426c8")
-            .addField("~report [message]", "eg: ~report XYZ is bugged", true)
-            .addField("~about", "eg: ~about", true)
-            .addField("~setrsn [player name]", "eg: ~setrsn lynx titan", true)
+            .addField("~report [message]", "Use this to give feedback/bug report", true)
+            .addField("~about", "Quick introduction to the bot", true)
+            .addField("~setrsn [player name]", "Set your rsn", true)
             //.addField("~mybosses [budget]", "eg: ~mybosses 500m", true)
-            .addField("~mybosslist [budget]", "eg: ~mybosses 500m", true)
-            .addField("~showstats", "eg: ~showstats", true)
-            .addField("~tob [budget]", "eg: ~tob 510.27m", true)
-            .addField("~dks [budget]", "eg: ~dks 15m", true)
-            .addField("~kree [budget]", "eg: ~kree 150.1m", true)
-            .addField("~bandos [tank/attacker] [budget]", "eg: ~bandos attacker 150.1m", true);
+            .addField("~mybosslist [budget]", "Lists bosses you can do with your budget", true)
+            .addField("~showstats", "Shows your stats (must set rsn first)", true)
+            .addField("~bosses", "A list of all bosses the bot has so far", true)
+            .addField("~joke", "Sometimes the jokes are funny", true);
         // Send the message
         message.channel.send(helpList);
     }

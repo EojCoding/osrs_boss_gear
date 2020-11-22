@@ -2,10 +2,12 @@
 
 config.json
 
-/Logs/*
-
 /Requests/*
 
 *.pem
+
+.env
+
+/Logs/*
 
 /Players/RSNList.json

@@ -91,7 +91,11 @@ function updateAll() {
     logger.logUpdates();
 }
 
-updateAll();
+setInterval(() => {
+    let time = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+    console.log("Updated: " + time);
+    updateAll();
+}, 7200000);
 
 // Export JSON (not in use currently)
 module.exports = {

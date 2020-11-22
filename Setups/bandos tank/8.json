@@ -1,0 +1,16 @@
+{
+  "name" : 8,
+  "head" : "Verac's helm",
+  "amulet" : "Amulet of fury",
+  "cloak" : "Fire cape",
+  "chest" : "Guthan's platebody",
+  "legs" : "Verac's plateskirt",
+  "main-hand" : "Abyssal tentacle",
+  "off-hand" : "Dragonfire shield",
+  "ammo" : "Unholy blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Guardian boots",
+  "ring" : "Berserker ring",
+  "inventory" : ["Guthan's helm", "Guthan's chainskirt",
+    "Guthan's warspear", "Bandos godsword"]
+}

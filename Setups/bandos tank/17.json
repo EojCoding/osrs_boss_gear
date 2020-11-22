@@ -1,0 +1,16 @@
+{
+  "name" : 17,
+  "head" : "Justiciar faceguard",
+  "amulet" : "Amulet of blood fury",
+  "cloak" : "Infernal cape",
+  "chest" : "Justiciar chestguard",
+  "legs" : "Justiciar legguards",
+  "main-hand" : "Ghrazi rapier",
+  "off-hand" : "Dragonfire shield",
+  "ammo" : "Unholy blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Guardian boots",
+  "ring" : "Ring of suffering",
+  "inventory" : ["Guthan's helm", "Guthan's chainskirt", "Guthan's platebody",
+    "Guthan's warspear", "Bandos godsword"]
+}

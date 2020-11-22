@@ -5,20 +5,18 @@ const total = require("../Items/TotalPrices");
 const fs = require("fs");
 const path = require("path");
 const logger = require("../Logs/Logger");
-const player = require("../Players/Player");
-const numEmojis = require("./numberemojis.json");
 
 let messageIDs = new Map();
 
 /**
  * This function serves as the entry point for Responses which grabs all the setups for the boss
  * provided and then sends them to GearBudget.js to be sorted in order of price
- * @param client
- * @param message
- * @param budget
- * @param boss
+ * @param client The bot client
+ * @param message The discord message object
+ * @param budget The user's budget
+ * @param boss The name of the boss
  */
-function response(client, message, budget, boss) {
+async function response(client, message, budget, boss) {
     // See ../Setups/GearBudget.js for implementation
     let allSetups = {};
     const args = message.content.slice(1).split(/ +/).slice(1);
@@ -28,7 +26,6 @@ function response(client, message, budget, boss) {
             "Or for requesting a new feature use: `~report [type here]`");
         return;
     }
-    console.log("From inside response budget: " + budget);
     let result = budget;
     // If the given budget is not an integer
     if (!Number.isInteger(budget)) {
@@ -49,10 +46,9 @@ function response(client, message, budget, boss) {
     // }
     // If the budget matches and is greater than the minimum
     if (result >= total(setups["1"])) {
-        let setupToUse = gearBudget.getSetupToUse(result, setups);
+        let setupToUse = await gearBudget.getSetupToUse(result, setups);
         successResponse(client, result, message, setupToUse);
-    }
-    else {
+    } else {
         message.channel.send("Minimum budget is " + total(setups["1"]).toLocaleString() + "gp");
     }
 }
@@ -60,10 +56,10 @@ function response(client, message, budget, boss) {
 /**
  * If all information is validated in response() an embedded message is built and sent
  * back to the user who used the command.
- * @param client
- * @param budget
- * @param message
- * @param setupJson
+ * @param client The bot client
+ * @param budget The user's budget
+ * @param message The discord message object
+ * @param setupJson The gear stup JSON object
  */
 async function successResponse(client, budget, message, setupJson) {
 
@@ -88,34 +84,22 @@ async function successResponse(client, budget, message, setupJson) {
     }
 
     let itemEmoji = "";
+    let wornTotal = 0;
+    let invTotal = 0;
 
-    const embedWorn = new Discord.MessageEmbed();
-    const embedInventory = new Discord.MessageEmbed();
     const embedBoss = new Discord.MessageEmbed();
     const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
     embedBoss
         .setColor("0099ff")
         .setTitle(links[boss].name)
         .setURL(links[boss].strategy)
-        .setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**`)
         .setThumbnail(links[boss].thumbnail)
-        .setFooter("Consumables not included");
-
-    embedWorn
-        .setColor("#0099ff")
-        .setThumbnail("https://oldschool.runescape.wiki/images/5/50/Worn_equipment.png?124cf");
-
-    embedInventory
-        .setColor("#0099ff")
-        .setThumbnail("https://oldschool.runescape.wiki/images/d/db/Inventory.png?1e52e");
-
-    let wornTotal = 0;
-    let invTotal = 0;
+        .addField("__**Worn**__", "------------------------------");
 
     for (const key in setupJson) {
         let itemName = setupJson[key];
         let price = 0;
-        // Don't display the "name" key
+        // Don't display the "name" key, build the worn embed
         if (key !== "name" && key !== "inventory") {
             // Get the emoji that matches this item
             if (itemName !== "none") {
@@ -123,13 +107,14 @@ async function successResponse(client, budget, message, setupJson) {
                     itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[itemName].id.toString());
                     price = equipment[itemName].price;
                     wornTotal += price;
-                    embedWorn.addField(itemName, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
-                } catch (e) {
-                    logger.logErrors(e + " -> " + itemName + " has no ID");
+                    embedBoss.addField(itemName, `${itemEmoji} ${price.toLocaleString()}gp`, true);
+                } catch (err) {
+                    logger.logErrors(err + " -> " + itemName + " has no ID");
                 }
             }
         }
         if (key === "inventory") {
+            embedBoss.addField("__**Inventory**__", "------------------------------");
             // Look up each item in equipment.json and output them to a "inventory" section
             itemName.forEach((prop) => {
                 // If equipment.json has this property
@@ -139,9 +124,9 @@ async function successResponse(client, budget, message, setupJson) {
                             itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
                             price = equipment[prop].price;
                             invTotal += price;
-                            embedInventory.addField(prop, `${itemEmoji}\n${price.toLocaleString()}gp`, true);
-                        } catch (e) {
-                            logger.logErrors(e + " -> " + itemName + " has no ID");
+                            embedBoss.addField(prop, `${itemEmoji} ${price.toLocaleString()}gp`, true);
+                        } catch (err) {
+                            logger.logErrors(err + " -> " + itemName + " has no ID");
                         }
                     }
                 }
@@ -153,20 +138,15 @@ async function successResponse(client, budget, message, setupJson) {
     let grandTotal = wornTotal + invTotal;
 
     // This creates a new line
-    embedInventory
-        .addField("\u200b", "\u200b")
-        .addField("Grand total", `${coinsEmoji} ${grandTotal.toLocaleString()}gp`, true);
+    embedBoss
+        .setDescription(`${coinsEmoji} **${budget.toLocaleString()}gp**\n__Gear cost:__ ${coinsEmoji}${grandTotal.toLocaleString()}gp\n*Consumables not included*`)
 
     try {
         if (split[2] === "DM") {
             await client.users.cache.get(split[3]).send(embedBoss);
-            await client.users.cache.get(split[3]).send(embedWorn);
-            await client.users.cache.get(split[3]).send(embedInventory);
         }
         else {
             await message.channel.send(embedBoss);
-            await message.channel.send(embedWorn);
-            await message.channel.send(embedInventory);
         }
     } catch (e) {
         logger.logErrors(e);
@@ -174,6 +154,7 @@ async function successResponse(client, budget, message, setupJson) {
 }
 
 /**
+ * @deprecated
  * This function gets a list of all bosses available to the user when provided
  * with their budget. Each boss in their own embedded message.
  * @param bossMap
@@ -218,9 +199,10 @@ async function myBossesList(bossMap, message, budget) {
 /**
  * This function gets a list of all bosses available to the user when provided
  * with their budget. All bosses in a single embedded message.
- * @param bossMap This is a map of bosses which
- * @param message
- * @param budget
+ * @param bossMap This is a map of bosses which the player has the stats to do
+ * @param message The discord message object
+ * @param budget The user's budget
+ * @param client The bot client
  */
 async function myBossList(bossMap, message, budget, client) {
     let allSetups = {};
@@ -244,7 +226,7 @@ async function myBossList(bossMap, message, budget, client) {
         const bossNames = new Map();
         bossListEmbed
             .setColor("#FF0000")
-            .setTitle(budget + "gp : Your Boss List")
+            .setTitle(budget + " gp : Your Boss List")
             .setDescription("*React to this message with the boss that you would like to see the gear for.*")
             .setThumbnail("https://oldschool.runescape.wiki/images/3/3a/Vannaka.png?b5716");
         let i = 1;
@@ -264,7 +246,6 @@ async function myBossList(bossMap, message, budget, client) {
                     const react = client.emojis.cache.find((emoji) => emoji.name === bossName)
                     sentEmbed.react(react);
                 }
-                console.log(sentEmbed.id);
                 messageIDs.set(sentEmbed.id, bossNames);
             });
         // Set the  message ID as the key and the bossNames map as value
@@ -277,9 +258,9 @@ async function myBossList(bossMap, message, budget, client) {
 
 /**
  * This is a helper function to get all the setups in a JSON object for use in response().
- * @param bossName
- * @param setups
- * @returns {*}
+ * @param bossName The name of the boss
+ * @param setups Empty JSON object to be filled up with setups for the boss.
+ * @returns {setups} JSON object with all the gear setups for the boss.
  */
 function getSetups(bossName, setups) {
     setups.size = 0;

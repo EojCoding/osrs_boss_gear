@@ -3,7 +3,7 @@
   "head" : "Verac's helm",
   "amulet" : "Amulet of fury",
   "cloak" : "Fire cape",
-  "chest" : "Torag's platebody",
+  "chest" : "Guthan's platebody",
   "legs" : "Verac's plateskirt",
   "main-hand" : "Abyssal tentacle",
   "off-hand" : "Crystal shield",
@@ -11,6 +11,6 @@
   "gloves" : "Barrows gloves",
   "feet" : "Bandos boots",
   "ring" : "Berserker ring",
-  "inventory" : ["Guthan's helm", "Guthan's platebody", "Guthan's chainskirt",
+  "inventory" : ["Guthan's helm", "Guthan's chainskirt",
     "Guthan's warspear", "Bandos godsword"]
 }

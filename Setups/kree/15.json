@@ -1,0 +1,15 @@
+{
+  "name" : 15,
+  "head" : "Justiciar faceguard",
+  "amulet" : "Necklace of anguish",
+  "cloak" : "Ava's assembler",
+  "chest" : "Armadyl chestplate",
+  "legs" : "Armadyl chainskirt",
+  "main-hand" : "Black chinchompa",
+  "off-hand" : "Dragonfire ward",
+  "ammo" : "Diamond dragon bolts (e)",
+  "gloves" : "Barrows gloves",
+  "feet" : "Pegasian boots",
+  "ring" : "Ring of suffering",
+  "inventory" : ["Armadyl crossbow", "Toxic blowpipe", "Kodai wand", "Imbued heart"]
+}

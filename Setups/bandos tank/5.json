@@ -1,0 +1,17 @@
+{
+  "name" : 5,
+  "head" : "Justiciar faceguard",
+  "amulet" : "Amulet of blood fury",
+  "cloak" : "Infernal cape",
+  "chest" : "Justiciar chestguard",
+  "legs" : "Justiciar legguards",
+  "main-hand" : "Zamorakian hasta",
+  "off-hand" : "Elysian spirit shield",
+  "ammo" : "Rada's blessing",
+  "gloves" : "Barrows gloves",
+  "feet" : "Guardian boots",
+  "ring" : "Ring of suffering",
+  "inventory" : ["Guthan's helm", "Guthan's platebody", "Guthan's chainskirt",
+    "Guthan's warspear", "Dragon warhammer", "Avernic defender",
+    "Imbued heart"]
+}

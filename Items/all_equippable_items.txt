@@ -139,3 +139,7 @@ Unholy blessing
 Bandos boots
 Dragonfire ward
 Obsidian platelegs
+Dragonfire shield
+Anti-dragon shield
+Dragon hunter crossbow
+Dragon hunter lance

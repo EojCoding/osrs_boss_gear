@@ -84,6 +84,9 @@ client.on("message", (message) => {
         case "mybosslist":
             client.commands.get("mybosslist").execute(client, message);
             break;
+        case "bosses":
+            client.commands.get("bosses").execute(message);
+            break;
         case "tob":
             client.commands.get("tob").execute(client, message, budget, command);
             break;
@@ -96,6 +99,9 @@ client.on("message", (message) => {
         case "bandos":
             client.commands.get("bandos").execute(client, message);
             break;
+        case "vorkath":
+            client.commands.get("vorkath").execute(client, message);
+            break;
         case "setrsn":
             client.commands.get("setrsn").execute(message, args);
             break;
@@ -104,6 +110,9 @@ client.on("message", (message) => {
             break;
         case "about":
             client.commands.get("about").execute(client, message);
+            break;
+        case "joke":
+            client.commands.get("joke").execute(message);
             break;
     }
 });
@@ -149,12 +158,9 @@ client.on("messageReactionAdd", (reaction) => {
                     return;
                 }
                 reaction.message.content = PREFIX + boss + " " + parsedBudget + " DM " + sender;
-                console.log("Reaction message content: " + reaction.message.content);
-                console.log("Boss array: " + boss);
 
                 // If the boss does not have specific roles, give it just the boss name
                 // Bosses with roles have a different execute function
-                console.log("BOSS LENGTH: " + boss.length + "\nAND BOSS: " + boss);
                 if (boss.length === 2) {
                     client.commands.get(boss[0]).execute(client, reaction.message, boss[1], boss[0]);
                 }
