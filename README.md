@@ -52,4 +52,11 @@ DM you an embedded message with the gear set for that boss (see below).
 > ~bosses  
 
 This command simply lists the bosses which the bot has information for right now.  
-This is continuously being updated.
+This is continuously being updated.  
+
+> ~(boss-name) (budget)  
+
+Using `~bosses` will show you which individual boss commands are currently added.  
+See below for an example using `~kree 3b`:
+
+<img src="https://i.gyazo.com/66e4997abc247602db425c04fcabcd61.png" width="500">
