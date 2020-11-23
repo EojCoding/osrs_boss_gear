@@ -6,6 +6,8 @@ Boss Gear is a bot that is designed to help you choose what gear to bring to a b
 specify with a budget that you provide for [Oldschool Runescape](https://oldschool.runescape.com). 
 Please read below for a quick introduction on using the bot!
 
+You cna invite the bot to your Discord server with [this link](https://discord.com/api/oauth2/authorize?client_id=773777770454581270&permissions=313408&scope=bot)
+
 <br/>
 
 ## Getting started
