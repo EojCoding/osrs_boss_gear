@@ -30,7 +30,7 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: " for ~help",
+            name: ` for ~help | ${client.guilds.cache.size} servers`,
             type: "WATCHING"
         }
     });

@@ -1,8 +1,10 @@
-# Boss Gear Bot
+<img src="https://github.com/EojCoding/osrs_boss_gear/blob/dev/bossgear.png?raw=true" width=500/>
 
 #### Description:
 
-Boss Gear is a bot that is designed to help you choose what gear to bring to a boss that you specify with a budget that you provide.
+Boss Gear is a bot that is designed to help you choose what gear to bring to a boss that you
+specify with a budget that you provide for [Oldschool Runescape](https://oldschool.runescape.com). 
+Please read below for a quick introduction on using the bot!
 
 <br/>
 
