@@ -1,4 +1,5 @@
-# Boss Gear Bot
+# Boss Gear Bot  
+<img src="./bossgear.png" width=500/>
 
 #### Description:
 
