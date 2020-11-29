@@ -180,7 +180,7 @@ async function connectToDB() {
     }
 }
 
-UpdateAllSetups();
+//UpdateAllSetups();
 
 module.exports = {
     dbCollections,

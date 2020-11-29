@@ -39,15 +39,9 @@ async function response(client, message, budget, boss) {
             "Or for requesting a new feature use: ~report [type here]");
         return;
     }
-    //todo: add minstats property to bossinfo.json (rename it?) with combat levels
-    // if (player.checkStatRequirements(String(message.author.id), boss) === -1) {
-    //     message.reply("You do not meet the minimum requirements for ");
-    //     return;
-    // }
-    // If the budget matches and is greater than the minimum
     if (result >= total(setups["1"])) {
         let setupToUse = await gearBudget.getSetupToUse(result, setups);
-        successResponse(client, result, message, setupToUse);
+        await successResponse(client, result, message, setupToUse);
     } else {
         message.channel.send("Minimum budget is " + total(setups["1"]).toLocaleString() + "gp");
     }
@@ -88,13 +82,17 @@ async function successResponse(client, budget, message, setupJson) {
     let invTotal = 0;
 
     const embedBoss = new Discord.MessageEmbed();
+    const embedInventory = new Discord.MessageEmbed();
     const coinsEmoji = client.emojis.cache.find(emoji => emoji.name === "Coins_10000");
     embedBoss
-        .setColor("0099ff")
+        .setColor("#FF0000")
         .setTitle(links[boss].name)
         .setURL(links[boss].strategy)
         .setThumbnail(links[boss].thumbnail)
-        .addField("__**Worn**__", "------------------------------");
+        .addField("__**Equipped**__", "------------------------------");
+
+    embedInventory
+        .setColor("#FF0000")
 
     for (const key in setupJson) {
         let itemName = setupJson[key];
@@ -114,7 +112,7 @@ async function successResponse(client, budget, message, setupJson) {
             }
         }
         if (key === "inventory") {
-            embedBoss.addField("__**Inventory**__", "------------------------------");
+            embedInventory.addField("__**Inventory**__", "------------------------------");
             // Look up each item in equipment.json and output them to a "inventory" section
             itemName.forEach((prop) => {
                 // If equipment.json has this property
@@ -124,7 +122,7 @@ async function successResponse(client, budget, message, setupJson) {
                             itemEmoji = client.emojis.cache.find(emoji => emoji.name === equipment[prop].id.toString());
                             price = equipment[prop].price;
                             invTotal += price;
-                            embedBoss.addField(prop, `${itemEmoji} ${price.toLocaleString()}gp`, true);
+                            embedInventory.addField(prop, `${itemEmoji} ${price.toLocaleString()}gp`, true);
                         } catch (err) {
                             logger.logErrors(err + " -> " + itemName + " has no ID");
                         }
@@ -144,9 +142,11 @@ async function successResponse(client, budget, message, setupJson) {
     try {
         if (split[2] === "DM") {
             await client.users.cache.get(split[3]).send(embedBoss);
+            await client.users.cache.get(split[3]).send(embedInventory);
         }
         else {
             await message.channel.send(embedBoss);
+            await message.channel.send(embedInventory);
         }
     } catch (e) {
         logger.logErrors(e);
